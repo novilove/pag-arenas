@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tips de arenas</title>
+
+    <link rel="stylesheet" href="./css/grid.css" />
+    <link rel="stylesheet" href="./css/spacing-utilities.css" />
+    <link rel="stylesheet" href="./css/global.css" />
+    <link rel="stylesheet" href="./css/navbar.css" />
+    <link rel="stylesheet" href="./css/carrusel.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wdth,wght@0,75..100,300..800;1,75..100,300..800&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      .tips-section {
+        background-color: #f8f8f8;
+      }
+
+      .container-tips {
+        max-width: 1440px;
+        width: 100%;
+        margin: 0 auto;
+      }
+
+      .main-title {
+        text-align: center;
+        color: #5a7d16;
+        font-family: "Open Sans", sans-serif;
+        font-size: 2.2rem;
+        font-weight: 700;
+      }
+
+      .tips-content {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        gap: 20px; /* antes 40px */
+        flex-wrap: wrap;
+        padding: 0 2rem;
+      }
+
+      .tips-image img {
+        width: 100%; /* que ocupe el ancho disponible de su contenedor */
+        max-width: 85%; /* puedes ajustar este valor */
+        height: auto;
+        border-radius: 10px;
+      }
+
+      .tips-text {
+        flex: 1;
+        min-width: 280px;
+        max-width: 800px;
+        font-family: "Open Sans", sans-serif;
+      }
+
+      .tips-text h2 {
+        color: #7cb518;
+        font-size: 1.5rem;
+        line-height: 1.6;
+        margin-bottom: 5px;
+      }
+
+      .tips-text2 h6 {
+        margin: 0;
+        color: #f8f8f8;
+        padding: 0.5rem 1.5rem;
+      }
+
+      .tips-text3 h5 {
+        margin: 0;
+        color: #f8f8f8;
+        line-height: 1.6;
+        font-size: 1.2em;
+      }
+
+      .tips-text p {
+        font-size: 1rem;
+        color: #333;
+        line-height: 1.6;
+        margin-bottom: 10px;
+      }
+
+      .bubble-text {
+        background: #7cb518;
+        border-radius: 50%;
+        height: auto;
+        text-align: center;
+        display: flex;
+        align-items: anchor-center;
+        justify-content: center;
+        padding: 1.5rem 0;
+      }
+
+      .bubble-trail {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 5px;
+        margin-top: 10px;
+        margin-left: 20px; /* Ajusta este valor según la posición que desees */
+      }
+
+      .small-bubble {
+        width: 12px;
+        height: 12px;
+        background-color: #7cb518; /* mismo verde de la burbuja grande */
+        border-radius: 50%;
+      }
+
+      .align-right {
+        text-align: left;
+        justify-content: flex-end;
+      }
+
+      .radius-text {
+        background: #7cb518;
+        height: auto;
+        text-align: center;
+        display: flex;
+        align-items: anchor-center;
+        justify-content: center;
+        padding: 0.5rem 0;
+        border-top-left-radius: 100rem;
+        border-bottom-left-radius: 100rem;
+        margin: 1rem 0;
+      }
+
+      #bubble {
+        z-index: 1;
+      }
+
+      #img-2-tips {
+        z-index: 0;
+        margin-top: -10rem;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="fondo">
+      <div id="navbar-placeholder"></div>
+      <div class="tips-section">
+        <div class="container-tips">
+          <h1 class="main-title">
+            Tips esenciales para un buen <br />
+            uso de las arenas
+          </h1>
+          <div class="tips-content">
+            <div class="tips-image">
+              <img src="../assets/img/tip-cat-1.svg" alt="Gatito con arenero" />
+            </div>
+            <div class="tips-text">
+              <h2><strong>¡Cambia la arena con regularidad!</strong></h2>
+              <strong>
+                ¿Sabías que cambiar la arena regularmente ayuda a mantener un
+                ambiente más higiénico y libre de bacterias?
+              </strong>
+              <p>
+                Esto ocurre porque los restos en el fondo del arenero pierden su
+                efectividad bactericida y virucida, acumulando suciedad que
+                puede ser un vector de enfermedades para los gatos y el hogar.
+              </p>
+            </div>
+          </div>
+          <div class="tips-content">
+            <div class="tips-text">
+              <h2>
+                <strong
+                  >¿Por que se recomienda tener mas de un<br />
+                  arenero en casa?</strong
+                >
+              </h2>
+              <strong>
+                Recuerda que lo ideal es tener dos areneros por gato, ya que en
+                el mundo de los gatos la orina y las heces cumplen funciones de
+                comunicación diferentes.
+              </strong>
+              <p>
+                Se recomienda tener dos areneros por gato porque los felinos
+                separan orina y heces para evitar estimulos olfativos excesivos.
+                Esto reduce el estrés y los conflictos, especialmente en hogares
+                con varios gatos.
+              </p>
+            </div>
+            <div class="d-center col-md-6 row">
+              <div id="bubble" class="tips-image">
+                <div class="col-md-12 bubble-text">
+                  <div class="tips-text2">
+                    <h6>
+                      Ahora cuando tienes más de un gato, la regla<br />
+                      que se debe seguir (N+1). Es decir, por cada<br />
+                      gato que ingresa al hogar, debes proporcionar<br />un
+                      arenero más a los dos adicionales que ya<br />tienes.
+                    </h6>
+                  </div>
+                </div>
+                <div class="bubble-trail">
+                  <span
+                    class="small-bubble"
+                    style="width: 25px; height: 25px"
+                  ></span>
+                  <span
+                    class="small-bubble"
+                    style="margin-right: 20px; width: 15px; height: 15px"
+                  ></span>
+                  <span class="small-bubble" style="margin-right: 40px"></span>
+                </div>
+              </div>
+              <div id="img-2-tips" class="tips-image">
+                <img
+                  src="../assets/img/tip-cat-2.svg"
+                  alt="Gatito con arenero"
+                />
+              </div>
+            </div>
+          </div>
+          <div class="row col-md-12 align-right">
+            <div class="tips-text col-md-10">
+              <h2><strong>¡No mezcles arenas!</strong></h2>
+              <strong>
+                Mezclar distintos tipos de arena para gatos<br />
+                puede afectar su rendimiento, disminuyendo<br />
+                cualidades importantes como la capacidad de<br />
+                formar grumos o controlar olores.
+              </strong>
+            </div>
+            <div class="radius-text row col-md-10">
+              <div class="tips-text3 col-md-8">
+                <h5>
+                  Elige una arena que se adapte a las necesidades de su gato<br />
+                  (aglomerante, con o sin aroma, ecológica, etc.).
+                </h5>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="topbar-placeholder"></div>
+    </div>
+
+    <script type="module">
+      import { addComponent } from "./javascript/addComponents.js";
+      // Espera a que el DOM esté completamente cargado antes de ejecutar el script
+      document.addEventListener("DOMContentLoaded", () => {
+        addComponent("navbar-placeholder", "components/navbar.html");
+        addComponent("topbar-placeholder", "components/footer.html");
+      });
+    </script>
+  </body>
+</html>

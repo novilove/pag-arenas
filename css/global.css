@@ -1,0 +1,637 @@
+@import url(web.css);
+@import url(mobile.css);
+@font-face {
+  font-family: "Calvert";
+  src: url("./Calvert/CalvertMTStd-Bold.otf") format("woff2"),
+    url("./Calvert/CalvertMTStd-Light.otf") format("woff2"),
+    url("./Calvert/CalvertMTStd.otf") format("woff2");
+  /*   font-weight: normal;
+  font-style: normal;
+  font-display: swap; */
+}
+body {
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+  background-color: #afbe95;
+}
+.fondo {
+  background-color: #fafafa;
+}
+:root {
+  --green-bg: #c1d100;
+  --green-btn: #a8c51f;
+  --text-dark: #333;
+  --text-light: #e8f5d0;
+  font-family: Calvert !important;
+}
+
+h1 {
+  color: var(--Colors-Primary-600, #73a121);
+  font-size: 3rem;
+  font-weight: 700;
+  line-height: 60px;
+  word-wrap: break-word;
+}
+h2 {
+  color: var(--Colors-Primary-600, #73a121);
+  font-size: 2.5rem;
+  font-weight: 400;
+  line-height: 60px;
+  word-wrap: break-word;
+}
+h3 {
+  color: var(--Colors-Primary-500, #87bd27);
+  font-size: 1em;
+  font-weight: 300;
+  line-height: 27.48px;
+  word-wrap: break-word;
+}
+a.filter-button {
+  margin: 0 1rem;
+}
+a:not(.active).filter-button:hover h3 {
+  border-radius: 8px;
+  padding: 0 0.5rem;
+  background: var(--Colors-Secondary-900, #364823);
+  color: var(--Colors-Primary-100, #e8f5d0) !important;
+}
+a:not(.active) h3 {
+  font-size: 0.8em !important;
+}
+a.active h3 {
+  /*   border: 4px solid #364823; */
+  border-radius: 8px;
+  padding: 1rem;
+  background: var(--Colors-Secondary-900, #364823);
+  color: var(--Colors-Primary-100, #e8f5d0) !important;
+}
+a.active h4 {
+  color: var(--Colors-Primary-100, #364823) !important;
+}
+.bolder-text {
+  font-size: 1.3em;
+
+  font-weight: 700 !important;
+}
+.cursor-pointer {
+  cursor: pointer;
+}
+.white-text {
+  color: var(--Colors-Neutral-100, #fafafa);
+}
+
+/* @media (max-width: 767px) {
+} */
+h3.gotham {
+  color: #707070;
+  font-size: 1.5em;
+  font-family: "Gotham";
+  font-weight: 900 !important;
+  line-height: 25.2px;
+  margin: 0;
+  word-wrap: break-word !important;
+}
+/* ITEM MARCAS */
+h3.gotham.white {
+  color: #fafafa;
+  font-size: 1.5em;
+  font-family: "Gotham";
+  font-weight: 600 !important;
+  line-height: 25.2px;
+  margin: 0;
+  word-wrap: break-word !important;
+}
+h2.gotham.white {
+  color: #fafafa;
+  font-size: 2.5em;
+  font-family: "Gotham";
+  font-weight: 900 !important;
+  line-height: 1.2em;
+  margin: 0;
+  word-wrap: break-word !important;
+}
+h4.gotham.white {
+  color: #fafafa;
+  font-size: 1em;
+  font-family: "Gotham";
+  font-weight: 400 !important;
+  line-height: 25.2px;
+  margin: 0;
+  word-wrap: break-word !important;
+}
+/*  */
+
+h4 {
+  color: #707070;
+  font-size: 1em;
+  font-weight: 700;
+  line-height: 35.2px;
+  word-wrap: normal;
+}
+.button-h4 {
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  display: inline-flex;
+  text-decoration: none !important;
+}
+p {
+  color: #707070;
+  font-size: 1.5rem;
+  font-family: Gotham;
+  font-weight: 200;
+  line-height: 27.5px;
+  margin: 0;
+}
+.text-white {
+  color: #e8f5d0 !important;
+}
+
+/* point */
+
+.point-category {
+  width: 5rem;
+  height: 5rem;
+  background: #b8c701;
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2);
+  border-radius: 100px;
+}
+.point-category.version-2 {
+  background: #87b05c;
+}
+.point-category.version-3 {
+  background: #87bd27;
+}
+.point-category.version-origin {
+  width: 10rem;
+  height: 10rem;
+  background: var(--Colors-Accent-300, #c2d500);
+  border-radius: 50%;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+}
+
+.point-category:hover {
+  cursor: pointer;
+  box-shadow: 0px 0px 50px #86bc24;
+}
+.icon-category {
+  width: 3rem;
+}
+
+/* button */
+button {
+  font-size: 1.5em;
+
+  border-color: transparent;
+  background: #c2d500;
+  color: #374d10;
+  font-weight: 800;
+  padding: 5px 10px;
+  border-radius: 25px;
+}
+
+button:hover {
+  cursor: pointer;
+
+  background: var(--Colors-Secondary-900, #364823);
+  color: var(--Colors-Primary-100, #e8f5d0) !important;
+}
+
+/*  */
+
+/*  */
+
+@media (max-width: 767px) /* MOBILE */ {
+  h4 {
+    font-size: 0.7em !important;
+  }
+  .title-home {
+    margin-top: 5rem;
+  }
+  .title-origin {
+    margin-top: -2rem;
+  }
+  .title-origin h2 {
+    font-size: 2rem;
+  }
+  /* fondos */
+  /*  */
+
+  .fondo-home-4 {
+    margin: 0rem 0 0 0;
+    align-content: start;
+    height: auto;
+    margin-top: -42rem;
+    min-height: 40dvh;
+    background: url("../assets/img/fondo-home-5.svg") no-repeat;
+    width: 100dvw;
+    background-size: cover; /* para mejor adaptabilidad */
+    object-fit: cover; /* O 'contain' */
+
+    /* Define una altura o usa padding-top con un porcentaje
+       para mantener una relación de aspecto si las imágenes tienen
+       diferentes tamaños. Ejemplo: 56.25% para 16:9 */
+    height: 100dvh; /* Ajusta según necesites, o usa padding-top */
+    overflow: hidden; /* Asegura que las imágenes apiladas no se desborden */
+  }
+  .fondo-category {
+    background: url("../assets/img/fondo-category-mobile.svg") no-repeat;
+    width: 100%;
+    object-fit: cover; /* O 'contain' */
+
+    /* Define una altura o usa padding-top con un porcentaje
+       para mantener una relación de aspecto si las imágenes tienen
+       diferentes tamaños. Ejemplo: 56.25% para 16:9 */
+    height: 57dvh; /* Ajusta según necesites, o usa padding-top */
+    overflow: hidden; /* Asegura que las imágenes apiladas no se desborden */
+  }
+  /*  */
+  .point-category {
+    width: 6rem !important;
+    height: 6rem !important;
+  }
+  .point-category h1 {
+    font-size: 2rem;
+  }
+
+  .cola-home-1 {
+    background: url("../assets/img/cola-home-1.svg") no-repeat;
+    width: 70dvw;
+    object-fit: cover; /* O 'contain' */
+    position: absolute;
+    right: 0;
+    top: 10%;
+    z-index: 0 !important;
+    /* Define una altura o usa padding-top con un porcentaje
+       para mantener una relación de aspecto si las imágenes tienen
+       diferentes tamaños. Ejemplo: 56.25% para 16:9 */
+    height: 100dvh; /* Ajusta según necesites, o usa padding-top */
+    overflow: hidden; /* Asegura que las imágenes apiladas no se desborden */
+  }
+  /* origin */
+  .arrow-right-cat {
+    margin-top: -2rem;
+
+    width: 100vw;
+    object-fit: cover;
+    right: 0;
+    height: 40rem;
+    overflow: hidden;
+    justify-content: center;
+
+    display: flex;
+  }
+  .cat-origin {
+    position: absolute;
+    /* align-content: start; */
+    background: url("https://stalwart-faloodeh-22bebe.netlify.app/public/assets/svg/home/mobile/cat-origin.svg")
+      no-repeat;
+    /*     height: 100vh !important; */
+    width: 40vw;
+    background-position: right;
+    background-position-y: bottom;
+
+    height: 35rem;
+    object-fit: contain;
+    left: 0;
+    top: 0;
+  }
+  .arrow-right-sholve {
+    background: url("../assets/img/origin-arrow-to-right-mobile-sholve.svg")
+      no-repeat;
+    width: 100vw;
+    object-fit: cover;
+    right: 0;
+    height: 40rem;
+    overflow: hidden;
+    justify-content: center;
+
+    display: flex;
+  }
+  /*   .arrow-right {
+    background: url("../assets/img/origin-arrow-to-right-mobile.svg") no-repeat;
+    width: 100vw;
+    object-fit: cover;
+    right: 0;
+    height: 40rem;
+    overflow: hidden;
+    justify-content: center;
+
+    display: flex;
+  } */
+  .arrow-left {
+    background: url("../assets/img/origin-arrow-to-left-mobile.svg") no-repeat;
+    width: 80vw;
+    object-fit: cover;
+    right: 0;
+    height: 40rem;
+    overflow: hidden;
+    z-index: 0;
+
+    justify-content: center;
+
+    display: flex;
+  }
+}
+
+/*  */
+
+/*  */
+@media (min-width: 768px) /* WEB */ {
+  .title-home {
+    margin-top: 10rem;
+    margin-bottom: 3rem;
+  }
+  /* fondo */
+  .fondo-home-1 {
+    margin: 3rem 0 0 0;
+    /*    position: absolute !important; */
+
+    background: url("../assets/img/fondo-home-1.svg") no-repeat;
+    /*     width: 100dvw; */
+    object-fit: contain; /* O 'contain' */
+
+    /* Define una altura o usa padding-top con un porcentaje
+       para mantener una relación de aspecto si las imágenes tienen
+       diferentes tamaños. Ejemplo: 56.25% para 16:9 */
+
+    height: auto; /* Ajusta según necesites, o usa padding-top */
+    overflow: hidden; /* Asegura que las imágenes apiladas no se desborden */
+  }
+
+  .fondo-home-2 {
+    margin: -4rem 0 0 0;
+    align-content: start;
+    padding-top: 14rem;
+    background: url("../assets/img/fondo-home-marcas.svg") no-repeat;
+    /*    width: 100dvw; */
+    object-fit: cover; /* O 'contain' */
+
+    /* Define una altura o usa padding-top con un porcentaje
+       para mantener una relación de aspecto si las imágenes tienen
+       diferentes tamaños. Ejemplo: 56.25% para 16:9 */
+    height: auto; /* Ajusta según necesites, o usa padding-top */
+    overflow: hidden; /* Asegura que las imágenes apiladas no se desborden */
+  }
+
+  .fondo-home-3 {
+    background: url("../assets/img/fondo-home-marcas-2.svg") no-repeat;
+    /*   width: 100dvw; */
+    object-fit: cover; /* O 'contain' */
+    /* Define una altura o usa padding-top con un porcentaje
+       para mantener una relación de aspecto si las imágenes tienen
+       diferentes tamaños. Ejemplo: 56.25% para 16:9 */
+    height: 55dvh; /* Ajusta según necesites, o usa padding-top */
+    overflow: hidden; /* Asegura que las imágenes apiladas no se desborden */
+  }
+  .fondo-home-4 {
+    margin: -4rem 0 0 0;
+    align-content: start;
+    padding-top: 0rem;
+    margin-top: -30rem;
+    background: url("../assets/img/fondo-home-5.svg") no-repeat;
+    /*   width: 100dvw; */
+    object-fit: cover; /* O 'contain' */
+    /* Define una altura o usa padding-top con un porcentaje
+       para mantener una relación de aspecto si las imágenes tienen
+       diferentes tamaños. Ejemplo: 56.25% para 16:9 */
+    height: 77dvh; /* Ajusta según necesites, o usa padding-top */
+    overflow: hidden; /* Asegura que las imágenes apiladas no se desborden */
+    z-index: 0;
+  }
+  .fondo-category {
+    background: url("https://stalwart-faloodeh-22bebe.netlify.app/public/assets/svg/home/web/fondo-category.svg")
+      no-repeat;
+    object-fit: cover; /* O 'contain' */
+    width: 100%;
+    /* Define una altura o usa padding-top con un porcentaje
+       para mantener una relación de aspecto si las imágenes tienen
+       diferentes tamaños. Ejemplo: 56.25% para 16:9 */
+    height: auto; /* Ajusta según necesites, o usa padding-top */
+    overflow: hidden; /* Asegura que las imágenes apiladas no se desborden */
+  }
+
+  .cat-origin {
+    position: absolute;
+    /* align-content: start; */
+    background: url("https://stalwart-faloodeh-22bebe.netlify.app/public/assets/svg/home/web/cat-origin.svg")
+      no-repeat;
+    /*     height: 100vh !important; */
+    width: 100vw;
+    height: 40rem;
+    object-fit: fill;
+  }
+  .shovel-origin {
+    position: absolute;
+    background: url("https://stalwart-faloodeh-22bebe.netlify.app/public/assets/svg/home/web/shovel-origin.svg")
+      no-repeat;
+    bottom: 55%;
+    /* height: 100vh !important; */
+    right: 0;
+    width: 100vw;
+    background-position: right;
+    height: 41rem;
+    object-fit: cover;
+  }
+}
+.plant-origin {
+  position: absolute;
+  /* align-content: start; */
+  background: url("https://stalwart-faloodeh-22bebe.netlify.app/public/assets/svg/home/web/plant-origin.svg")
+    no-repeat;
+  height: 70vh !important;
+  width: 100%;
+  z-index: 0;
+  bottom: 0rem;
+  object-fit: fill;
+}
+
+/* -----------<<<<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>>>>>>>------------ */
+
+.hero {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  /*   padding-top: 4rem; */
+
+  background-color: #fafafa;
+  background-size: contain;
+  background-position: center center;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  display: flex;
+  /*   align-items: start; */
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.hero.loaded {
+  opacity: 1;
+  background-color: transparent;
+}
+
+.hero-content {
+  max-width: 1440px;
+  width: 100%;
+  /*   padding: 20px; */
+  height: max-content;
+  text-align: center;
+  z-index: 2;
+  gap: 2rem;
+}
+
+/* .hero-content h1 {
+  font-family: "Arial", sans-serif;
+  font-size: 2.8rem;
+  color: #4b8c2f;
+  line-height: 1.2;
+} */
+
+/* .hero-content .subtitulo {
+  font-size: 2.2rem;
+  display: block;
+  margin-top: 4px;
+  color: #6cbf44;
+} */
+
+.iconos {
+  display: flex;
+  flex-wrap: wrap;
+  /*   justify-content: space-evenly; */
+  /*   gap: 35px; */
+  /*   margin-top: 1rem; */
+}
+
+.icono {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.icono img {
+  width: 48px;
+  height: 48px;
+  padding: 0.5rem;
+  /*   margin-bottom: 8px; */
+  background: #b8c701;
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2);
+  border-radius: 100px;
+}
+.icono.v2 img {
+  background: #87b05c;
+}
+.icono.v3 img {
+  background: #87bd27;
+}
+.icono:hover img {
+  cursor: pointer;
+  box-shadow: 0px 0px 50px #86bc24;
+}
+
+.icono p {
+  /*   font-family: "Arial", sans-serif; */
+  font-size: 1.5rem;
+  padding: 1rem 0;
+  font-family: Calvert !important;
+  font-weight: 400;
+  color: #707070;
+}
+
+.descripcion {
+  color: var(--Colors-Primary-500, #707070);
+  font-size: 1.1rem;
+  font-weight: 300;
+  word-wrap: break-word;
+  margin-bottom: 1rem;
+  font-family: Open Sans;
+  /*   font-family: Calvert !important; */
+}
+
+.btn-vermas {
+  display: inline-block;
+  background-color: #c0d92c;
+  color: #fff;
+  /*   font-family: "Arial", sans-serif; */
+  font-size: 1.1rem;
+  text-decoration: none;
+  padding: 12px 32px;
+  border-radius: 24px;
+  transition: background-color 0.2s ease;
+}
+
+.btn-vermas:hover {
+  background-color: #a8c51f;
+}
+
+/* -----------<<<<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>>>>>>>------------ */
+
+.lazy-svg {
+  background-color: transparent;
+}
+/* styles.css */
+
+/* Reutilizable: imágenes lazy, tamaño fijo y mismas dimensiones */
+.lazy-img {
+  opacity: 0;
+  transition: opacity 0.4s ease-in-out;
+  /*   width: 200px;
+  height: 200px; */
+  object-fit: contain;
+  /*   margin-right: 0.2px; */
+  flex: 0 0 auto;
+}
+
+.lazy-img.loaded {
+  opacity: 1;
+}
+
+/* Contenedor y scroll */
+.infinite-scroll-wrapper {
+  position: relative;
+  width: 70vw;
+  overflow: hidden;
+}
+
+.infinite-scroll {
+  display: flex;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  padding: 16px;
+  cursor: grab;
+}
+
+/* Ocultar scrollbar */
+.infinite-scroll::-webkit-scrollbar {
+  display: none;
+}
+.infinite-scroll {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Fade en los bordes */
+.fade-overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 80px;
+  pointer-events: none;
+  z-index: 2;
+}
+.fade-overlay.left {
+  left: 0;
+  border-radius: 25px;
+  background: linear-gradient(to right, #c1d100, rgba(255, 255, 255, 0));
+}
+.fade-overlay.right {
+  right: 0;
+  border-radius: 25px;
+  background: linear-gradient(to left, #c1d100, rgba(255, 255, 255, 0));
+}
+
+/* ORIGIN */
