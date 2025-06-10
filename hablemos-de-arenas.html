@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Hablemos de arenas</title>
-
+    <link rel="stylesheet" href="styles.css" />
     <link rel="stylesheet" href="./css/grid.css" />
     <link rel="stylesheet" href="./css/spacing-utilities.css" />
     <link rel="stylesheet" href="./css/global.css" />
@@ -17,17 +17,6 @@
       rel="stylesheet"
     />
     <style>
-      .cola-title {
-        position: absolute;
-        background: url(../assets/img/cola-title-1.svg) no-repeat;
-        object-fit: fill;
-        height: 20rem;
-        width: 100%;
-        top: 7rem;
-        left: 0;
-        max-width: 1440px;
-        justify-self: anchor-center;
-      }
       /* Contenedor principal */
       .chat-container {
         display: flex;
@@ -150,11 +139,19 @@
   </head>
   <body>
     <div class="fondo">
-      <div id="navbar-placeholder"></div>
-      <div class="title-home">
-        <div class="cola-title"></div>
-        <div class="col-sm-12 col-md-12">
-          <h1 class="mb-0 text-center">¡Hablemos!</h1>
+      <div
+        id="navbar-placeholder"
+        style="
+          position: sticky !important;
+          top: 0;
+          z-index: 999;
+          overflow: hidden;
+        "
+      ></div>
+      <div>
+        <div class="cola-title" style="margin-top: -3rem"></div>
+        <div class="col-sm-12 col-md-12 hero-content cate my-4">
+          <h1 class="my-0">¡Hablemos!</h1>
         </div>
       </div>
       <main class="chat-container col-md-10">
@@ -182,27 +179,29 @@
           Llena el siguiente formulario y nos <br />
           contactaremos en la brevedad contigo :) <br /><br />
           <div class="col-sm-12 col-md-12 row d-center">
-            <button class="col-sm-3 col-md-10 text-center">
-              <h3 class="my-0">Formulario</h3>
-            </button>
+            <a class="btn-vermas"> Formulario </a>
           </div>
         </div>
       </main>
-      <img
-        id="cat-image"
-        src="../assets/img/cat-hablemos.svg"
-        width="75%"
-        class="hidden-until-end"
-      />
-      <div id="fondo-home" class="fondo-home-4 hidden-until-end"></div>
+
+      <div id="fondo-home" class="fondo-home-4 hidden-until-end">
+        <img
+          id="cat-image"
+          src="https://stalwart-faloodeh-22bebe.netlify.app/public/assets/svg/hablemos/cat-hablemos.svg"
+          width="75%"
+          class="hidden-until-end"
+        />
+      </div>
 
       <div id="topbar-placeholder"></div>
     </div>
     <script type="module">
-      import { addComponent } from "./javascript/addComponents.js";
+      import { addComponent, addNavFunc } from "./javascript/addComponents.js";
+
       // Espera a que el DOM esté completamente cargado antes de ejecutar el script
-      document.addEventListener("DOMContentLoaded", () => {
-        addComponent("navbar-placeholder", "components/navbar.html");
+      document.addEventListener("DOMContentLoaded", async () => {
+        await addComponent("navbar-placeholder", "components/navbar.html");
+        addNavFunc();
         addComponent("topbar-placeholder", "components/footer.html");
         const container = document.querySelector(".chat-container");
         const bubbles = Array.from(container.querySelectorAll(".chat-bubble"));
@@ -225,9 +224,9 @@
 
                       setTimeout(() => {
                         extraElements.forEach((el) => el.classList.add("show"));
-                      }, 1000); // Espera un segundo después de la última burbuja
+                      }, 500); // Espera un segundo después de la última burbuja
                     }
-                  }, index * 1000); // 500ms entre burbujas
+                  }, index * 500); // 500ms entre burbujas
                 });
 
                 observer.unobserve(container); // Se ejecuta solo una vez

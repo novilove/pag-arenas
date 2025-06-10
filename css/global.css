@@ -75,18 +75,10 @@ h3.gotham {
   font-weight: 900 !important;
   line-height: 25.2px;
   margin: 0;
+
   word-wrap: break-word !important;
 }
 /* ITEM MARCAS */
-h3.gotham.white {
-  color: #fafafa;
-  font-size: 1.5em;
-  font-family: "Gotham";
-  font-weight: 600 !important;
-  line-height: 25.2px;
-  margin: 0;
-  word-wrap: break-word !important;
-}
 h2.gotham.white {
   color: #fafafa;
   font-size: 2.5em;
@@ -94,16 +86,69 @@ h2.gotham.white {
   font-weight: 900 !important;
   line-height: 1.2em;
   margin: 0;
+  padding: 2rem;
+  word-wrap: break-word !important;
+}
+h3.gotham.white {
+  color: #fafafa;
+  font-size: 1.5em;
+  font-family: "Gotham";
+  font-weight: 600 !important;
+  line-height: 25.2px;
+  padding: 1rem 2rem;
+
+  margin: 0;
+  word-wrap: break-word !important;
+}
+
+h3.gotham.white-banner {
+  color: #fafafa;
+  font-size: 20px;
+  font-family: "Gotham";
+  font-weight: 400 !important;
+  line-height: 25.2px;
+  padding: 1rem 2rem;
+
+  margin: 0;
+  word-wrap: break-word !important;
+}
+h3.gotham.white-sand {
+  color: #fafafa;
+  font-size: 20px;
+  font-family: "Gotham";
+  font-weight: 600 !important;
+  line-height: 25.2px;
+  padding: 1rem 2rem;
+  margin: 0;
   word-wrap: break-word !important;
 }
 h4.gotham.white {
   color: #fafafa;
-  font-size: 1em;
+  font-size: 16px;
+  padding: 1rem 2rem;
+
   font-family: "Gotham";
   font-weight: 400 !important;
   line-height: 25.2px;
   margin: 0;
   word-wrap: break-word !important;
+}
+h4.gotham.white-sand {
+  color: #fafafa;
+  font-size: 16px;
+  padding: 1rem 2rem;
+
+  font-family: "Gotham";
+  font-weight: 400 !important;
+  line-height: 25.2px;
+  margin: 0;
+  word-wrap: break-word !important;
+}
+
+.under-sand {
+  z-index: 4;
+  margin-top: -5rem;
+  margin-left: 20rem;
 }
 /*  */
 
@@ -206,21 +251,11 @@ button:hover {
   /*  */
 
   .fondo-home-4 {
-    margin: 0rem 0 0 0;
-    align-content: start;
-    height: auto;
-    margin-top: -42rem;
-    min-height: 40dvh;
-    background: url("../assets/img/fondo-home-5.svg") no-repeat;
-    width: 100dvw;
-    background-size: cover; /* para mejor adaptabilidad */
-    object-fit: cover; /* O 'contain' */
-
-    /* Define una altura o usa padding-top con un porcentaje
-       para mantener una relación de aspecto si las imágenes tienen
-       diferentes tamaños. Ejemplo: 56.25% para 16:9 */
-    height: 100dvh; /* Ajusta según necesites, o usa padding-top */
-    overflow: hidden; /* Asegura que las imágenes apiladas no se desborden */
+    background: url("https://stalwart-faloodeh-22bebe.netlify.app/public/assets/svg/hablemos/fondo-hablemos.svg")
+      no-repeat;
+    width: 100%;
+    background-size: contain;
+    overflow: hidden;
   }
 
   /*  */
@@ -362,20 +397,13 @@ button:hover {
     height: 55dvh; /* Ajusta según necesites, o usa padding-top */
     overflow: hidden; /* Asegura que las imágenes apiladas no se desborden */
   }
+
   .fondo-home-4 {
-    margin: -4rem 0 0 0;
-    align-content: start;
-    padding-top: 0rem;
-    margin-top: -30rem;
-    background: url("../assets/img/fondo-home-5.svg") no-repeat;
-    /*   width: 100dvw; */
-    object-fit: cover; /* O 'contain' */
-    /* Define una altura o usa padding-top con un porcentaje
-       para mantener una relación de aspecto si las imágenes tienen
-       diferentes tamaños. Ejemplo: 56.25% para 16:9 */
-    height: 77dvh; /* Ajusta según necesites, o usa padding-top */
-    overflow: hidden; /* Asegura que las imágenes apiladas no se desborden */
-    z-index: 0;
+    background: url("https://stalwart-faloodeh-22bebe.netlify.app/public/assets/svg/hablemos/fondo-hablemos.svg")
+      no-repeat;
+    width: 100%;
+    background-size: contain;
+    overflow: hidden;
   }
 
   .cat-origin {
@@ -519,19 +547,22 @@ button:hover {
 }
 
 .btn-vermas {
-  display: inline-block;
+  display: inline;
   background-color: #c0d92c;
   color: #fff;
   /*   font-family: "Arial", sans-serif; */
   font-size: 1.1rem;
   text-decoration: none;
-  padding: 12px 32px;
+  padding: 8px 32px;
   border-radius: 24px;
   transition: background-color 0.2s ease;
 }
 
 .btn-vermas:hover {
-  background-color: #a8c51f;
+  cursor: pointer;
+  background: var(--Colors-Secondary-900, #364823);
+
+  color: var(--Colors-Primary-100, #e8f5d0) !important;
 }
 
 /* -----------<<<<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>>>>>>>------------ */

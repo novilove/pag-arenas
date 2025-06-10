@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Arena Hey!</title>
-
+    <link rel="stylesheet" href="styles.css" />
     <link rel="stylesheet" href="./css/grid.css" />
     <link rel="stylesheet" href="./css/spacing-utilities.css" />
     <link rel="stylesheet" href="./css/global.css" />
@@ -17,24 +17,80 @@
       rel="stylesheet"
     />
     <style>
-      /* animation ws description item */
-      .cola-title {
-        position: absolute;
-        background: url(../assets/img/cola-title-1.svg) no-repeat;
-        object-fit: fill;
-        height: 20rem;
-        width: 100%;
-        top: 7rem;
-        left: 0;
-        max-width: 1440px;
-        justify-self: anchor-center;
+      /* styles.css */
+      :root {
+        --light: #f0c41d;
+        --dark: #ea527e;
       }
+      .line-color-marca {
+        background: var(--dark);
+        opacity: 0.9;
+      }
+      /* Asegúrate de que estos bloques tengan tamaño */
+      .title-fondo-marca,
+      .product-img,
+      .img-description,
+      .arena,
+      .cat-1,
+      .fondo-cat {
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+      }
+
+      /* Alturas y anchos mínimos para que se vea */
+      .title-fondo-marca {
+        width: 100%;
+        object-fit: contain;
+        height: 33rem;
+        overflow: hidden;
+        background-position: bottom;
+      }
+
+      .product-img {
+        object-fit: contain;
+        width: 100%;
+        position: absolute;
+        top: 0;
+        height: 30rem;
+        overflow: hidden;
+      }
+      .img-description {
+        width: 100%;
+        height: 4rem;
+        margin-top: 2rem;
+        background-size: contain;
+      }
+      .arena {
+        margin-top: 2rem;
+
+        width: 100%;
+        background-size: contain;
+        height: 25rem;
+        z-index: 2 !important;
+        background-position: right;
+      }
+      .cat-1 {
+        background-size: contain;
+        width: 100%;
+        height: 36rem;
+        /*         margin-top: -10rem; */
+        z-index: 3 !important;
+      }
+      .fondo-cat {
+        width: 100%;
+        height: 48rem;
+        background-size: contain;
+        position: absolute;
+        z-index: 1 !important;
+      }
+
       /* Contenedor principal */
       .chat-container {
         display: flex;
         flex-direction: column;
         justify-self: center;
-        gap: 0.5rem;
+        gap: 1rem;
         width: 50%;
       }
       @media (max-width: 767px) {
@@ -68,12 +124,12 @@
 
       /* Temas */
       .light {
-        background-color: #c1d100;
+        background-color: var(--light);
         color: white;
       }
 
       .dark {
-        background-color: #73a121;
+        background-color: var(--dark);
       }
 
       /* Lado izquierdo */
@@ -85,7 +141,7 @@
         width: 0;
         height: 0;
         border: 10px solid transparent;
-        border-top-color: #c1d100;
+        border-top-color: var(--light);
         border-bottom: 0;
         margin-left: -5px;
       }
@@ -99,13 +155,37 @@
         width: 0;
         height: 0;
         border: 10px solid transparent;
-        border-top-color: #73a121;
+        border-top-color: var(--dark);
         border-bottom: 0;
         margin-right: -5px;
+      }
+      .brand-row {
+        display: flex;
+        justify-content: space-evenly;
+        margin-top: 3rem;
+        margin: 5rem;
+      }
+      .brand-row img {
+        width: 200px;
+        height: auto;
+        cursor: pointer;
+        opacity: 0.6;
+        transition: opacity 0.3s;
+      }
+      .brand-row img.active,
+      .brand-row img:hover {
+        opacity: 1;
       }
 
       /* Responsividad */
       @media (max-width: 767px) {
+        .brand-row img {
+          width: 100px;
+          margin: 1rem;
+        }
+        .brand-row {
+          margin: 0rem;
+        }
         .chat-bubble {
           font-size: 0.95rem;
           padding: 1rem 1.2rem;
@@ -148,34 +228,9 @@
         z-index: 1;
       }
       /*  */
-      .product-img {
-        background: url("../assets/img/marca-hey/product.svg") no-repeat;
-        object-fit: cover; /* O 'contain' */
-        width: 20rem;
-        position: absolute;
-        top: 0;
-        /* Define una altura o usa padding-top con un porcentaje
-       para mantener una relación de aspecto si las imágenes tienen
-       diferentes tamaños. Ejemplo: 56.25% para 16:9 */
-        height: 50rem; /* Ajusta según necesites, o usa padding-top */
-        overflow: hidden; /* Asegura que las imágenes apiladas no se desborden */
-      }
-      .title-fondo-marca {
-        /*         margin: -4rem 0 0 0; */
-        align-content: start;
-        /*         padding-top: 14rem; */
-        background: url("../assets/img/marca-hey/fondo-title.svg") no-repeat;
-        /*    width: 100dvw; */
-        object-fit: cover; /* O 'contain' */
 
-        /* Define una altura o usa padding-top con un porcentaje
-       para mantener una relación de aspecto si las imágenes tienen
-       diferentes tamaños. Ejemplo: 56.25% para 16:9 */
-        height: 50rem; /* Ajusta según necesites, o usa padding-top */
-        overflow: hidden; /* Asegura que las imágenes apiladas no se desborden */
-      }
       .color-primary-marca {
-        background: #ea527e;
+        background: var(--dark);
         color: #fafafa;
       }
     </style>
@@ -193,133 +248,169 @@
       ></div>
       <!-- TITLE DESCRIPTION PRODUCT -->
       <div class="title-fondo-marca row">
-        <div class="col-md-4 col-sm-12 p-4">
-          <div>
-            <div
-              style="
-                gap: 24px;
-                align-self: stretch;
-                flex-direction: column;
-                justify-content: center;
-                align-items: flex-start;
-                display: flex;
-              "
-            >
-              <h2 class="gotham white">
-                Hey! Arena de<br />bentonita natural <br />Aroma lavanda
-              </h2>
-              <div
-                style="
-                  align-self: stretch;
-                  justify-content: space-between;
-                  align-items: center;
-                  display: inline-flex;
-                "
-              >
-                <h3 class="gotham white">3kg</h3>
-                <h3 class="gotham white">4kg</h3>
-                <h3 class="gotham white">10kg</h3>
-                <h3 class="gotham white">20kg</h3>
-              </div>
-              <h4 class="gotham white">
-                Esta arena está especialmente formulada para neutralizar
-                rápidamente los olores y es de bajo rastreo, por lo que hay
-                menos suciedad y no hay rastros de arena esparcida.
-              </h4>
-            </div>
+        <div
+          style="
+            /*             gap: 24px; */
+            align-self: stretch;
+            flex-direction: column;
+            justify-content: start;
+            /*  align-items: flex-start; */
+            display: flex;
+          "
+          class="col-md-5 col-sm-12"
+        >
+          <h2 class="gotham white">
+            Hey! Arena de<br />bentonita natural <br />Aroma lavanda
+          </h2>
+          <div
+            style="
+              align-self: stretch;
+              justify-content: space-between;
+              align-items: center;
+              display: inline-flex;
+            "
+            class="list-kg"
+          >
+            <h3 class="gotham white">3kg</h3>
+            <h3 class="gotham white">4kg</h3>
+            <h3 class="gotham white">10kg</h3>
+            <h3 class="gotham white">20kg</h3>
           </div>
+          <h4 class="gotham white">
+            Esta arena está especialmente formulada para neutralizar rápidamente
+            los olores y es de bajo rastreo, por lo que hay menos suciedad y no
+            hay rastros de arena esparcida.
+          </h4>
         </div>
-        <div class="col-md-5 col-sm-12">
+        <div
+          class="col-md-5 col-sm-12"
+          style="display: flex; justify-content: center; align-content: end"
+        >
           <div class="product-img"></div>
         </div>
       </div>
       <!-- picture decription -->
-      <div class="row col-md-12 px-4">
-        <div class="col-md-7">
-          <img
-            src="./assets/img/marca-hey/img-description.svg"
-            alt=""
-            width="100%"
-          />
-        </div>
+      <div class="row col-md-12 not-p-x">
+        <div class="col-md-7 img-description px-2"></div>
         <div
-          class="col-md-7 color-primary-marca pt-3 pb-2 px-2"
+          class="col-md-7 color-primary-marca px-2"
           style="border-bottom-right-radius: 100rem"
         >
-          <h3 class="gotham white my-0">
+          <h3 class="gotham white-banner my-0">
             Aglutinación superior y con un agradable aroma a lavanda.
           </h3>
         </div>
       </div>
       <div class="row">
-        <div class="row col-md-6" style="justify-content: center">
-          <!-- ARENA -->
-          <img
-            src="./assets/img/marca-hey/img-arena.svg"
-            class="col-md-6"
-            alt=""
-            style="margin-top: -6rem"
-          />
-        </div>
-        <div class="d-center row col-md-6">
-          <!-- CAT -->
-          <img
-            src="./assets/img/marca-hey/cat-marca.svg"
-            alt=""
-            class="col-md-9"
-            style="z-index: 2"
-          />
-        </div>
-        <img
-          class="absolute-right"
-          src="./assets/img/marca-hey/fondo-cat.svg"
-          alt=""
-          style="z-index: 0"
-        />
-      </div>
-      <main class="chat-container col-md-10">
-        <div class="chat-bubble right col-md-7 light">
-          Todas nuestras arenas las podras encontrar <br />
-          en las mejores tiendas del país
-        </div>
-
-        <div class="chat-bubble left col-md-7 dark">
-          <strong>¿No sabes donde comprar?</strong>
-        </div>
-
-        <div class="chat-bubble right col-md-7 light">
-          Escribanos a contacto@pw.cl o a nuestro <br />
-          instagram @petwarehousechile
-        </div>
-
-        <div class="chat-bubble left col-md-7 dark">
-          <strong
-            >¿Tienes una tienda y quieres <br />
-            vender nuestras arenas sanitarias?</strong
+        <div class="row col-md-6 arena" style="justify-content: center">
+          <div
+            class="d-center row col-md-0 col-sm-12 my-auto"
+            style="z-index: 4"
           >
-        </div>
-        <div class="chat-bubble right col-md-7 light">
-          Llena el siguiente formulario y nos <br />
-          contactaremos en la brevedad contigo :) <br /><br />
-          <div class="col-sm-12 col-md-12 row d-center">
-            <button class="col-sm-3 col-md-10 text-center">
-              <h3 class="my-0">Formulario</h3>
-            </button>
+            <h3
+              class="gotham white-sand w-100 py-0 pt-2 text-center line-color-marca"
+            >
+              Ideal para todo<br />tipo de areneros
+            </h3>
+            <h4
+              class="gotham white-sand w-100 pt-0 pb-2 text-center line-color-marca"
+            >
+              y es muy eficaz en hogares<br />con varios gatos.
+            </h4>
           </div>
         </div>
+
+        <div class="d-center row col-md-6 cat-1"></div>
+        <div class="d-center row col-md-6 col-sm-0 under-sand">
+          <h3 class="gotham white-sand w-100 pb-0">
+            Ideal para todo<br />tipo de areneros
+          </h3>
+          <h4 class="gotham white-sand w-100 pt-0">
+            y es muy eficaz en hogares<br />con varios gatos.
+          </h4>
+        </div>
+        <div class="fondo-cat"></div>
+      </div>
+
+      <!-- >>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< -->
+
+      <!-- CHATTTTT -->
+      <main class="chat-container col-md-10" style="margin-top: 10rem">
+        <div class="chat-bubble right col-md-7 light">con aroma Lavanda</div>
+
+        <div class="chat-bubble left col-md-7 dark">
+          Los gránulos crean una potente unión para<br />retener la humedad y
+          evitar que cualquier<br />líquido llegue al fondo de la bandeja
+          higiénica.
+        </div>
+
+        <div class="chat-bubble right col-md-7 light">
+          Es hipoalergénica a alérgenos comunes como<br />el polvo, las
+          proteínas vegetales y las fragancias.
+        </div>
+
+        <div class="chat-bubble left col-md-7 dark">
+          <strong> Mira el siguiente video</strong>
+        </div>
       </main>
+      <!-- >>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< -->
+
+      <!-- VIDEO -->
+      <div class="video-carousel mt-4">
+        <div class="video-wrapper">
+          <video
+            id="carouselVideo"
+            class="carousel-video"
+            controls=""
+            muted=""
+            preload="metadata"
+            src="https://stalwart-faloodeh-22bebe.netlify.app/public/assets/video/hey-basica.mp4"
+          ></video>
+        </div>
+      </div>
+
+      <div class="col-sm-12 col-md-12 mt-4 hero-content cate">
+        <h2 class="my-0">
+          Más
+          <h1 class="my-0">Arenas</h1>
+        </h2>
+      </div>
+      <div id="brand-row" class="brand-row">
+        <a href="/item-marca.html?brand=pipicat&category=premium">
+          <img
+            src="https://stalwart-faloodeh-22bebe.netlify.app/public/assets/svg/marcas/web/pipicat/premium.svg"
+            alt="gatuna"
+        /></a>
+        <a href="/item-marca.html?brand=gatuna&category=premium">
+          <img
+            src="https://stalwart-faloodeh-22bebe.netlify.app/public/assets/svg/marcas/web/gatuna/premium.svg"
+            alt="london"
+            class="active"
+          />
+        </a>
+        <a href="/item-marca.html?brand=london&category=basica">
+          <img
+            src="https://stalwart-faloodeh-22bebe.netlify.app/public/assets/svg/marcas/web/london/basica.svg"
+            alt="pipicat"
+          />
+        </a>
+      </div>
       <div id="topbar-placeholder"></div>
     </div>
     <!--  -->
     <!-- JS -->
     <!--  -->
+    <script type="module" src="./javascript/content-replace.js"></script>
 
     <script type="module">
-      import { addComponent } from "./javascript/addComponents.js";
+      import { addComponent, addNavFunc } from "./javascript/addComponents.js";
 
-      document.addEventListener("DOMContentLoaded", () => {
-        addComponent("navbar-placeholder", "components/navbar.html");
+      // Espera a que el DOM esté completamente cargado antes de ejecutar el script
+      document.addEventListener("DOMContentLoaded", async () => {
+        await addComponent("navbar-placeholder", "components/navbar.html");
+        addNavFunc();
         addComponent("topbar-placeholder", "components/footer.html");
+
         const container = document.querySelector(".chat-container");
         const bubbles = Array.from(container.querySelectorAll(".chat-bubble"));
         let alreadyTriggered = false;
@@ -341,9 +432,9 @@
 
                       setTimeout(() => {
                         extraElements.forEach((el) => el.classList.add("show"));
-                      }, 1000); // Espera un segundo después de la última burbuja
+                      }, 500); // Espera un segundo después de la última burbuja
                     }
-                  }, index * 1000); // 500ms entre burbujas
+                  }, index * 500); // 500ms entre burbujas
                 });
 
                 observer.unobserve(container); // Se ejecuta solo una vez
@@ -356,6 +447,67 @@
         );
 
         observer.observe(container);
+      });
+      // content-replace.js
+
+      const BRAND_PATH =
+        "https://stalwart-faloodeh-22bebe.netlify.app/public/assets/svg/marcas/logos";
+      const MOBILE_PATH =
+        "https://stalwart-faloodeh-22bebe.netlify.app/public/assets/svg/marcas/web";
+      const WEB_PATH =
+        "https://stalwart-faloodeh-22bebe.netlify.app/public/assets/svg/marcas/web";
+
+      // Mapea clases a nombres de archivo
+      const PARTS = {
+        "title-fondo-marca": "title-fondo-marca.svg",
+        "product-img": "product-img.svg",
+        "img-description": "img-description.svg",
+        arena: "img-arena.svg",
+        "cat-1": "cat-marca.svg",
+        "fondo-cat": "fondo-cat.svg",
+      };
+
+      const BREAK = 767;
+      function isMobile() {
+        return window.innerWidth <= BREAK;
+      }
+
+      function getParam(name, def) {
+        const p = new URLSearchParams(window.location.search);
+        return p.get(name) || def;
+      }
+
+      // Comprueba existencia de URL sin CORS
+      function imageExists(url) {
+        return new Promise((res) => {
+          const i = new Image();
+          i.src = url;
+          i.onload = () => res(true);
+          i.onerror = () => res(false);
+        });
+      }
+
+      async function replaceContent() {
+        const brand = getParam("brand", "london");
+        const category = getParam("category", "basica");
+        const basePath =
+          (isMobile() ? MOBILE_PATH : WEB_PATH) + `/${brand}/${category}`;
+
+        for (const cls in PARTS) {
+          const file = PARTS[cls];
+          const url = `${basePath}/${file}`;
+          if (await imageExists(url)) {
+            document.querySelectorAll(`.${cls}`).forEach((el) => {
+              el.style.backgroundImage = `url('${url}')`;
+            });
+          }
+        }
+      }
+
+      window.addEventListener("DOMContentLoaded", replaceContent);
+      window.addEventListener("resize", () => {
+        clearTimeout(window._cr);
+        window._cr = setTimeout(replaceContent, 200);
       });
     </script>
   </body>

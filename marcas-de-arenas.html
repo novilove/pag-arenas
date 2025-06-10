@@ -17,143 +17,92 @@
       rel="stylesheet"
     />
     <style>
-      /* --- Reset y variables --- */
+      /* Reset */
       * {
         box-sizing: border-box;
         margin: 0;
         padding: 0;
       }
+
       :root {
-        --green: #c0d92c;
-        --dark: #374d10;
+        --green-light: #e8f5d0;
+        --green-dark: #374d10;
+        --grad-from: #c0d92c;
+        --grad-to: #a6c200;
       }
 
-      /* Título */
-      .section-title {
-        text-align: center;
-        margin: 2rem 0 1rem;
-        color: var(--dark);
-      }
-      .section-title small {
-        display: block;
-        font-size: 1.2rem;
-        color: #666;
-      }
-
-      /* --- 1) Brand row --- */
+      /* --- Logos row --- */
       .brand-row {
         display: flex;
-        justify-content: center;
-        gap: 2rem;
-        margin-bottom: 2rem;
+        justify-content: space-evenly;
+        margin-top: 3rem;
+        margin: 4rem;
       }
-      .brand-item img {
-        width: 80px;
+      .brand-row img {
+        width: 90px;
+        height: auto;
         cursor: pointer;
+        opacity: 0.6;
         transition: opacity 0.3s;
       }
-      .brand-row:hover .brand-item img {
-        opacity: 0.4;
-      }
-      .brand-item:hover img,
-      .brand-item.active img {
+      .brand-row img.active,
+      .brand-row img:hover {
         opacity: 1;
       }
 
-      /* --- 2) Carrusel --- */
-      .carousel-container {
-        position: relative;
-        max-width: 700px;
-        margin: 1rem auto 2rem;
-      }
-      .carousel-slide {
-        position: relative;
-        width: 100%;
-        padding-top: 56.25%; /*16:9*/
-        background: #f5f5f5;
-        border-radius: 8px;
-        overflow: hidden;
-      }
-      .carousel-slide img {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-      }
-      .carousel-arrow {
-        position: absolute;
-        top: 50%;
-        transform: translateY(-50%);
-        background: rgba(0, 0, 0, 0.4);
-        color: #fff;
-        border: none;
-        padding: 0.5rem;
-        font-size: 1.2rem;
-        cursor: pointer;
-        border-radius: 4px;
-        z-index: 1;
-      }
-      #prevBtn {
-        left: 1rem;
-      }
-      #nextBtn {
-        right: 1rem;
-      }
-
-      .carousel-dots {
-        text-align: center;
-        margin-top: 0.75rem;
-      }
-      .carousel-dots .dot {
-        display: inline-block;
-        width: 10px;
-        height: 10px;
-        margin: 0 0.25rem;
-        background: #ccc;
-        border-radius: 50%;
-        cursor: pointer;
-        transition: background 0.2s;
-      }
-      .carousel-dots .dot.active {
-        background: var(--dark);
-      }
-
-      /* --- 3) Products grid --- */
+      /* --- Products grid --- */
       .products-grid {
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-        gap: 1rem;
+        gap: 2rem;
         max-width: 1000px;
-        margin: 2rem auto;
+        margin: 0 auto 2rem;
+        padding: 0 1rem;
+        justify-items: center;
       }
-      .products-grid .product-block {
-        text-align: center;
-      }
-      .product-block img {
-        width: 100%;
-        border-radius: 8px;
-        object-fit: cover;
-      }
-      .product-block .category-label {
-        margin-top: 0.5rem;
-        font-weight: bold;
-        color: var(--dark);
+      .product-block {
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+        flex-direction: column;
       }
 
-      /* Responsive */
-      @media (max-width: 600px) {
-        .brand-item img {
+      .product-block img {
+        position: relative;
+        width: 100%;
+        max-width: 300px;
+        height: auto;
+        border-radius: 8px;
+        object-fit: cover;
+        z-index: 2;
+      }
+      .product-block .category-btn {
+        margin-top: 1rem;
+        background: var(--green-dark);
+        color: #fff;
+        border: none;
+        padding: 0.4rem 1rem;
+        border-radius: 20px;
+        cursor: pointer;
+        z-index: 3;
+      }
+
+      /* Responsive tweaks */
+      @media (max-width: 769px) {
+        .brand-row img {
           width: 60px;
         }
-        .carousel-arrow {
-          font-size: 1rem;
-          padding: 0.4rem;
+        .brand-row {
+          margin-top: 2rem;
         }
-        .carousel-dots .dot {
-          width: 8px;
-          height: 8px;
+        .products-grid {
+          grid-template-columns: repeat(2, 1fr);
+        }
+        .products-grid.single {
+          grid-template-columns: 1fr;
+        }
+        .product-block img {
+          max-width: 250px;
         }
       }
     </style>
@@ -171,41 +120,24 @@
       ></div>
       <div class="fondo-marcas">
         <!-- title -->
-        <div class="title-home">
-          <div class="col-sm-12 col-md-12">
+        <!--          <div class="col-sm-12 col-md-12">
             <h1 class="mb-0 text-center">Nuestras marcas</h1>
           </div>
           <div class="col-sm-12 col-md-12">
             <h2 class="mt-0 text-center">de arena para gato</h2>
           </div>
+        </div> -->
+        <div class="col-sm-12 col-md-12 hero-content cate mt-3 pb-0">
+          <h1 class="my-0">
+            Nuestras marcas<br />
+            <h2 class="my-0">de arenas para gatos</h2>
+          </h1>
         </div>
         <!-- 1) Fila de marcas -->
-        <div class="brand-row">
-          <div class="brand-item" data-brand="london">
-            <img src="assets/svg/marcas/london-cats.svg" alt="London Cats" />
-          </div>
-          <div class="brand-item" data-brand="gatuna">
-            <img src="assets/svg/marcas/gatuna.svg" alt="Gatuna" />
-          </div>
-          <div class="brand-item" data-brand="pipicat">
-            <img src="assets/svg/marcas/pipicat.svg" alt="Pipicat" />
-          </div>
-          <div class="brand-item" data-brand="hey">
-            <img src="assets/svg/marcas/hey.svg" alt="Hey!" />
-          </div>
-        </div>
+        <!-- Logos de marcas -->
+        <div id="brand-row" class="brand-row"></div>
 
-        <!-- 2) Carrusel simple de fotos de esa marca -->
-        <div class="carousel-container">
-          <button id="prevBtn" class="carousel-arrow">&larr;</button>
-          <div class="carousel-slide">
-            <img id="carouselImage" alt="Imagen de producto" />
-          </div>
-          <button id="nextBtn" class="carousel-arrow">&rarr;</button>
-          <div id="carouselDots" class="carousel-dots"></div>
-        </div>
-
-        <!-- 3) Productos por categoría dentro de la marca -->
+        <!-- Galería de productos -->
         <div id="products-container" class="products-grid"></div>
         <!--  -->
         <!-- img marcas -->
@@ -243,36 +175,26 @@
     </div>
     <!--    <script src="./assets/logos-img.js"></script> -->
     <script type="module">
-      import {
-        addComponent,
-        /*         buttonsMarcas, */
-        addNavFunc,
-      } from "./javascript/addComponents.js";
+      import { addComponent, addNavFunc } from "./javascript/addComponents.js";
 
       // Espera a que el DOM esté completamente cargado antes de ejecutar el script
       document.addEventListener("DOMContentLoaded", async () => {
         await addComponent("navbar-placeholder", "components/navbar.html");
         addNavFunc();
         addComponent("topbar-placeholder", "components/footer.html");
-
-        /*   buttonsMarcas(); */
       });
-      const MAX_IMAGES = 10;
-      const MOBILE_BREAK = 767;
-      const MOBILE_PATH = "/assets/mobile";
-      const WEB_PATH = "/assets/web";
+      const BRAND_PATH =
+        "https://stalwart-faloodeh-22bebe.netlify.app/public/assets/svg/marcas/logos";
+      const MOBILE_PATH =
+        "https://stalwart-faloodeh-22bebe.netlify.app/public/assets/svg/marcas/mobile";
+      const WEB_PATH =
+        "https://stalwart-faloodeh-22bebe.netlify.app/public/assets/svg/marcas/web";
+      const BRANDS = ["london", "gatuna", "pipicat", "hey"];
       const CATEGORIES = ["basica", "premium", "super", "black"];
 
-      let brandUrls = [];
-      let currentIndex = 0;
-      let lastMobile = null;
+      const MOBILE_BREAK = 767;
 
-      // helpers
-      const isMobile = () => window.innerWidth <= MOBILE_BREAK;
-      function getBrand() {
-        const p = new URLSearchParams(location.search);
-        return p.get("brand") || "london";
-      }
+      // Utility: test imagen sin CORS
       function imageExists(url) {
         return new Promise((res) => {
           const i = new Image();
@@ -282,126 +204,88 @@
         });
       }
 
-      // build brand images list (1.jpg…N.jpg)
-      async function buildBrandUrls(brand) {
-        const base = (isMobile() ? MOBILE_PATH : WEB_PATH) + `/${brand}`;
-        const arr = [];
-        for (let i = 1; i <= MAX_IMAGES; i++) {
-          const url = `${base}/${i}.jpg`;
-          if (await imageExists(url)) arr.push(url);
-        }
-        return arr;
+      // Saber móvil vs. web
+      function isMobile() {
+        return window.innerWidth <= MOBILE_BREAK;
       }
 
-      // render carousel
-      function buildCarousel() {
-        const dots = document.getElementById("carouselDots");
-        dots.innerHTML = "";
-        brandUrls.forEach((_, idx) => {
-          const d = document.createElement("span");
-          d.className = "dot" + (idx === currentIndex ? " active" : "");
-          d.addEventListener("click", () => showSlide(idx));
-          dots.appendChild(d);
-        });
-      }
-      function showSlide(idx) {
-        currentIndex = idx;
-        document.getElementById("carouselImage").src = brandUrls[idx];
-        document
-          .querySelectorAll(".dot")
-          .forEach((d, i) => d.classList.toggle("active", i === idx));
+      // Leer brand de URL
+      function getBrand() {
+        const p = new URLSearchParams(location.search);
+        return p.get("brand") || "london";
       }
 
-      // render products grid for each category that exists
-      async function buildProducts(brand) {
-        const grid = document.getElementById("products-container");
-        grid.innerHTML = "";
-        const base = (isMobile() ? MOBILE_PATH : WEB_PATH) + `/${brand}`;
-        for (const cat of CATEGORIES) {
-          // test at least one image
-          if (await imageExists(`${base}/${cat}/1.jpg`)) {
-            // gather all in that folder
-            const imgs = [];
-            for (let i = 1; i <= MAX_IMAGES; i++) {
-              const url = `${base}/${cat}/${i}.jpg`;
-              if (await imageExists(url)) imgs.push(url);
-            }
-            // block
-            const blk = document.createElement("div");
-            blk.className = "product-block";
-            const divImgs = document.createElement("div");
-            divImgs.className = "product-images";
-            imgs.forEach((u) => {
-              const im = document.createElement("img");
-              im.src = u;
-              grid.appendChild(im);
-              blk.appendChild(im);
+      // Render row de logos
+      async function renderBrands(active) {
+        const row = document.getElementById("brand-row");
+        row.innerHTML = "";
+        for (const b of BRANDS) {
+          const url = `${BRAND_PATH}/${b}.png`;
+          if (await imageExists(url)) {
+            const img = document.createElement("img");
+            img.src = url;
+            img.alt = b;
+            if (b === active) img.classList.add("active");
+            img.addEventListener("click", () => {
+              history.pushState({ brand: b }, "", `?brand=${b}`);
+              init();
             });
-            const lbl = document.createElement("div");
-            lbl.className = "category-label";
-            lbl.textContent = cat.charAt(0).toUpperCase() + cat.slice(1);
-            blk.append(divImgs, lbl);
-            grid.appendChild(blk);
+            row.appendChild(img);
           }
         }
       }
 
-      // init
-      async function init() {
-        const brand = getBrand();
-        // highlight brand
-        document
-          .querySelectorAll(".brand-item")
-          .forEach((b) =>
-            b.classList.toggle("active", b.dataset.brand === brand)
-          );
+      // Render productos para la marca (todas las categorías que existan)
+      async function renderProducts(brand) {
+        const cont = document.getElementById("products-container");
+        cont.innerHTML = "";
+        const base = (isMobile() ? MOBILE_PATH : WEB_PATH) + "/" + brand;
+        for (const cat of CATEGORIES) {
+          const imgUrl = `${base}/${cat}.svg`;
+          if (await imageExists(imgUrl)) {
+            const block = document.createElement("div");
+            block.className = "product-block";
 
-        // carousel
-        const mobileFlag = isMobile();
-        if (init.lastBrand !== brand || mobileFlag !== lastMobile) {
-          init.lastBrand = brand;
-          lastMobile = mobileFlag;
-          brandUrls = await buildBrandUrls(brand);
-          currentIndex = 0;
-          buildCarousel();
-          if (brandUrls.length) showSlide(0);
+            const img = document.createElement("img");
+            img.src = imgUrl;
+            img.alt = `${brand} ${cat}`;
 
-          // products
-          await buildProducts(brand);
+            const btn = document.createElement("a");
+            btn.className = "btn-vermas";
+            btn.textContent = cat[0].toUpperCase() + cat.slice(1);
+            btn.addEventListener("click", () => {
+              window.location.href = `/item-marca.html?brand=${brand}&category=${cat}`;
+            });
+            block.addEventListener("click", () => {
+              window.location.href = `/item-marca.html?brand=${brand}&category=${cat}`;
+            });
+
+            block.append(img, btn);
+            cont.appendChild(block);
+          }
+        }
+        // Si sólo hay un bloque, agregar clase 'single'
+        if (cont.children.length === 1) {
+          cont.classList.add("single");
+        } else {
+          cont.classList.remove("single");
         }
       }
 
-      // bind
-      function bind() {
-        document.querySelectorAll(".brand-item").forEach((item) =>
-          item.addEventListener("click", () => {
-            const b = item.dataset.brand;
-            history.pushState({ b }, "", `?brand=${b}`);
-            init();
-          })
-        );
-
-        document.getElementById("prevBtn").addEventListener("click", () => {
-          if (!brandUrls.length) return;
-          showSlide((currentIndex - 1 + brandUrls.length) % brandUrls.length);
-        });
-        document.getElementById("nextBtn").addEventListener("click", () => {
-          if (!brandUrls.length) return;
-          showSlide((currentIndex + 1) % brandUrls.length);
-        });
-
-        window.addEventListener("popstate", init);
-        window.addEventListener("DOMContentLoaded", () => {
-          bind();
-          init();
-        });
-        window.addEventListener("resize", () => {
-          clearTimeout(window._r);
-          window._r = setTimeout(init, 200);
-        });
+      // Inicializa todo
+      async function init() {
+        const brand = getBrand();
+        await renderBrands(brand);
+        await renderProducts(brand);
       }
 
-      bind();
+      // React to history nav & resize
+      window.addEventListener("popstate", init);
+      window.addEventListener("DOMContentLoaded", init);
+      window.addEventListener("resize", () => {
+        clearTimeout(window._r);
+        window._r = setTimeout(init, 200);
+      });
     </script>
   </body>
 </html>
