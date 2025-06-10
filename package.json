@@ -5,6 +5,7 @@
     "build": "sh build.sh"
   },
   "source": "index.html",
+  "author": "Giovanna Tapia",
   "devDependencies": {
     "copyfiles": "^2.4.1",
     "parcel": "^2.15.2"
