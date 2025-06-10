@@ -377,19 +377,19 @@
         </h2>
       </div>
       <div id="brand-row" class="brand-row">
-        <a href="/item-marca.html?brand=pipicat&category=premium">
+        <a href="./views/item-marca.html?brand=pipicat&category=premium">
           <img
             src="https://stalwart-faloodeh-22bebe.netlify.app/public/assets/svg/marcas/web/pipicat/premium.svg"
             alt="gatuna"
         /></a>
-        <a href="/item-marca.html?brand=gatuna&category=premium">
+        <a href="./view/item-marca.html?brand=gatuna&category=premium">
           <img
             src="https://stalwart-faloodeh-22bebe.netlify.app/public/assets/svg/marcas/web/gatuna/premium.svg"
             alt="london"
             class="active"
           />
         </a>
-        <a href="/item-marca.html?brand=london&category=basica">
+        <a href="./view/item-marca.html?brand=london&category=basica">
           <img
             src="https://stalwart-faloodeh-22bebe.netlify.app/public/assets/svg/marcas/web/london/basica.svg"
             alt="pipicat"
@@ -401,16 +401,16 @@
     <!--  -->
     <!-- JS -->
     <!--  -->
-    <script type="module" src="./javascript/content-replace.js"></script>
+    <script type="module" src=".../javascript/content-replace.js"></script>
 
     <script type="module">
-      import { addComponent, addNavFunc } from "./javascript/addComponents.js";
+      import { addComponent, addNavFunc } from "../javascript/addComponents.js";
 
       // Espera a que el DOM esté completamente cargado antes de ejecutar el script
       document.addEventListener("DOMContentLoaded", async () => {
-        await addComponent("navbar-placeholder", "components/navbar.html");
+        await addComponent("navbar-placeholder", "../components/navbar.html");
         addNavFunc();
-        addComponent("topbar-placeholder", "components/footer.html");
+        addComponent("topbar-placeholder", "../components/footer.html");
 
         const container = document.querySelector(".chat-container");
         const bubbles = Array.from(container.querySelectorAll(".chat-bubble"));

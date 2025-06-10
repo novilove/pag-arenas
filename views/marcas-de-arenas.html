@@ -255,10 +255,10 @@
             btn.className = "btn-vermas";
             btn.textContent = cat[0].toUpperCase() + cat.slice(1);
             btn.addEventListener("click", () => {
-              window.location.href = `/item-marca.html?brand=${brand}&category=${cat}`;
+              window.location.href = `/views/item-marca.html?brand=${brand}&category=${cat}`;
             });
             block.addEventListener("click", () => {
-              window.location.href = `/item-marca.html?brand=${brand}&category=${cat}`;
+              window.location.href = `/views/item-marca.html?brand=${brand}&category=${cat}`;
             });
 
             block.append(img, btn);
