@@ -13,4 +13,7 @@ cp -r assets public/
 echo "→ Copiando vistas…"
 mkdir -p public/views
 cp views/*.html public/views/
+mkdir -p public/components
+cp components/*.html public/components/
+
 echo "✅ Build completo."
