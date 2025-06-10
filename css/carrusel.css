@@ -93,6 +93,8 @@
   justify-content: center;
   align-items: start;
   padding: 12px 0;
+  position: relative !important;
+  z-index: 20 !important;
   gap: 8px; /* Espaciado entre dots */
 }
 .carousel-dots.home-fondo {
@@ -100,17 +102,20 @@
   background-image: url("https://stalwart-faloodeh-22bebe.netlify.app/public/assets/svg/home/mobile/fondo-marcas-2.svg") !important;
   background-size: cover;
   background-position: bottom;
-  width: 100vw;
+  width: 100%;
+  position: relative;
+  z-index: 20;
   height: 19rem;
 }
 
 /* Cada dot circular con número */
-.carousel-dot {
+.carousel-dot,
+.carousel-dots .dot {
   width: 32px;
   height: 32px;
   border: 2px solid #999;
   border-radius: 50%;
-  background-color: #fff;
+  background-color: #fafafa;
   color: #333;
   font-size: 0.9rem;
   display: flex;
@@ -120,36 +125,19 @@
   transition: background-color 0.2s, border-color 0.2s;
 }
 
-.carousel-dot.active {
+.carousel-dot.active,
+.carousel-dots .dot.active {
   background-color: #87bd27;
-  color: #fff;
+  color: #fafafa;
   border-color: #87bd27;
 }
 
-.carousel-dot:hover {
+.carousel-dot:hover,
+.carousel-dots:hover {
   background-color: #f0f0f0;
 }
 
 /* En pantallas muy chicas, reducimos un poco el tamaño de dots y flechas */
-@media (max-width: 480px) {
-  .carousel-button {
-    font-size: 1.5rem;
-    top: 15% !important;
-    transform: none;
-    padding: 8px 12px;
-  }
-  .carousel-dots.home-fondo {
-    /* Foto de fondo para la zona de dots */
-
-    height: 7rem;
-  }
-
-  .carousel-dot {
-    width: 28px;
-    height: 28px;
-    font-size: 0.8rem;
-  }
-}
 
 /* styles.css */
 /* Wrapper para video */
@@ -195,4 +183,25 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
+}
+
+/* flechas */
+.carousel-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0, 0, 0, 0.4);
+  color: #fff;
+  border: none;
+  padding: 0.5rem 0.8rem;
+  font-size: 1.2rem;
+  cursor: pointer;
+  border-radius: 4px;
+  z-index: 1;
+}
+#prevBtn {
+  left: 1rem;
+}
+#nextBtn {
+  right: 1rem;
 }

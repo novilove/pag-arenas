@@ -3,6 +3,11 @@
     height: 100vh;
     width: 100% !important;
     margin-top: -5rem;
+    z-index: 1 !important;
+  }
+  .carousel-dots {
+    position: relative !important;
+    z-index: 20 !important;
   }
   .hero-content {
     width: 100%;
@@ -101,7 +106,92 @@
 
   /* origin */
 
-  .title-origin {
-    /*     margin-top: 5rem; */
+  .fondo-category {
+    background: url("https://stalwart-faloodeh-22bebe.netlify.app/public/assets/svg/categorias/fondo-category.svg")
+      no-repeat;
+    object-fit: contain;
+    width: 100%;
+    height: 26rem;
+    position: absolute;
+    overflow: hidden;
+    background-position: bottom;
+  }
+
+  /* filtro bar */
+  .filter-bar {
+    text-align: center;
+    /*   margin: 1rem 0; */
+  }
+
+  .filter-button {
+    display: inline-block;
+    margin: 0 0.5rem;
+    padding: 0.5rem 1rem;
+    background: #c0d92c;
+    color: #fff;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: background 0.2s;
+  }
+  .filter-button.active,
+  .filter-button:hover {
+    background: var(--Colors-Secondary-900, #364823);
+    color: var(--Colors-Primary-100, #e8f5d0) !important;
+  }
+  /*   a.filter-button:not(.active) {
+    margin: 0 1rem;
+    font-size: 12px !important;
+    line-height: 100% !important;
+  } */
+  .filter-button h4 {
+    font-size: 12px !important;
+    line-height: 200% !important;
+  }
+  .filter-button h3 {
+    font-size: 20px !important;
+    line-height: 200% !important;
+  }
+  .filter-button.active h4,
+  .filter-button:hover h4 {
+    font-size: 16px !important;
+    line-height: 150% !important;
+  }
+  .filter-button.active h3,
+  .filter-button:hover h3 {
+    font-size: 20px !important;
+    line-height: 150% !important;
+  }
+
+  .carousel-container-2 {
+    position: relative;
+    max-width: 1440px;
+    margin: 0 5rem !important;
+    overflow: hidden;
+  }
+
+  .carousel-slide {
+    width: 100%;
+    padding-top: 34%; /* 16:9 ratio */
+    position: relative;
+    background: #eee;
+    border-radius: 18px;
+  }
+  .carousel-slide img {
+    position: absolute;
+    top: 0;
+    border-radius: 18px;
+
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+  .cola-title {
+    background: url("https://stalwart-faloodeh-22bebe.netlify.app/public/assets/svg/categorias/line-title.svg")
+      no-repeat;
+    position: absolute;
+    height: 13rem;
+    width: 27%;
+    background-position: bottom;
   }
 }

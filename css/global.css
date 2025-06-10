@@ -47,28 +47,13 @@ h3 {
   line-height: 27.48px;
   word-wrap: break-word;
 }
-a.filter-button {
-  margin: 0 1rem;
-}
-a:not(.active).filter-button:hover h3 {
-  border-radius: 8px;
-  padding: 0 0.5rem;
-  background: var(--Colors-Secondary-900, #364823);
-  color: var(--Colors-Primary-100, #e8f5d0) !important;
-}
+
 a:not(.active) h3 {
   font-size: 0.8em !important;
+  /*   font-size: 12px !important; */
+  /*   line-height: 100% !important; */
 }
-a.active h3 {
-  /*   border: 4px solid #364823; */
-  border-radius: 8px;
-  padding: 1rem;
-  background: var(--Colors-Secondary-900, #364823);
-  color: var(--Colors-Primary-100, #e8f5d0) !important;
-}
-a.active h4 {
-  color: var(--Colors-Primary-100, #364823) !important;
-}
+
 .bolder-text {
   font-size: 1.3em;
 
@@ -237,17 +222,7 @@ button:hover {
     height: 100dvh; /* Ajusta según necesites, o usa padding-top */
     overflow: hidden; /* Asegura que las imágenes apiladas no se desborden */
   }
-  .fondo-category {
-    background: url("../assets/img/fondo-category-mobile.svg") no-repeat;
-    width: 100%;
-    object-fit: cover; /* O 'contain' */
 
-    /* Define una altura o usa padding-top con un porcentaje
-       para mantener una relación de aspecto si las imágenes tienen
-       diferentes tamaños. Ejemplo: 56.25% para 16:9 */
-    height: 57dvh; /* Ajusta según necesites, o usa padding-top */
-    overflow: hidden; /* Asegura que las imágenes apiladas no se desborden */
-  }
   /*  */
   .point-category {
     width: 6rem !important;
@@ -402,17 +377,6 @@ button:hover {
     overflow: hidden; /* Asegura que las imágenes apiladas no se desborden */
     z-index: 0;
   }
-  .fondo-category {
-    background: url("https://stalwart-faloodeh-22bebe.netlify.app/public/assets/svg/home/web/fondo-category.svg")
-      no-repeat;
-    object-fit: cover; /* O 'contain' */
-    width: 100%;
-    /* Define una altura o usa padding-top con un porcentaje
-       para mantener una relación de aspecto si las imágenes tienen
-       diferentes tamaños. Ejemplo: 56.25% para 16:9 */
-    height: auto; /* Ajusta según necesites, o usa padding-top */
-    overflow: hidden; /* Asegura que las imágenes apiladas no se desborden */
-  }
 
   .cat-origin {
     position: absolute;
@@ -456,7 +420,7 @@ button:hover {
   width: 100%;
   height: 100vh;
   /*   padding-top: 4rem; */
-
+  z-index: 1 !important;
   background-color: #fafafa;
   background-size: contain;
   background-position: center center;
@@ -472,6 +436,7 @@ button:hover {
 
 .hero.loaded {
   opacity: 1;
+  z-index: 1 !important;
   background-color: transparent;
 }
 
@@ -511,6 +476,7 @@ button:hover {
   display: flex;
   flex-direction: column;
   align-items: center;
+  text-decoration: none;
 }
 
 .icono img {
@@ -634,4 +600,17 @@ button:hover {
   background: linear-gradient(to left, #c1d100, rgba(255, 255, 255, 0));
 }
 
-/* ORIGIN */
+/* categoria */
+
+.special-image-container {
+  text-align: left;
+  display: flex;
+  margin-left: 2rem;
+  width: 80dvw !important;
+  max-width: 800px;
+}
+.special-image-container img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+}

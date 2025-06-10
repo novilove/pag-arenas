@@ -17,24 +17,7 @@
       href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wdth,wght@0,75..100,300..800;1,75..100,300..800&display=swap"
       rel="stylesheet"
     />
-    <style>
-      /*      #gallery-container {
-        max-width: 60vw;
-        border-radius: 8px;
-      }
-      .gallery-item {
-        width: 100%;
-      } */
-      #gallery-container img {
-        border-radius: 8px;
-        /*  width: 80% !important;
-        border-radius: 8px; */
-      }
-      #gallery-container {
-        width: 80% !important;
-        border-radius: 8px;
-      }
-    </style>
+    <style></style>
   </head>
   <body>
     <div class="fondo">
@@ -49,183 +32,98 @@
         "
       ></div>
 
-      <div class="row fondo-category d-center pb-4">
-        <div class="category-nav col-md-12 col-sm-12" id="category-buttons">
-          <div
-            class="col-md-12 col-sm-12 row"
-            style="
-              padding-top: 2rem;
-              padding-bottom: 16px;
-              justify-content: center;
-              align-items: center;
-            "
-          >
-            <a
-              class="pt-1 col-md-2 col-sm-2 text-center button-h4 cursor-pointer basica filter-button"
-            >
-              <h3 class="white-text my-0 bolder-text">Básica</h3>
-              <h4 class="white-text my-0">Hey! y London Cats</h4>
-            </a>
-            <a
-              class="pt-1 col-md-2 col-sm-2 text-center button-h4 cursor-pointer premium filter-button"
-            >
-              <h3 class="white-text my-0 bolder-text">Premium</h3>
-              <h4 class="white-text my-0">Gatuna y Pipicat</h4>
-            </a>
-            <a
-              class="pt-1 col-md-2 col-sm-2 text-center button-h4 cursor-pointer super filter-button"
-            >
-              <h3 class="white-text my-0 bolder-text">Super Premium</h3>
-              <h4 class="white-text my-0">Pipicat</h4>
-            </a>
-            <a
-              class="pt-1 col-md-2 col-sm-2 text-center button-h4 cursor-pointer black filter-button"
-            >
-              <h3 class="white-text my-0 bolder-text black col-md-6 col-sm-12">
-                Black
-              </h3>
-              <h4 class="white-text my-0">London Cats</h4>
-            </a>
-          </div>
-        </div>
+      <!-- filtro -->
 
-        <div id="gallery-container">
-          <div class="carousel-container col-md-12 col-sm-12">
-            <div class="carousel-images"></div>
-            <div class="carousel-nav"></div>
-          </div>
+      <div class="category-nav col-md-12 col-sm-12">
+        <div class="fondo-category"></div>
+        <div
+          style="
+            /*               width: 786px;
+              height: 77px; */
+            padding-top: 2rem;
+            padding-bottom: 16px;
+            justify-content: center;
+            align-items: center;
+          "
+          id="category-buttons"
+          class="filter-bar row"
+        >
+          <!-- 1 -->
+          <a
+            data-category="basica"
+            class="pt-1 col-md-2 col-sm-5 text-center button-h4 cursor-pointer filter-button"
+          >
+            <h3 class="white-text my-0 bolder-text">Básica</h3>
+            <h4 class="white-text my-0">Hey! y London Cats</h4>
+          </a>
+          <!-- 2 -->
+
+          <a
+            data-category="premium"
+            class="pt-1 col-md-2 col-sm-5 text-center button-h4 cursor-pointer filter-button"
+          >
+            <h3 class="white-text my-0 bolder-text">Premium</h3>
+            <h4 class="white-text my-0">Gatuna y Pipicat</h4>
+          </a>
+          <!-- 3 -->
+          <a
+            data-category="super"
+            class="pt-1 col-md-2 col-sm-5 text-center button-h4 cursor-pointer filter-button"
+          >
+            <h3 class="white-text my-0 bolder-text">Super Premium</h3>
+            <h4 class="white-text my-0">Pipicat</h4>
+          </a>
+          <!-- 4 -->
+          <a
+            data-category="black"
+            class="pt-1 col-md-2 col-sm-5 text-center button-h4 cursor-pointer filter-button"
+          >
+            <h3 class="white-text my-0 bolder-text">Black</h3>
+            <h4 class="white-text my-0">London Cats</h4>
+          </a>
         </div>
       </div>
-      <!--       <div
-        class="row d-center"
-        style="align-content: center; z-index: 2; margin-top: -5rem"
-      >
-        <div class="title-home ml-4 pl-4">
-          <div class="col-sm-12 col-md-12">
-            <h1 class="mb-0 text-center">Tabla comparativa de</h1>
-          </div>
-          <div class="col-sm-12 col-md-12">
-            <h2 class="mt-0 text-center">arenas para gatos</h2>
-          </div>
+
+      <!-- carrusel -->
+      <div class="carousel-container-2">
+        <button id="prevBtn" class="carousel-arrow">&larr;</button>
+        <div class="carousel-slide">
+          <img id="carouselImage" alt="Imagen de arena" />
         </div>
-        <div class="">
-          <img
-            src="./assets/img/table-resumen-basic.svg"
-            alt=""
-            style="width: 90%; height: auto"
-          />
+        <button id="nextBtn" class="carousel-arrow">&rarr;</button>
+        <div id="carouselDots" class="carousel-dots"></div>
+      </div>
+      <!-- Aquí irá la imagen extra (table.svg) -->
+
+      <div class="row my-4" style="align-content: center; z-index: 2">
+        <div class="cola-title"></div>
+        <!-- title -->
+        <!--         <div style="margin-top: 10rem; width: 100%"> -->
+        <div class="col-sm-12 col-md-12 hero-content cate">
+          <h1 class="my-0">
+            Tabla comparativa de<br />
+            <h2 class="my-0">arenas para gatos</h2>
+          </h1>
         </div>
-      </div> -->
+        <div style="width: 100%; justify-content: center; display: flex">
+          <div id="special-container" class="special-image-container"></div>
+        </div>
+      </div>
 
       <div id="topbar-placeholder"></div>
     </div>
-    <!-- carrusel banners -->
-    <!-- carrusel banners -->
-    <script src="./assets/carrusel-img.js"></script>
+
+    <script src="./javascript/gallery.js" defer></script>
     <script type="module">
       import { addComponent, addNavFunc } from "./javascript/addComponents.js";
       // Espera a que el DOM esté completamente cargado antes de ejecutar el script
-
-      /*      import { setCarruselImg } from "./javascript/carrusel.js";
-
-      const defaultCategory = "basica"; */
-
-      // --- Función para actualizar los botones activos ---
-      /*     function updateActiveButton(activeCategory) {
-        // Selecciona TODOS los enlaces que actúan como botones de filtro
-        // Es crucial que estos enlaces tengan una clase común, por ejemplo 'filter-button'
-        // Si no tienen una clase, podrías usar 'a[data-category]', pero una clase es mejor.
-        const filterButtons = document.querySelectorAll(".filter-button"); // <<-- CAMBIO CLAVE AQUÍ
-
-        filterButtons.forEach((button) => {
-          if (button.dataset.category === activeCategory) {
-            button.classList.add("active");
-          } else {
-            button.classList.remove("active");
-          }
-        });
-      }
-      const nameButtons = ["basica", "premium", "super", "black"]; */
 
       // --- Adjuntar event listeners a los botones de filtro ---
       document.addEventListener("DOMContentLoaded", async () => {
         await addComponent("navbar-placeholder", "components/navbar.html");
         addNavFunc();
         addComponent("topbar-placeholder", "components/footer.html"); // ¿Footer en placeholder de topbar? Revisa esto.
-
-        // Asegúrate de que los botones existan antes de intentar seleccionarlos
-        /*         const filterButtons = document.querySelectorAll(".filter-button"); // <<-- OTRA VEZ AQUÍ
-
-        if (filterButtons.length === 0) {
-          console.warn(
-            "No se encontraron elementos con la clase 'filter-button'. Asegúrate de que tus enlaces tengan esta clase."
-          );
-        }
-
-        filterButtons.forEach((button, indexButton) => {
-          let category = nameButtons[indexButton]; // Obtener la categoría del atributo data-category del botón
-          button.dataset.category = category;
-          button.addEventListener("click", (event) => {
-            event.preventDefault(); // Evita la recarga de la página si es un <a>
-            category = button.dataset.category;
-            // Actualizar el parámetro de búsqueda en la URL sin recargar la página
-            const newUrl = new URL(window.location.href);
-            newUrl.searchParams.set("filter", category);
-            history.pushState({ filter: category }, "", newUrl.toString());
-
-            // Actualizar la apariencia de los botones
-            updateActiveButton(category);
-
-            // Filtrar las imágenes y actualizar el carrusel
-            const imgs = carouselImagesData.filter(
-              (img) => img.type === category
-            );
-            setCarruselImg(imgs, ".carousel-images", ".carousel-nav", category); // Asumo que .carousel-images es un selector para el contenedor del carrusel
-
-         
-          });
-        }); */
-        // --- Lógica inicial al cargar la página ---
-        /*    
-        const urlParams = new URLSearchParams(window.location.search);
-        let initialCategory = urlParams.get("filter") || defaultCategory;
-
-        const imgs = carouselImagesData.filter(
-          (img) => img.type === initialCategory
-        );
-        setCarruselImg(
-          imgs,
-          ".carousel-images",
-          ".carousel-nav",
-          initialCategory
-        );
-        updateActiveButton(initialCategory); */
-        // Llamar para que el botón inicial esté activo
       });
-
-      // --- Manejar el evento popstate para navegación del historial (flechas atrás/adelante del navegador) ---
-      /*  window.addEventListener("popstate", (event) => {
-        const urlParams = new URLSearchParams(window.location.search);
-        const categoryFromHistory = urlParams.get("filter") || defaultCategory;
-
-        // Actualizar la apariencia de los botones
-        updateActiveButton(categoryFromHistory);
-
-        // Filtrar y actualizar el carrusel
-        const imgs = carouselImagesData.filter(
-          (img) => img.type === categoryFromHistory
-        );
-        setCarruselImg(
-          imgs,
-          ".carousel-images",
-          ".carousel-nav",
-          categoryFromHistory
-        );
-        console.log(
-          `Navegando historial a categoría: ${categoryFromHistory}. Imágenes cargadas:`,
-          imgs
-        );
-      }); */
     </script>
   </body>
 </html>

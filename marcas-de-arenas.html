@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Marcas de arenas</title>
+    <link rel="stylesheet" href="styles.css" />
     <link rel="stylesheet" href="./css/grid.css" />
     <link rel="stylesheet" href="./css/spacing-utilities.css" />
     <link rel="stylesheet" href="./css/global.css" />
@@ -12,95 +13,148 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wdth,wght@0,75..100,https://drive.google.com/thumbnail?id=1y2CFFQh6uecQFlSsWk6qIojgfvapdlQP&sz=w1440300..800;1,75..100,300..800&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wdth,wght@0,75..100,300..800;1,75..100,300..800&display=swap"
       rel="stylesheet"
     />
     <style>
-      .title-home {
-        margin-top: 3rem;
+      /* --- Reset y variables --- */
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+      :root {
+        --green: #c0d92c;
+        --dark: #374d10;
       }
 
-      /* products */
-
-      .products-conteiner {
-        justify-content: space-evenly;
-        position: relative;
-        /*         padding: 2rem; */
-        /*         margin-top: -8rem; */
-        /*         height: 500rem; */
+      /* Título */
+      .section-title {
+        text-align: center;
+        margin: 2rem 0 1rem;
+        color: var(--dark);
       }
-      .product-in-filter {
-        background: url("../assets/img/ellipsis-marcas.svg") no-repeat;
-        object-fit: contain; /* O 'contain' */
-        /*        justify-content: center; */
-        /* Define una altura o usa padding-top con un porcentaje
-        para mantener una relación de aspecto si las imágenes tienen
-        diferentes tamaños. Ejemplo: 56.25% para 16:9 */
-        height: auto; /* Ajusta según necesites, o usa padding-top */
+      .section-title small {
+        display: block;
+        font-size: 1.2rem;
+        color: #666;
       }
 
-      /* buttons link */
-
-      .button-link:hover {
-        background-color: #374d10;
-        color: #e8f5d0;
-      }
-
-      .button-link.active {
-        background-color: #374d10;
-        color: #e8f5d0;
-        font-weight: bold;
-      }
-      .button-link {
-        display: inline-block;
-        margin: 0 5px;
-
-        font-size: 1rem !important;
-        border-color: transparent;
-        background-color: #c2d500;
-        cursor: pointer;
-        border-radius: 12px;
-        transition: background-color 0.3s ease;
-      }
-      .fondo-marcas {
-        /*   width: 100dvw; */
-        background: url("../assets/img/fondo-marcas-img.svg") no-repeat;
-
-        object-fit: cover; /* O 'contain' */
-        /* Define una altura o usa padding-top con un porcentaje
-        para mantener una relación de aspecto si las imágenes tienen
-        diferentes tamaños. Ejemplo: 56.25% para 16:9 */
-        /*    height: 10rem; /* Ajusta según necesites, o usa padding-top */
-        height: 30rem;
-        top: 0;
-        right: 0;
-        width: 100%;
-        overflow: hidden; /* Asegura que las imágenes apiladas no se desborden */
-      }
-      .buttons-marcas {
+      /* --- 1) Brand row --- */
+      .brand-row {
         display: flex;
-        justify-content: space-evenly;
-        width: 100%; /* Ajusta el ancho visible del scroll */
-        max-width: 1000px; /* Ancho máximo para el contenedor */
-        overflow: hidden; /* Muy importante para ocultar las imágenes fuera de vista */
-        /*      white-space: nowrap;  */ /* Evita que las imágenes se apilen verticalmente */
-        border-radius: 8px;
-        padding: 10px 0; /* Espacio vertical dentro del contenedor */
-        box-sizing: border-box; /* Incluye padding en el ancho total */
+        justify-content: center;
+        gap: 2rem;
+        margin-bottom: 2rem;
+      }
+      .brand-item img {
+        width: 80px;
+        cursor: pointer;
+        transition: opacity 0.3s;
+      }
+      .brand-row:hover .brand-item img {
+        opacity: 0.4;
+      }
+      .brand-item:hover img,
+      .brand-item.active img {
+        opacity: 1;
       }
 
-      .buttons-marcas img {
-        /*   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05); */
-        vertical-align: middle;
+      /* --- 2) Carrusel --- */
+      .carousel-container {
+        position: relative;
+        max-width: 700px;
+        margin: 1rem auto 2rem;
+      }
+      .carousel-slide {
+        position: relative;
+        width: 100%;
+        padding-top: 56.25%; /*16:9*/
+        background: #f5f5f5;
+        border-radius: 8px;
+        overflow: hidden;
+      }
+      .carousel-slide img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+      .carousel-arrow {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        background: rgba(0, 0, 0, 0.4);
+        color: #fff;
+        border: none;
+        padding: 0.5rem;
+        font-size: 1.2rem;
         cursor: pointer;
-        display: inline-block; /* Mantiene las imágenes en línea */
-        /*   width: 250px; */ /* **Asegura que todas las imágenes tengan el mismo ancho** */
-        height: 80px; /* **Asegura que todas las imágenes tengan la misma altura** */
-
-        object-fit: cover; /* Cubre el área del img sin distorsionar */
-        margin: 0 10px; /* Espacio entre imágenes */
         border-radius: 4px;
-        vertical-align: middle; /* Alinea las imágenes si tienen diferente altura (aunque aquí todas son iguales) */
+        z-index: 1;
+      }
+      #prevBtn {
+        left: 1rem;
+      }
+      #nextBtn {
+        right: 1rem;
+      }
+
+      .carousel-dots {
+        text-align: center;
+        margin-top: 0.75rem;
+      }
+      .carousel-dots .dot {
+        display: inline-block;
+        width: 10px;
+        height: 10px;
+        margin: 0 0.25rem;
+        background: #ccc;
+        border-radius: 50%;
+        cursor: pointer;
+        transition: background 0.2s;
+      }
+      .carousel-dots .dot.active {
+        background: var(--dark);
+      }
+
+      /* --- 3) Products grid --- */
+      .products-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+        gap: 1rem;
+        max-width: 1000px;
+        margin: 2rem auto;
+      }
+      .products-grid .product-block {
+        text-align: center;
+      }
+      .product-block img {
+        width: 100%;
+        border-radius: 8px;
+        object-fit: cover;
+      }
+      .product-block .category-label {
+        margin-top: 0.5rem;
+        font-weight: bold;
+        color: var(--dark);
+      }
+
+      /* Responsive */
+      @media (max-width: 600px) {
+        .brand-item img {
+          width: 60px;
+        }
+        .carousel-arrow {
+          font-size: 1rem;
+          padding: 0.4rem;
+        }
+        .carousel-dots .dot {
+          width: 8px;
+          height: 8px;
+        }
       }
     </style>
   </head>
@@ -125,10 +179,38 @@
             <h2 class="mt-0 text-center">de arena para gato</h2>
           </div>
         </div>
+        <!-- 1) Fila de marcas -->
+        <div class="brand-row">
+          <div class="brand-item" data-brand="london">
+            <img src="assets/svg/marcas/london-cats.svg" alt="London Cats" />
+          </div>
+          <div class="brand-item" data-brand="gatuna">
+            <img src="assets/svg/marcas/gatuna.svg" alt="Gatuna" />
+          </div>
+          <div class="brand-item" data-brand="pipicat">
+            <img src="assets/svg/marcas/pipicat.svg" alt="Pipicat" />
+          </div>
+          <div class="brand-item" data-brand="hey">
+            <img src="assets/svg/marcas/hey.svg" alt="Hey!" />
+          </div>
+        </div>
+
+        <!-- 2) Carrusel simple de fotos de esa marca -->
+        <div class="carousel-container">
+          <button id="prevBtn" class="carousel-arrow">&larr;</button>
+          <div class="carousel-slide">
+            <img id="carouselImage" alt="Imagen de producto" />
+          </div>
+          <button id="nextBtn" class="carousel-arrow">&rarr;</button>
+          <div id="carouselDots" class="carousel-dots"></div>
+        </div>
+
+        <!-- 3) Productos por categoría dentro de la marca -->
+        <div id="products-container" class="products-grid"></div>
         <!--  -->
         <!-- img marcas -->
 
-        <div
+        <!--    <div
           class="row d-center col-sm-12 col-md-12 row text-center"
           style="align-content: center; z-index: 2"
         >
@@ -137,16 +219,15 @@
               <div class="buttons-marcas"></div>
             </div>
           </div>
-        </div>
+        </div> -->
 
         <!--  -->
       </div>
       <!-- products -->
-      <div class="products-conteiner row col-sm-12 col-md-12">
+      <!--  <div class="products-conteiner row col-sm-12 col-md-12">
         <div class="product-in-filter col-md-3 text-center">
           <img src="./assets/img/pipicat-product.svg" alt="" width="100%" />
-          <!--         src="https://drive.google.com/thumbnail?id=1ONnkPZbIk34J1cLritn-6bS7o3ByHQUC&sz=w1500" -->
-          <button class="button-link col-md-5">Ver más</button>
+ 
         </div>
         <div class="product-in-filter col-md-3 text-center">
           <img
@@ -154,56 +235,173 @@
             alt=""
             weight="100%"
           />
-          <!--     src="https://drive.google.com/thumbnail?id=1GNjyJ-NM2JxDcDHeSjn_9_fhp7GatVEt&sz=w1500" -->
+      
           <button class="button-link col-md-5">Ver más</button>
         </div>
-      </div>
+      </div> -->
       <div id="topbar-placeholder"></div>
     </div>
-    <script src="./assets/logos-img.js"></script>
+    <!--    <script src="./assets/logos-img.js"></script> -->
     <script type="module">
       import {
         addComponent,
-        buttonsMarcas,
+        /*         buttonsMarcas, */
+        addNavFunc,
       } from "./javascript/addComponents.js";
 
       // Espera a que el DOM esté completamente cargado antes de ejecutar el script
-      document.addEventListener("DOMContentLoaded", () => {
-        addComponent("navbar-placeholder", "components/navbar.html");
+      document.addEventListener("DOMContentLoaded", async () => {
+        await addComponent("navbar-placeholder", "components/navbar.html");
+        addNavFunc();
         addComponent("topbar-placeholder", "components/footer.html");
 
-        buttonsMarcas();
-        /*         const productsContaines = document.createElement("products-conteiner");
-        const defaultMarca = "hey!"; */
-        /*    imgList.filter().forEach((imageData, index) => {
-    const imgElement = document.createElement("img");
-    imgElement.src = imageData.url;
-    imgElement.alt = imageData.alt;
-    imgElement.classList.add("carousel-img"); // Añade la clase base
-
-    // La primera imagen será la 'current' inicialmente, las demás quedan con el estado por defecto (translateX(100%), opacity 0)
-    if (index === 0) {
-      imgElement.classList.add("current");
-    }
-
-    imagesContainer.appendChild(imgElement);
-
-    const buttonElement = document.createElement("button");
-    buttonElement.textContent =  index + 1;
-    if (label) {
-      const labelH3 = document.querySelector(`.${label}`);
-      labelH3.classList.add("active");
-    }
-    buttonElement.classList.add("nav-button");
-    buttonElement.dataset.index = index;
-
-    if (index === 0) {
-      buttonElement.classList.add("active"); // 'active' para el botón
-    }
-
-    buttonsContainer.appendChild(buttonElement);
-  }); */
+        /*   buttonsMarcas(); */
       });
+      const MAX_IMAGES = 10;
+      const MOBILE_BREAK = 767;
+      const MOBILE_PATH = "/assets/mobile";
+      const WEB_PATH = "/assets/web";
+      const CATEGORIES = ["basica", "premium", "super", "black"];
+
+      let brandUrls = [];
+      let currentIndex = 0;
+      let lastMobile = null;
+
+      // helpers
+      const isMobile = () => window.innerWidth <= MOBILE_BREAK;
+      function getBrand() {
+        const p = new URLSearchParams(location.search);
+        return p.get("brand") || "london";
+      }
+      function imageExists(url) {
+        return new Promise((res) => {
+          const i = new Image();
+          i.src = url;
+          i.onload = () => res(true);
+          i.onerror = () => res(false);
+        });
+      }
+
+      // build brand images list (1.jpg…N.jpg)
+      async function buildBrandUrls(brand) {
+        const base = (isMobile() ? MOBILE_PATH : WEB_PATH) + `/${brand}`;
+        const arr = [];
+        for (let i = 1; i <= MAX_IMAGES; i++) {
+          const url = `${base}/${i}.jpg`;
+          if (await imageExists(url)) arr.push(url);
+        }
+        return arr;
+      }
+
+      // render carousel
+      function buildCarousel() {
+        const dots = document.getElementById("carouselDots");
+        dots.innerHTML = "";
+        brandUrls.forEach((_, idx) => {
+          const d = document.createElement("span");
+          d.className = "dot" + (idx === currentIndex ? " active" : "");
+          d.addEventListener("click", () => showSlide(idx));
+          dots.appendChild(d);
+        });
+      }
+      function showSlide(idx) {
+        currentIndex = idx;
+        document.getElementById("carouselImage").src = brandUrls[idx];
+        document
+          .querySelectorAll(".dot")
+          .forEach((d, i) => d.classList.toggle("active", i === idx));
+      }
+
+      // render products grid for each category that exists
+      async function buildProducts(brand) {
+        const grid = document.getElementById("products-container");
+        grid.innerHTML = "";
+        const base = (isMobile() ? MOBILE_PATH : WEB_PATH) + `/${brand}`;
+        for (const cat of CATEGORIES) {
+          // test at least one image
+          if (await imageExists(`${base}/${cat}/1.jpg`)) {
+            // gather all in that folder
+            const imgs = [];
+            for (let i = 1; i <= MAX_IMAGES; i++) {
+              const url = `${base}/${cat}/${i}.jpg`;
+              if (await imageExists(url)) imgs.push(url);
+            }
+            // block
+            const blk = document.createElement("div");
+            blk.className = "product-block";
+            const divImgs = document.createElement("div");
+            divImgs.className = "product-images";
+            imgs.forEach((u) => {
+              const im = document.createElement("img");
+              im.src = u;
+              grid.appendChild(im);
+              blk.appendChild(im);
+            });
+            const lbl = document.createElement("div");
+            lbl.className = "category-label";
+            lbl.textContent = cat.charAt(0).toUpperCase() + cat.slice(1);
+            blk.append(divImgs, lbl);
+            grid.appendChild(blk);
+          }
+        }
+      }
+
+      // init
+      async function init() {
+        const brand = getBrand();
+        // highlight brand
+        document
+          .querySelectorAll(".brand-item")
+          .forEach((b) =>
+            b.classList.toggle("active", b.dataset.brand === brand)
+          );
+
+        // carousel
+        const mobileFlag = isMobile();
+        if (init.lastBrand !== brand || mobileFlag !== lastMobile) {
+          init.lastBrand = brand;
+          lastMobile = mobileFlag;
+          brandUrls = await buildBrandUrls(brand);
+          currentIndex = 0;
+          buildCarousel();
+          if (brandUrls.length) showSlide(0);
+
+          // products
+          await buildProducts(brand);
+        }
+      }
+
+      // bind
+      function bind() {
+        document.querySelectorAll(".brand-item").forEach((item) =>
+          item.addEventListener("click", () => {
+            const b = item.dataset.brand;
+            history.pushState({ b }, "", `?brand=${b}`);
+            init();
+          })
+        );
+
+        document.getElementById("prevBtn").addEventListener("click", () => {
+          if (!brandUrls.length) return;
+          showSlide((currentIndex - 1 + brandUrls.length) % brandUrls.length);
+        });
+        document.getElementById("nextBtn").addEventListener("click", () => {
+          if (!brandUrls.length) return;
+          showSlide((currentIndex + 1) % brandUrls.length);
+        });
+
+        window.addEventListener("popstate", init);
+        window.addEventListener("DOMContentLoaded", () => {
+          bind();
+          init();
+        });
+        window.addEventListener("resize", () => {
+          clearTimeout(window._r);
+          window._r = setTimeout(init, 200);
+        });
+      }
+
+      bind();
     </script>
   </body>
 </html>
