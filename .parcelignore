@@ -1,0 +1,4 @@
+# .parcelignore
+# Ignora todo el HTML de tus plantillas parciales
+components/**/*.html
+views/**/*.html

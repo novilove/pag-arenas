@@ -1,0 +1,12 @@
+{
+  "name": "pag-arenas",
+  "version": "1.0.0",
+  "scripts": {
+    "build": "sh build.sh"
+  },
+  "source": "index.html",
+  "devDependencies": {
+    "copyfiles": "^2.4.1",
+    "parcel": "^2.15.2"
+  }
+}

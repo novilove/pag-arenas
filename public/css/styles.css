@@ -1,0 +1,48 @@
+img {
+  display: block;
+  /*   margin: 10px auto; */
+}
+
+video {
+  display: block;
+  /*   margin: 10px auto; */
+  max-width: 100%;
+  height: auto;
+}
+
+/* styles.css */
+.lazy-svg,
+.lazy-video {
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.lazy-svg.loaded,
+.lazy-video.loaded {
+  opacity: 1;
+}
+
+/* Si deseas un placeholder, por ejemplo fondo gris: */
+.lazy-svg {
+  background-color: #f0f0f0;
+  display: block;
+  /*   margin: 10px auto; */
+}
+
+.lazy-video {
+  background-color: #000; /* placeholder negro hasta que cargue el poster */
+  display: block;
+  margin: 20px auto;
+  max-width: 100%;
+  height: auto;
+}
+
+.logo-clicable {
+  display: block;
+  cursor: pointer; /* cursor “manito” al pasar por encima */
+  transition: opacity 0.2s ease-in-out;
+}
+
+.logo-clicable:hover {
+  opacity: 0.8; /* opcional: efecto sutil al hacer hover */
+}

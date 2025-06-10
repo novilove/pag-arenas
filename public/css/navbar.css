@@ -1,0 +1,146 @@
+/* Navbar principal */
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: var(--green-bg);
+  padding: 0.5rem 1rem;
+  position: relative;
+  z-index: 10;
+}
+
+/* Logo */
+.navbar__logo img {
+  height: 40px;
+}
+
+/* Links desktop */
+.navbar__links {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+}
+.navbar__links a {
+  text-decoration: none;
+  color: var(--text-dark);
+  font-weight: bold;
+}
+.navbar__links li {
+  width: 6rem;
+  text-align: center;
+}
+.btn-contacto {
+  background: var(--green-btn);
+  color: var(--text-light) !important;
+  padding: 0.4rem 0.8rem;
+  border-radius: 20px;
+  margin-left: -1rem;
+  padding: 0.5rem 0.8rem !important;
+}
+
+/* Hamburger (oculto en desktop) */
+.navbar__hamburger {
+  display: none;
+  font-size: 1.5rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--text-dark);
+}
+
+/* Sidebar */
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: -100%;
+  width: 75%;
+  max-width: 300px;
+  height: 100%;
+  background: var(--green-bg);
+  padding: 1rem;
+  transition: left 0.3s ease;
+  z-index: 20;
+}
+.sidebar.open {
+  left: 0;
+}
+.sidebar__close {
+  background: none;
+  border: none;
+  font-size: 2rem;
+  color: var(--text-dark);
+  cursor: pointer;
+  display: block;
+  margin-left: auto;
+}
+.sidebar__links {
+  list-style: none;
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+.sidebar__links a {
+  text-decoration: none;
+  color: var(--text-dark);
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+.sidebar__links .btn-contacto {
+  background: var(--green-btn);
+  color: var(--text-light);
+  padding: 0.4rem 0.8rem;
+  border-radius: 20px;
+  display: inline-block;
+}
+
+/* Media Queries */
+@media (max-width: 769px) {
+  /* Ocultar links y mostrar hamburger */
+  .navbar__links {
+    display: none;
+  }
+  .navbar__hamburger {
+    display: block;
+  }
+  /* Centrar logo */
+  .navbar {
+    justify-content: center;
+  }
+  .navbar__hamburger {
+    position: absolute;
+    left: 1rem;
+  }
+}
+/* Añade al final de styles.css */
+
+/* underline hover & active */
+.navbar__links a,
+.sidebar__links a {
+  position: relative;
+  text-decoration: none;
+  padding-bottom: 8px;
+}
+.navbar__links a.btn-contacto,
+.sidebar__links a.btn-contacto {
+  padding: 8px;
+}
+
+.navbar__links a::after,
+.sidebar__links a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 2px;
+  width: 0%;
+  background: var(--text-dark);
+  transition: width 0.3s ease;
+}
+
+.navbar__links a:hover::after,
+.sidebar__links a:hover::after,
+.navbar__links a.active::after,
+.sidebar__links a.active::after {
+  width: 100%;
+}

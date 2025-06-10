@@ -1,0 +1,207 @@
+/* styles.css */
+
+/* Reset ligero */
+/* * {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+} */
+
+/* Contenedor principal */
+.carousel-container {
+  position: relative;
+  width: 100%;
+  max-width: 1440px; /* Ajusta según tu diseño */
+  overflow: hidden;
+  border-radius: 8px;
+}
+
+/* Botones de flechas */
+.carousel-button {
+  position: absolute;
+  top: 35%;
+  transform: translateY(-50%);
+  background-color: rgba(0, 0, 0, 0.4);
+  color: #fafafa;
+  border: none;
+  font-size: 2rem;
+  padding: 12px 18px;
+  cursor: pointer;
+  border-radius: 50%;
+  z-index: 10;
+  user-select: none;
+  transition: background-color 0.2s;
+}
+
+#prevButton {
+  left: 10px;
+}
+
+#nextButton {
+  right: 10px;
+}
+
+.carousel-button:hover {
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
+/* Wrapper de la imagen + progreso */
+.carousel-image-wrapper {
+  position: relative;
+  width: 100%;
+  background-color: #eaeaea; /* Color de fondo mientras se carga */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.carousel-image-wrapper img {
+  width: 100%;
+  height: auto;
+  display: block;
+  /*   max-height: 500px; */ /* Para evitar que sea gigante en desktop */
+  object-fit: cover; /* En caso de que quieras recortar un poco */
+  transition: opacity 0.4s ease-in-out;
+  opacity: 0;
+}
+
+.carousel-image-wrapper img.loaded {
+  opacity: 1;
+}
+
+/* Barra de carga (progress bar) */
+.progress-bar {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 4px; /* Alto de la barra */
+  background-color: rgba(200, 200, 200, 0.5);
+  overflow: hidden;
+}
+
+.progress-bar .progress-fill {
+  width: 0%;
+  height: 100%;
+  background-color: #87bd27; /* Color de la carga */
+  transition: width linear;
+}
+
+/* Contenedor de los dots (botones circulares con índices) */
+.carousel-dots {
+  display: flex;
+  justify-content: center;
+  align-items: start;
+  padding: 12px 0;
+  position: relative !important;
+  z-index: 20 !important;
+  gap: 8px; /* Espaciado entre dots */
+}
+.carousel-dots.home-fondo {
+  /* Foto de fondo para la zona de dots */
+  background-image: url("https://stalwart-faloodeh-22bebe.netlify.app/public/assets/svg/home/mobile/fondo-marcas-2.svg") !important;
+  background-size: cover;
+  background-position: bottom;
+  width: 100%;
+  position: relative;
+  z-index: 20;
+  height: 19rem;
+}
+
+/* Cada dot circular con número */
+.carousel-dot,
+.carousel-dots .dot {
+  width: 32px;
+  height: 32px;
+  border: 2px solid #999;
+  border-radius: 50%;
+  background-color: #fafafa;
+  color: #333;
+  font-size: 0.9rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: background-color 0.2s, border-color 0.2s;
+}
+
+.carousel-dot.active,
+.carousel-dots .dot.active {
+  background-color: #87bd27;
+  color: #fafafa;
+  border-color: #87bd27;
+}
+
+.carousel-dot:hover,
+.carousel-dots:hover {
+  background-color: #f0f0f0;
+}
+
+/* En pantallas muy chicas, reducimos un poco el tamaño de dots y flechas */
+
+/* styles.css */
+/* Wrapper para video */
+/* .video-wrapper {
+  overflow: hidden;
+  border-radius: 8px;
+}
+.video-wrapper video {
+  width: 100%;
+  height: auto;
+  display: block;
+} */
+/* CONTENEDOR PRINCIPAL */
+.video-carousel {
+  position: relative;
+  width: 100%;
+  margin: 0;
+  max-width: 1440px;
+}
+
+#prevBtn {
+  left: 10px;
+}
+#nextBtn {
+  right: 10px;
+}
+
+/* WRAPPER CON ASPECT-RATIO 16:9 */
+.video-wrapper {
+  position: relative;
+  width: 100%;
+  padding-top: 56.25%; /* 16:9 */
+  background: black;
+  overflow: hidden;
+  border-radius: 8px;
+}
+
+/* VIDEO ABSOLUTO CUBRIENDO WRAPPER */
+.video-wrapper .carousel-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* flechas */
+.carousel-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0, 0, 0, 0.4);
+  color: #fff;
+  border: none;
+  padding: 0.5rem 0.8rem;
+  font-size: 1.2rem;
+  cursor: pointer;
+  border-radius: 4px;
+  z-index: 1;
+}
+#prevBtn {
+  left: 1rem;
+}
+#nextBtn {
+  right: 1rem;
+}

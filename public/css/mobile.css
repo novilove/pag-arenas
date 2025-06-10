@@ -1,0 +1,368 @@
+@media (max-width: 769px) {
+  .hero {
+    /*     margin-top: -10rem; */
+    height: 20rem;
+  }
+  .carousel-dots {
+    position: relative !important;
+    z-index: 20 !important;
+  }
+  .hero-content {
+    padding-top: 7rem;
+  }
+  .hero-content h1 {
+    font-size: 1.8rem;
+    line-height: 0;
+    /*  text-align: right; */
+  }
+  .hero-content h2 {
+    font-size: 1.6rem;
+    /*     text-align: right; */
+
+    /*     line-height: 0; */
+  }
+  .icono {
+    width: 40% !important;
+    margin-top: 2rem !important;
+    /*     width: 9.5rem !important; */
+  }
+  .icono img {
+    width: 32px;
+    height: 32px;
+  }
+  .iconos {
+    /*       gap: 12px; */
+    margin-top: 1rem;
+    justify-content: center !important;
+  }
+  .descripcion {
+    font-size: 1rem;
+    line-height: 1.5rem;
+    margin: 0 3rem;
+    margin-top: 1rem;
+  }
+  .btn-vermas {
+    font-size: 1rem;
+    padding: 10px 24px;
+  }
+
+  /*  */
+
+  h3.open {
+    font-size: 2.5em;
+
+    color: var(--Colors-Primary-700, #5f851b);
+    font-family: Open Sans;
+    font-weight: 400;
+    line-height: 50px;
+
+    word-wrap: break-word;
+  }
+
+  .hero--salvaje {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px 0;
+    /*     margin-top: -10rem; */
+
+    text-align: center !important;
+  }
+  .hero-curve {
+    height: 15rem;
+    position: absolute;
+    /*     right: 0; */
+    /*     margin-right: -5rem; */
+    width: 20rem;
+    background-position: right !important;
+  }
+  /*  */
+
+  /* Variante “salvaje” */
+  .hero--marca {
+    margin-top: -3rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    width: 100%;
+    height: 37rem;
+  }
+
+  /* styles.css */
+
+  .lazy-img {
+    padding: 0.3rem;
+    width: 6rem;
+    height: 5rem;
+  }
+  .infinite-scroll-wrapper {
+    position: relative;
+    width: 100vw;
+    overflow: hidden;
+  }
+  .shovel-origin {
+    position: absolute;
+    background: url("https://stalwart-faloodeh-22bebe.netlify.app/public/assets/svg/home/web/shovel-origin.svg")
+      no-repeat;
+    bottom: 57%;
+    /* height: 100vh !important; */
+    right: 0;
+    width: 100vw;
+    background-position: right;
+    height: 41rem;
+    object-fit: cover;
+  }
+  .plant-origin {
+    position: absolute;
+    /* align-content: start; */
+    background: url("https://stalwart-faloodeh-22bebe.netlify.app/public/assets/svg/home/web/plant-origin.svg")
+      no-repeat;
+    height: 50vh !important;
+    width: 100%;
+    z-index: 0;
+    bottom: 0rem;
+    object-fit: fill;
+  }
+
+  .fondo-category {
+    background: url("https://stalwart-faloodeh-22bebe.netlify.app/public/assets/svg/categorias/fondo-category-mobile.svg")
+      no-repeat;
+    object-fit: contain;
+    width: 100%;
+    height: 17rem;
+    position: absolute;
+    overflow: hidden;
+    background-position: bottom;
+  }
+
+  /*   .carousel-slide {
+    width: 60% !important;
+    padding-top: 100% !important;
+    position: relative;
+    background: #fafafa;
+    border-radius: 10px;
+  }
+
+  .carousel-slide img {
+    position: absolute;
+    top: 0;
+    border-radius: 18px;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  } */
+  .carousel-slide {
+    width: 100%;
+    aspect-ratio: 10/15;
+    position: relative;
+    overflow: hidden;
+  }
+  .carousel-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  .carousel-container-2 {
+    position: relative;
+    max-width: 1440px;
+    margin: 0 3rem !important;
+    overflow: hidden;
+  }
+  .carousel-button {
+    font-size: 1.5rem;
+    top: 15% !important;
+    transform: none;
+    padding: 8px 12px;
+  }
+  .carousel-dots.home-fondo {
+    /* Foto de fondo para la zona de dots */
+
+    height: 7rem;
+  }
+
+  .carousel-dot {
+    width: 28px;
+    height: 28px;
+    font-size: 0.8rem;
+  }
+
+  .carousel-arrow {
+    padding: 0.4rem 0.6rem;
+    font-size: 1rem;
+  }
+  .carousel-arrow {
+    padding: 0.4rem 0.6rem;
+    font-size: 1rem;
+  }
+  .filter-button {
+    display: inline-block;
+    margin: 0.2rem;
+    padding: 0;
+    background: #c0d92c;
+    color: #fff;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.2s;
+  }
+  .filter-button.active,
+  .filter-button:hover {
+    background: var(--Colors-Secondary-900, #364823);
+    color: var(--Colors-Primary-100, #e8f5d0) !important;
+  }
+  .filter-button h4 {
+    line-height: 26px;
+  }
+  .filter-button h3 {
+    line-height: 16px;
+  }
+  .bolder-text {
+    font-size: 18px !important;
+    font-weight: 700 !important;
+  }
+  .special-image-container {
+    margin-right: 2rem;
+  }
+  .hero-content.cate {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    /*     padding-left: 10px; */
+  }
+  .cola-title {
+    background: url("https://stalwart-faloodeh-22bebe.netlify.app/public/assets/svg/categorias/line-title.svg")
+      no-repeat;
+    position: absolute;
+    height: 11rem;
+    width: 8rem;
+    background-position: right;
+    background-size: contain;
+  }
+  .title-fondo-marca {
+    height: 45rem !important;
+  }
+  .title-fondo-marca h2.gotham.white {
+    color: #fafafa;
+    font-size: 32px;
+    font-family: "Gotham";
+    font-weight: 900 !important;
+    line-height: 1.2em;
+    margin: 0;
+    padding: 1rem;
+    text-align: center;
+    word-wrap: break-word !important;
+  }
+  .title-fondo-marca h3.gotham.white {
+    color: #fafafa;
+    text-align: center;
+    font-size: 16px;
+    font-family: "Gotham";
+    font-weight: 600 !important;
+    line-height: 25.2px;
+    margin: 0;
+    padding: 0.5rem 1rem;
+    width: 60% !important;
+    word-wrap: break-word !important;
+  }
+  h3.gotham.white-sand {
+    color: #fafafa;
+    font-size: 20px;
+    font-family: "Gotham";
+    font-weight: 600 !important;
+    line-height: 25.2px;
+    padding: 1rem 2rem;
+    margin: 0;
+    word-wrap: break-word !important;
+  }
+  h3.gotham.white-banner {
+    padding: 1rem 0.5rem !important;
+  }
+  .not-p-x {
+    padding: 0 !important;
+  }
+  h4.gotham.white {
+    color: #fafafa;
+    font-size: 16px !important;
+    text-align: center;
+    font-family: "Gotham";
+    font-weight: 400 !important;
+    line-height: 25.2px;
+    margin: 0;
+    word-wrap: break-word !important;
+    padding: 0.5rem 1rem !important;
+  }
+  h4.gotham.white-sand {
+    color: #fafafa;
+    font-size: 16px !important;
+    text-align: center;
+    font-family: "Gotham";
+    font-weight: 400 !important;
+    line-height: 25.2px;
+    margin: 0;
+    word-wrap: break-word !important;
+    padding: 0.5rem 1rem !important;
+  }
+
+  .product-img {
+    margin-top: -7rem;
+    object-fit: contain !important;
+    width: 80% !important;
+    position: absolute;
+    top: 0;
+    height: 20rem !important;
+    overflow: hidden;
+    justify-content: center;
+  }
+  .img-description {
+    width: 100%;
+    height: 2.5rem !important;
+    margin-top: 2rem;
+    background-size: contain;
+  }
+  .fondo-cat {
+    width: 100% !important;
+    height: 58rem !important;
+    background-size: cover;
+    position: absolute;
+    z-index: 1 !important;
+    background-position: right !important;
+  }
+  .arena {
+    margin-top: 2rem;
+
+    width: 100%;
+    background-size: contain;
+    height: 25rem;
+    z-index: 2 !important;
+    background-position: center !important;
+  }
+  .cat-1 {
+    background-size: contain;
+    width: 100%;
+    height: 36rem;
+    margin-top: -10rem;
+    z-index: 3 !important;
+  }
+
+  h3.gotham.white-sand {
+    color: #fafafa !important;
+    font-size: 20px;
+    font-family: "Gotham";
+    font-weight: 600 !important;
+    line-height: 25.2px;
+    padding: 1rem 2rem;
+    margin: 0;
+    word-wrap: break-word !important;
+  }
+
+  h4.gotham.white-sand {
+    color: #fafafa !important;
+    font-size: 16px;
+    padding: 1rem 2rem;
+
+    font-family: "Gotham";
+    font-weight: 400 !important;
+    line-height: 25.2px;
+    margin: 0;
+    word-wrap: break-word !important;
+  }
+}
