@@ -28,6 +28,7 @@ function imageExists(url) {
 // Lee filtro de URL
 function getCategory() {
   const p = new URLSearchParams(window.location.search);
+  console.log(p.get("filtro"));
   return p.get("filtro") || "basica";
 }
 
@@ -94,6 +95,7 @@ async function loadSpecialImage(cat) {
 // Inicializa o reinicializa todo
 async function initCarousel() {
   const cat = getCategory();
+  console.log(cat);
   updateActiveFilter(cat);
 
   const mobileFlag = isMobile();

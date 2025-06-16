@@ -3,7 +3,7 @@ export function carruselBanner() {
   /* carousel.js */
 
   // 1. Parámetros básicos
-  const MAX_NUMBER = 10; // recorreremos 1..10
+  const MAX_NUMBER = 6; // recorreremos 1..10
   const mobileBasePath =
     "https://stalwart-faloodeh-22bebe.netlify.app/public/assets/svg/banners/mobile/";
   const webBasePath =

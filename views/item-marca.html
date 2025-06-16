@@ -74,6 +74,7 @@
       .cat-1 {
         background-size: contain;
         width: 100%;
+        background-position: right;
         height: 36rem;
         /*         margin-top: -10rem; */
         z-index: 3 !important;
@@ -93,10 +94,12 @@
         justify-self: center;
         gap: 1rem;
         width: 50%;
+        margin-top: 10rem;
       }
       @media (max-width: 767px) {
         .chat-container {
           width: 90%;
+          margin-top: 2rem;
         }
       }
 
@@ -251,11 +254,9 @@
       <div class="title-fondo-marca row">
         <div
           style="
-            /*             gap: 24px; */
             align-self: stretch;
             flex-direction: column;
             justify-content: start;
-            /*  align-items: flex-start; */
             display: flex;
           "
           class="col-md-5 col-sm-12"
@@ -284,7 +285,7 @@
           </h4>
         </div>
         <div
-          class="col-md-5 col-sm-12"
+          class="col-md-5 col-sm-12 mt-2"
           style="display: flex; justify-content: center; align-content: end"
         >
           <div class="product-img"></div>
@@ -302,24 +303,8 @@
           </h3>
         </div>
       </div>
-      <div class="row">
-        <div class="row col-md-6 arena" style="justify-content: center">
-          <div
-            class="d-center row col-md-0 col-sm-12 my-auto"
-            style="z-index: 4"
-          >
-            <h3
-              class="gotham white-sand w-100 py-0 pt-2 text-center line-color-marca"
-            >
-              Ideal para todo<br />tipo de areneros
-            </h3>
-            <h4
-              class="gotham white-sand w-100 pt-0 pb-2 text-center line-color-marca"
-            >
-              y es muy eficaz en hogares<br />con varios gatos.
-            </h4>
-          </div>
-        </div>
+      <div class="row" style="position: relative">
+        <div class="row col-md-6 arena" style="justify-content: center"></div>
 
         <div class="d-center row col-md-6 cat-1"></div>
         <div class="d-center row col-md-6 col-sm-0 under-sand">
@@ -331,12 +316,24 @@
           </h4>
         </div>
         <div class="fondo-cat"></div>
+        <div class="d-center row col-md-0 col-sm-12 my-auto" style="z-index: 4">
+          <h3
+            class="gotham white-sand w-100 py-0 pt-2 text-center line-color-marca"
+          >
+            Ideal para todo<br />tipo de areneros
+          </h3>
+          <h4
+            class="gotham white-sand w-100 pt-0 pb-2 text-center line-color-marca"
+          >
+            y es muy eficaz en hogares<br />con varios gatos.
+          </h4>
+        </div>
       </div>
 
       <!-- >>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< -->
 
       <!-- CHATTTTT -->
-      <main class="chat-container col-md-10" style="margin-top: 10rem">
+      <main class="chat-container col-md-10">
         <div class="chat-bubble right col-md-7 light">con aroma Lavanda</div>
 
         <div class="chat-bubble left col-md-7 dark">
@@ -371,10 +368,7 @@
       </div>
 
       <div class="col-sm-12 col-md-12 mt-4 hero-content cate">
-        <h2 class="my-0">
-          Más
-          <h1 class="my-0">Arenas</h1>
-        </h2>
+        <h2 class="my-0">Más <strong>Arenas...</strong></h2>
       </div>
       <div id="brand-row" class="brand-row">
         <a href="/views/item-marca.html?brand=pipicat&category=premium">
@@ -401,7 +395,7 @@
     <!--  -->
     <!-- JS -->
     <!--  -->
-    <script type="module" src=".../javascript/content-replace.js"></script>
+    <script type="module" src="../javascript/content-replace.js"></script>
 
     <script type="module">
       import { addComponent, addNavFunc } from "../javascript/addComponents.js";

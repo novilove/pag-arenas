@@ -86,7 +86,8 @@ h2.gotham.white {
   font-weight: 900 !important;
   line-height: 1.2em;
   margin: 0;
-  padding: 2rem;
+  margin-left: 2rem;
+  margin-top: 2rem;
   word-wrap: break-word !important;
 }
 h3.gotham.white {
@@ -114,7 +115,7 @@ h3.gotham.white-banner {
 }
 h3.gotham.white-sand {
   color: #fafafa;
-  font-size: 20px;
+  font-size: 32px;
   font-family: "Gotham";
   font-weight: 600 !important;
   line-height: 25.2px;
@@ -168,7 +169,7 @@ h4 {
 }
 p {
   color: #707070;
-  font-size: 1.5rem;
+  font-size: 1.4rem;
   font-family: Gotham;
   font-weight: 200;
   line-height: 27.5px;

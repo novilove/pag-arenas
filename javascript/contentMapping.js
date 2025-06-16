@@ -145,7 +145,7 @@ export const contentMapping = {
       "Genera menos suciedad y evita que la arena se disperse.",
     /* 3 */
     ".chat-container > .chat-bubble.right.light:nth-child(3)":
-      "Formulada para neutralizar olores rápidamente",
+      "Formulada para neutralizar olores rápidamente",
     /* 4 */
     ".chat-container > .chat-bubble.left.dark:nth-child(4)": "",
   },

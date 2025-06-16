@@ -9,6 +9,7 @@ function applyContent() {
   const category = getParam("filtro", "basica");
   const brand = getParam("brand", "hey");
   const key = `${category}-${brand}`;
+  console.log(key);
   const map = contentMapping[key];
 
   if (!map) {

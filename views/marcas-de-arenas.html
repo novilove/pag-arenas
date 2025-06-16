@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Marcas de arenas</title>
     <link rel="stylesheet" href="../css/styles.css" />
+    <link rel="stylesheet" href="../css/loading.css" />
 
     <link rel="stylesheet" href="../css/grid.css" />
     <link rel="stylesheet" href="../css/spacing-utilities.css" />
@@ -65,6 +66,8 @@
         display: flex;
         align-items: center;
         cursor: pointer;
+        margin-bottom: 3rem;
+
         flex-direction: column;
       }
 
@@ -119,6 +122,8 @@
           overflow: hidden;
         "
       ></div>
+      <!-- Loader overlay -->
+
       <div class="fondo-marcas">
         <!-- title -->
         <!--          <div class="col-sm-12 col-md-12">
@@ -136,10 +141,45 @@
         </div>
         <!-- 1) Fila de marcas -->
         <!-- Logos de marcas -->
-        <div id="brand-row" class="brand-row"></div>
+        <!--     <div id="brand-row" class="brand-row"></div> -->
+        <div id="brand-row" class="brand-row">
+          <img
+            src="https://stalwart-faloodeh-22bebe.netlify.app/public/assets/svg/marcas/logos/london.png"
+            alt="london"
+          /><img
+            src="https://stalwart-faloodeh-22bebe.netlify.app/public/assets/svg/marcas/logos/gatuna.png"
+            alt="gatuna"
+            class="active"
+          /><img
+            src="https://stalwart-faloodeh-22bebe.netlify.app/public/assets/svg/marcas/logos/pipicat.png"
+            alt="pipicat"
+          /><img
+            src="https://stalwart-faloodeh-22bebe.netlify.app/public/assets/svg/marcas/logos/hey.png"
+            alt="hey"
+          />
+        </div>
 
+        <!-- Loader Overlay -->
+        <!--  <div id="page-loader">
+          <div id="loader-slides">
+            <img src="../assets/loading_novi/Container.svg" class="slide" />
+            <img src="../assets/loading_novi/Container-1.svg" class="slide" />
+            <img src="../assets/loading_novi/Container-2.svg" class="slide" />
+            <img src="../assets/loading_novi/Container-3.svg" class="slide" />
+          </div>
+        </div> -->
+
+        <!-- Tu contenido real -->
+        <!--         <div id="page-content" style="visibility: hidden"> -->
         <!-- Galería de productos -->
-        <div id="products-container" class="products-grid"></div>
+        <!--    <div id="products-container" class="products-grid"></div> -->
+        <div class="product-block">
+          <img
+            src="https://stalwart-faloodeh-22bebe.netlify.app/public/assets/svg/marcas/web/gatuna/premium.svg"
+            alt="gatuna premium"
+          /><a class="btn-vermas">Premium</a>
+        </div>
+        <!--   </div> -->
         <!--  -->
         <!-- img marcas -->
 
@@ -175,21 +215,19 @@
       <div id="topbar-placeholder"></div>
     </div>
     <!--    <script src="./assets/logos-img.js"></script> -->
+    <script src="../css/loader.js"></script>
     <script type="module">
       import { addComponent, addNavFunc } from "../javascript/addComponents.js";
-
+      import { routeServer } from "../javascript/utils.js";
       // Espera a que el DOM esté completamente cargado antes de ejecutar el script
       document.addEventListener("DOMContentLoaded", async () => {
         await addComponent("navbar-placeholder", "../components/navbar.html");
         addNavFunc();
         addComponent("topbar-placeholder", "../components/footer.html");
       });
-      const BRAND_PATH =
-        "https://stalwart-faloodeh-22bebe.netlify.app/public/assets/svg/marcas/logos";
-      const MOBILE_PATH =
-        "https://stalwart-faloodeh-22bebe.netlify.app/public/assets/svg/marcas/mobile";
-      const WEB_PATH =
-        "https://stalwart-faloodeh-22bebe.netlify.app/public/assets/svg/marcas/web";
+      const BRAND_PATH = `${routeServer}/marcas/logos`;
+      const MOBILE_PATH = `${routeServer}/marcas/mobile`;
+      const WEB_PATH = `${routeServer}/marcas/web`;
       const BRANDS = ["london", "gatuna", "pipicat", "hey"];
       const CATEGORIES = ["basica", "premium", "super", "black"];
 
@@ -223,7 +261,7 @@
         for (const b of BRANDS) {
           const url = `${BRAND_PATH}/${b}.png`;
           if (await imageExists(url)) {
-            const img = document.createElement("img");
+            const img = document.getElementById("img");
             img.src = url;
             img.alt = b;
             if (b === active) img.classList.add("active");
@@ -275,9 +313,9 @@
 
       // Inicializa todo
       async function init() {
-        const brand = getBrand();
+        /*      const brand = getBrand();
         await renderBrands(brand);
-        await renderProducts(brand);
+        await renderProducts(brand); */
       }
 
       // React to history nav & resize
