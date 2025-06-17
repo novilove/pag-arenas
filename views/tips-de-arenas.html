@@ -43,20 +43,33 @@
         justify-content: space-between;
         gap: 20px; /* antes 40px */
         flex-wrap: wrap;
-        padding: 0 2rem;
+        /*       padding: 0 2rem; */
       }
-
+      .tips-image {
+        padding-left: 2rem;
+      }
+      .tips-image.right {
+        padding-right: 2rem;
+      }
       .tips-image img {
         width: 100%; /* que ocupe el ancho disponible de su contenedor */
-        max-width: 85%; /* puedes ajustar este valor */
+        /*     max-width: 85%; */ /* puedes ajustar este valor */
         height: auto;
         border-radius: 10px;
       }
 
       .tips-text {
         flex: 1;
-        min-width: 280px;
-        max-width: 800px;
+        /*       min-width: 280px;
+        max-width: 800px; */
+        padding-right: 2rem;
+        font-family: "Open Sans", sans-serif;
+      }
+      .tips-text.right {
+        flex: 1;
+        /*       min-width: 280px;
+        max-width: 800px; */
+        padding-left: 2rem;
         font-family: "Open Sans", sans-serif;
       }
 
@@ -160,29 +173,30 @@
             uso de las arenas
           </h1> -->
           <div>
-            <div class="cola-title mt-4 pt-4"></div>
-            <div class="col-sm-12 col-md-12 hero-content cate">
+            <div class="cola-title mt-4 pt-4" style="z-index: 99"></div>
+            <div class="col-sm-12 col-md-12 hero-content cate my-2">
               <h1 class="my-0" style="line-height: 100%">
-                Tips esenciales<br />
-                para un buen <br />
+                Tips esenciales para un buen <br />
                 <h2 class="my-0">uso de las arenas</h2>
               </h1>
             </div>
           </div>
-          <div class="tips-content">
-            <div class="tips-image">
+          <div class="tips-content col-sm-12">
+            <div class="tips-image col-md-6 col-sm-12">
               <img
                 src="https://stalwart-faloodeh-22bebe.netlify.app/public/assets/svg/tips/tip-cat-1.svg"
                 alt="Gatito con arenero"
               />
             </div>
-            <div class="tips-text">
-              <h2><strong>¡Cambia la arena con regularidad!</strong></h2>
-              <strong>
+            <div class="tips-text col-md-6 col-sm-12">
+              <h2 style="font-family: Gotham" class="mb-2">
+                <strong>¡Cambia la arena con regularidad!</strong>
+              </h2>
+              <strong style="font-size: 12px">
                 ¿Sabías que cambiar la arena regularmente ayuda a mantener un
-                ambiente más higiénico y libre de bacterias?
-              </strong>
-              <p>
+                ambiente más higiénico y libre de bacterias? </strong
+              ><br />
+              <p style="font-family: Open sans" class="mt-2 mb-4">
                 Esto ocurre porque los restos en el fondo del arenero pierden su
                 efectividad bactericida y virucida, acumulando suciedad que
                 puede ser un vector de enfermedades para los gatos y el hogar.
@@ -190,19 +204,19 @@
             </div>
           </div>
           <div class="tips-content">
-            <div class="tips-text">
-              <h2>
+            <div class="tips-text right">
+              <h2 style="font-family: Gotham" class="mb-2">
                 <strong
                   >¿Por que se recomienda tener mas de un<br />
                   arenero en casa?</strong
                 >
               </h2>
-              <strong>
+              <strong style="font-size: 12px">
                 Recuerda que lo ideal es tener dos areneros por gato, ya que en
                 el mundo de los gatos la orina y las heces cumplen funciones de
-                comunicación diferentes.
-              </strong>
-              <p>
+                comunicación diferentes. </strong
+              ><br />
+              <p style="font-family: Open sans" class="mt-2">
                 Se recomienda tener dos areneros por gato porque los felinos
                 separan orina y heces para evitar estimulos olfativos excesivos.
                 Esto reduce el estrés y los conflictos, especialmente en hogares
@@ -210,7 +224,7 @@
               </p>
             </div>
             <div class="d-center col-md-6 row">
-              <div id="bubble" class="tips-image">
+              <div id="bubble" class="tips-image right">
                 <div class="col-md-12 bubble-text">
                   <div class="tips-text2">
                     <h6>
@@ -233,7 +247,7 @@
                   <span class="small-bubble" style="margin-right: 40px"></span>
                 </div>
               </div>
-              <div id="img-2-tips" class="tips-image">
+              <div id="img-2-tips" class="tips-image right">
                 <img
                   src="https://stalwart-faloodeh-22bebe.netlify.app/public/assets/svg/tips/tip-cat-2.svg"
                   alt="Gatito con arenero"
@@ -242,14 +256,14 @@
             </div>
           </div>
           <div class="row col-md-12 align-right">
-            <div class="tips-text col-md-10">
+            <div class="tips-tex2 col-md-10">
               <h2><strong>¡No mezcles arenas!</strong></h2>
-              <strong>
+              <p style="font-family: Open sans" class="mt-2 mb-4">
                 Mezclar distintos tipos de arena para gatos<br />
                 puede afectar su rendimiento, disminuyendo<br />
                 cualidades importantes como la capacidad de<br />
                 formar grumos o controlar olores.
-              </strong>
+              </p>
             </div>
             <div class="radius-text row col-md-10">
               <div class="tips-text3 col-md-8">
@@ -261,15 +275,17 @@
             </div>
           </div>
           <div class="row col-md-12 align-right">
-            <div class="tips-text col-md-10">
+            <div class="tips-text2 col-md-10">
               <h2>
-                <strong>Elige la textura de arena que tu gato prefiera</strong>
+                <strong
+                  >Elige la textura de arena<br />que tu gato prefiera</strong
+                >
               </h2>
-              <strong>
+              <p style="font-family: Open sans" class="mt-2 mb-4">
                 Prefiere las arenas que no irriten el tacto de tu<br />mascota,
                 muchos de los gatos prefieren arenas<br />de granulometría fina
                 o redondeadas ya que es<br />más cómodo para sus almohadillas.
-              </strong>
+              </p>
             </div>
             <div class="radius-text row col-md-10">
               <div class="tips-text3 col-md-8">

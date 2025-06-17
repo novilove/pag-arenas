@@ -48,15 +48,15 @@ export const contentMapping = {
     extra: [
       {
         src: "https://stalwart-faloodeh-22bebe.netlify.app/public/assets/svg/marcas/web/gatuna/premium.svg",
-        urlRedirect: "/item-marca.html?brand=gatuna&category=premium",
+        urlRedirect: "/views/item-marca.html?brand=gatuna&category=premium",
       },
       {
         src: "https://stalwart-faloodeh-22bebe.netlify.app/public/assets/svg/marcas/web/london/basica.svg",
-        urlRedirect: "/item-marca.html?brand=london&category=basica",
+        urlRedirect: "/views/item-marca.html?brand=london&category=basica",
       },
       {
         src: "https://stalwart-faloodeh-22bebe.netlify.app/public/assets/svg/marcas/web/pipicat/premium.svg",
-        urlRedirect: "/item-marca.html?brand=pipicat&category=premium",
+        urlRedirect: "/views/item-marca.html?brand=pipicat&category=premium",
       },
     ],
   },
@@ -102,15 +102,15 @@ export const contentMapping = {
     extra: [
       {
         src: "https://stalwart-faloodeh-22bebe.netlify.app/public/assets/svg/marcas/web/pipicat/premium.svg",
-        urlRedirect: "/item-marca.html?brand=pipicat&category=premium",
+        urlRedirect: "/views/item-marca.html?brand=pipicat&category=premium",
       },
       {
         src: "https://stalwart-faloodeh-22bebe.netlify.app/public/assets/svg/marcas/web/london/black.svg",
-        urlRedirect: "/item-marca.html?brand=london&category=black",
+        urlRedirect: "/views/item-marca.html?brand=london&category=black",
       },
       {
         src: "https://stalwart-faloodeh-22bebe.netlify.app/public/assets/svg/marcas/web/gatuna/premium.svg",
-        urlRedirect: "/item-marca.html?brand=gatuna&category=premium",
+        urlRedirect: "/views/item-marca.html?brand=gatuna&category=premium",
       },
     ],
   },
@@ -157,16 +157,16 @@ export const contentMapping = {
     extra: [
       {
         src: "https://stalwart-faloodeh-22bebe.netlify.app/public/assets/svg/marcas/web/hey/basica.svg",
-        urlRedirect: "/item-marca.html?brand=hey&category=basica",
+        urlRedirect: "/views/item-marca.html?brand=hey&category=basica",
       },
 
       {
         src: "https://stalwart-faloodeh-22bebe.netlify.app/public/assets/svg/marcas/web/pipicat/super.svg",
-        urlRedirect: "/item-marca.html?brand=pipicat&category=super",
+        urlRedirect: "/views/item-marca.html?brand=pipicat&category=super",
       },
       {
         src: "https://stalwart-faloodeh-22bebe.netlify.app/public/assets/svg/marcas/web/london/black.svg",
-        urlRedirect: "/item-marca.html?brand=london&category=black",
+        urlRedirect: "/views/item-marca.html?brand=london&category=black",
       },
     ],
   },
@@ -210,15 +210,15 @@ export const contentMapping = {
     extra: [
       {
         src: "https://stalwart-faloodeh-22bebe.netlify.app/public/assets/svg/marcas/web/london/basica.svg",
-        urlRedirect: "/item-marca.html?brand=london&category=basica",
+        urlRedirect: "@/item-marca.html?brand=london&category=basica",
       },
       {
         src: "https://stalwart-faloodeh-22bebe.netlify.app/public/assets/svg/marcas/web/hey/basica.svg",
-        urlRedirect: "/item-marca.html?brand=hey&category=basica",
+        urlRedirect: "/views/item-marca.html?brand=hey&category=basica",
       },
       {
         src: "https://stalwart-faloodeh-22bebe.netlify.app/public/assets/svg/marcas/web/pipicat/premium.svg",
-        urlRedirect: "/item-marca.html?brand=pipicat&category=premium",
+        urlRedirect: "/views/item-marca.html?brand=pipicat&category=premium",
       },
     ],
   },
@@ -240,10 +240,10 @@ export const contentMapping = {
       // Subtítulo imagen
       "description-marca-text": "Neutraliza el olor a pipí",
       // Texto dentro de .arena
-      "cat-image-text-1": "Tecnología especial de neutralización de olores",
+      "cat-image-text-1": "Tecnología especial de<br/>neutralización de olores",
       "cat-image-text-2": "combate los fuertes olores a amoníaco al instante.",
       // Texto en versión móvil
-      "cat-image-text-3": "Tecnología especial de neutralización de olores",
+      "cat-image-text-3": "Tecnología especial de<br/>neutralización de olores",
       "cat-image-text-4": "combate los fuertes olores a amoníaco al instante.",
       /* CHAT */
       "chat-container": ` <div class="chat-bubble right col-md-7 light" style="display: flex;align-items: center;" >con aroma Neutro <img src="https://stalwart-faloodeh-22bebe.netlify.app/public/assets/svg/marcas/web/pipicat/super/aroma.png" style="width:32px;height:32px" alt='london Básica' class='logo-marca ml-2'/></div>
@@ -265,16 +265,16 @@ export const contentMapping = {
     extra: [
       {
         src: "https://stalwart-faloodeh-22bebe.netlify.app/public/assets/svg/marcas/web/london/basica.svg",
-        urlRedirect: "/item-marca.html?brand=london&category=black",
+        urlRedirect: "/views/item-marca.html?brand=london&category=black",
       },
 
       {
         src: "https://stalwart-faloodeh-22bebe.netlify.app/public/assets/svg/marcas/web/gatuna/premium.svg",
-        urlRedirect: "/item-marca.html?brand=gatuna&category=premium",
+        urlRedirect: "/views/item-marca.html?brand=gatuna&category=premium",
       },
       {
         src: "https://stalwart-faloodeh-22bebe.netlify.app/public/assets/svg/marcas/web/hey/basica.svg",
-        urlRedirect: "/item-marca.html?brand=hey&category=basica",
+        urlRedirect: "/views/item-marca.html?brand=hey&category=basica",
       },
     ],
   },
@@ -323,15 +323,15 @@ export const contentMapping = {
     extra: [
       {
         src: "https://stalwart-faloodeh-22bebe.netlify.app/public/assets/svg/marcas/web/gatuna/premium.svg",
-        urlRedirect: "/item-marca.html?brand=gatuna&category=premium",
+        urlRedirect: "/views/item-marca.html?brand=gatuna&category=premium",
       },
       {
         src: "https://stalwart-faloodeh-22bebe.netlify.app/public/assets/svg/marcas/web/pipicat/premium.svg",
-        urlRedirect: "/item-marca.html?brand=pipicat&category=premium",
+        urlRedirect: "/views/item-marca.html?brand=pipicat&category=premium",
       },
       {
         src: "https://stalwart-faloodeh-22bebe.netlify.app/public/assets/svg/marcas/web/pipicat/super.svg",
-        urlRedirect: "/item-marca.html?brand=pipicat&category=super",
+        urlRedirect: "/views/item-marca.html?brand=pipicat&category=super",
       },
     ],
   },
