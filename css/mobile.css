@@ -377,11 +377,15 @@
     margin: 0;
     word-wrap: break-word !important;
   }
-  /*  .tips-text {
-    text-align: center !important;
-  } */
+  .tips-text {
+    padding: 2rem;
+  }
   .tips-content {
-    padding: 0 1rem !important;
+    padding: 0 !important;
     color: #707070;
+    width: 100%;
+  }
+  .tips-image {
+    padding: 0 !important;
   }
 }

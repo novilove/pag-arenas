@@ -51,14 +51,12 @@ async function renderProducts(brand) {
   const cont = document.getElementById("products-container");
   cont.innerHTML = "";
   const base = (isMobile() ? MOBILE_PATH : WEB_PATH) + "/" + brand;
-  console.log(brand);
   for (const cat of CATEGORIES[brand]) {
     const imgUrl = `${base}/${cat}.svg`;
     /*  if (await imageExists(imgUrl)) { */
     const block = document.createElement("a");
     block.className = "product-block";
 
-    console.log(`Cargando imagen: ${imgUrl}`);
     const img = document.createElement("img");
     img.src = imgUrl;
     img.alt = `${brand} ${cat}`;

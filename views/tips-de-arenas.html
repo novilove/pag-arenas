@@ -20,12 +20,20 @@
     <style>
       .tips-section {
         background-color: #f8f8f8;
+        position: relative;
       }
-
+      .white {
+        color: #f8f8f8;
+      }
       .container-tips {
         max-width: 1440px;
         width: 100%;
         margin: 0 auto;
+      }
+      h5 {
+        font-size: 32px;
+        font-family: "Open Sans";
+        font-weight: 400;
       }
 
       .main-title {
@@ -140,9 +148,15 @@
         align-items: anchor-center;
         justify-content: center;
         padding: 0.5rem 0;
-        border-top-left-radius: 100rem;
-        border-bottom-left-radius: 100rem;
+        border-top-left-radius: 50rem;
+        border-bottom-left-radius: 50rem;
         margin: 1rem 0;
+      }
+      .radius-text.radius-right {
+        border-top-right-radius: 50rem;
+        border-bottom-right-radius: 50rem;
+        border-top-left-radius: 0;
+        border-bottom-left-radius: 0;
       }
 
       #bubble {
@@ -256,7 +270,7 @@
             </div>
           </div>
           <div class="row col-md-12 align-right">
-            <div class="tips-tex2 col-md-10">
+            <div class="tips-text right col-md-8" style="flex: auto">
               <h2><strong>¡No mezcles arenas!</strong></h2>
               <p style="font-family: Open sans" class="mt-2 mb-4">
                 Mezclar distintos tipos de arena para gatos<br />
@@ -265,34 +279,44 @@
                 formar grumos o controlar olores.
               </p>
             </div>
-            <div class="radius-text row col-md-10">
-              <div class="tips-text3 col-md-8">
+            <div class="radius-text row col-md-8">
+              <div class="tips-text col-md-8 white">
                 <h5>
-                  Elige una arena que se adapte a las necesidades de su gato<br />
+                  Elige una arena que se adapte a las necesidades de su gato
                   (aglomerante, con o sin aroma, ecológica, etc.).
                 </h5>
               </div>
             </div>
           </div>
-          <div class="row col-md-12 align-right">
-            <div class="tips-text2 col-md-10">
-              <h2>
-                <strong
-                  >Elige la textura de arena<br />que tu gato prefiera</strong
-                >
-              </h2>
-              <p style="font-family: Open sans" class="mt-2 mb-4">
-                Prefiere las arenas que no irriten el tacto de tu<br />mascota,
-                muchos de los gatos prefieren arenas<br />de granulometría fina
-                o redondeadas ya que es<br />más cómodo para sus almohadillas.
-              </p>
+          <div
+            class="row col-md-12 align-right"
+            style="justify-content: flex-start !important"
+          >
+            <div
+              class="tips-text col-md-12"
+              style="flex: auto; justify-items: center"
+            >
+              <div class="tips-text col-md-4" style="flex: auto">
+                <h2>
+                  <strong
+                    >Elige la textura de arena<br />que tu gato prefiera</strong
+                  >
+                </h2>
+                <p style="font-family: Open sans" class="mt-2 mb-4">
+                  Prefiere las arenas que no irriten el tacto<br />de tu
+                  mascota, muchos de los gatos<br />prefieren arenas de
+                  granulometría fina o<br />redondeadas ya que es más cómodo<br />para
+                  sus almohadillas.
+                </p>
+              </div>
             </div>
-            <div class="radius-text row col-md-10">
-              <div class="tips-text3 col-md-8">
+
+            <div class="radius-text radius-right row col-md-10">
+              <div class="tips-text col-md-8 white">
                 <h5>
                   Cada gato tiene preferencias únicas; elegir una textura de
-                  arena que le<br />resulte cómoda asegura su bienestar y
-                  fomenta su uso del arenero.
+                  arena que le resulte cómoda asegura su bienestar y fomenta su
+                  uso del arenero.
                 </h5>
               </div>
             </div>

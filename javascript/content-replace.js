@@ -15,7 +15,7 @@ function applyContent() {
     console.warn(`No mapping for ${key}`);
     return;
   }
-  console.log(`Aplicando contenido para:`, map);
+  /*   console.log(`Aplicando contenido para:`, map); */
   // 1) Aplica colores CSS variables
   if (map.colors) {
     const root = document.documentElement;
@@ -31,9 +31,8 @@ function applyContent() {
     const el = document.getElementById(`${selector}`);
     if (el) {
       el.innerHTML = html;
-      if (selector === "chat-container" && key == "premium-pipicat") {
-      }
-      console.log(`Contenido actualizado para ${selector}`);
+
+      /*  console.log(`Contenido actualizado para ${selector}`); */
     } else {
       console.warn(`Selector not found: ${selector}`);
     }
@@ -54,8 +53,12 @@ function applyContent() {
     playAt(map.video.src);
   } else {
     newVideo = document.createElement("img");
-    newVideo.id = "carouselVideo";
-    newVideo.className = "carousel-video";
+    newVideo.style.width = "100%";
+    video.style.padding = "0";
+    video.style.background = "transparent";
+
+    /*     newVideo.id = "carouselVideo"; */
+    /*    newVideo.className = "carousel-video"; */
     newVideo.src = map.video.src;
     video.appendChild(newVideo);
   }
@@ -77,7 +80,6 @@ function playAt(src) {
   const vidEl = document.getElementById("carouselVideo");
 
   vidEl.pause();
-  console.log("Cambiando video a:", src);
   vidEl.src = src;
   vidEl.load();
 }
