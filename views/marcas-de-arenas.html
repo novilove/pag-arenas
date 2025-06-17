@@ -6,7 +6,6 @@
     <title>Marcas de arenas</title>
     <link rel="stylesheet" href="../css/styles.css" />
     <link rel="stylesheet" href="../css/loading.css" />
-
     <link rel="stylesheet" href="../css/grid.css" />
     <link rel="stylesheet" href="../css/spacing-utilities.css" />
     <link rel="stylesheet" href="../css/global.css" />
@@ -36,9 +35,10 @@
       /* --- Logos row --- */
       .brand-row {
         display: flex;
+        z-index: 3;
         justify-content: space-evenly;
-        margin-top: 3rem;
-        margin: 4rem;
+        /*  margin-top: 3rem; */
+        margin: 3rem 6rem;
       }
       .brand-row img {
         width: 90px;
@@ -90,6 +90,16 @@
         cursor: pointer;
         z-index: 3;
       }
+      .fondo-marcas {
+        background: url("https://stalwart-faloodeh-22bebe.netlify.app/public/assets/svg/marcas/fondo.svg")
+          no-repeat;
+        background-position: right;
+        position: absolute;
+        width: 100%;
+        background-size: contain;
+        height: 30rem;
+        z-index: 0;
+      }
 
       /* Responsive tweaks */
       @media (max-width: 769px) {
@@ -108,6 +118,16 @@
         .product-block img {
           max-width: 250px;
         }
+        .fondo-marcas {
+          background: url("https://stalwart-faloodeh-22bebe.netlify.app/public/assets/svg/marcas/fondo.svg")
+            no-repeat;
+          background-position: center;
+          position: absolute;
+          width: 100%;
+          background-size: contain;
+          height: 16rem;
+          z-index: 0;
+        }
       }
     </style>
   </head>
@@ -124,7 +144,8 @@
       ></div>
       <!-- Loader overlay -->
 
-      <div class="fondo-marcas">
+      <div style="position: relative">
+        <div class="fondo-marcas"></div>
         <!-- title -->
         <!--          <div class="col-sm-12 col-md-12">
             <h1 class="mb-0 text-center">Nuestras marcas</h1>
@@ -143,20 +164,20 @@
         <!-- Logos de marcas -->
         <!--     <div id="brand-row" class="brand-row"></div> -->
         <div id="brand-row" class="brand-row">
-          <img
-            src="https://stalwart-faloodeh-22bebe.netlify.app/public/assets/svg/marcas/logos/london.png"
+          <!--  <img
+            src="https://stalwart-faloodeh-22bebe.netlify.app/public/assets/svg/iconos/logos/1.png"
             alt="london"
           /><img
-            src="https://stalwart-faloodeh-22bebe.netlify.app/public/assets/svg/marcas/logos/gatuna.png"
+            src="https://stalwart-faloodeh-22bebe.netlify.app/public/assets/svg/iconos/logos/2.png"
             alt="gatuna"
             class="active"
           /><img
-            src="https://stalwart-faloodeh-22bebe.netlify.app/public/assets/svg/marcas/logos/pipicat.png"
+            src="https://stalwart-faloodeh-22bebe.netlify.app/public/assets/svg/iconos/logos/3.png"
             alt="pipicat"
           /><img
-            src="https://stalwart-faloodeh-22bebe.netlify.app/public/assets/svg/marcas/logos/hey.png"
+            src="https://stalwart-faloodeh-22bebe.netlify.app/public/assets/svg/iconos/logos/4.png"
             alt="hey"
-          />
+          /> -->
         </div>
 
         <!-- Loader Overlay -->
@@ -173,11 +194,25 @@
         <!--         <div id="page-content" style="visibility: hidden"> -->
         <!-- Galería de productos -->
         <!--    <div id="products-container" class="products-grid"></div> -->
-        <div class="product-block">
-          <img
+        <div class="carousel-slide" style="aspect-ratio: 0 !important">
+          <!--           <a id="products">
+ <img
             src="https://stalwart-faloodeh-22bebe.netlify.app/public/assets/svg/marcas/web/gatuna/premium.svg"
             alt="gatuna premium"
-          /><a class="btn-vermas">Premium</a>
+          />
+          </a>
+         <a class="btn-vermas">Premium</a> -->
+          <div id="page-loader">
+            <div id="loader-slides">
+              <img src="../assets/loading_novi/Container.svg" class="slide" />
+              <img src="../assets/loading_novi/Container-1.svg" class="slide" />
+              <img src="../assets/loading_novi/Container-2.svg" class="slide" />
+              <img src="../assets/loading_novi/Container-3.svg" class="slide" />
+            </div>
+          </div>
+          <div id="page-content">
+            <div id="products-container" class="products-grid"></div>
+          </div>
         </div>
         <!--   </div> -->
         <!--  -->
@@ -215,115 +250,15 @@
       <div id="topbar-placeholder"></div>
     </div>
     <!--    <script src="./assets/logos-img.js"></script> -->
-    <script src="../css/loader.js"></script>
+    <script type="module" src="../javascript/brands.js"></script>
+
     <script type="module">
       import { addComponent, addNavFunc } from "../javascript/addComponents.js";
-      import { routeServer } from "../javascript/utils.js";
       // Espera a que el DOM esté completamente cargado antes de ejecutar el script
       document.addEventListener("DOMContentLoaded", async () => {
         await addComponent("navbar-placeholder", "../components/navbar.html");
         addNavFunc();
         addComponent("topbar-placeholder", "../components/footer.html");
-      });
-      const BRAND_PATH = `${routeServer}/marcas/logos`;
-      const MOBILE_PATH = `${routeServer}/marcas/mobile`;
-      const WEB_PATH = `${routeServer}/marcas/web`;
-      const BRANDS = ["london", "gatuna", "pipicat", "hey"];
-      const CATEGORIES = ["basica", "premium", "super", "black"];
-
-      const MOBILE_BREAK = 767;
-
-      // Utility: test imagen sin CORS
-      function imageExists(url) {
-        return new Promise((res) => {
-          const i = new Image();
-          i.src = url;
-          i.onload = () => res(true);
-          i.onerror = () => res(false);
-        });
-      }
-
-      // Saber móvil vs. web
-      function isMobile() {
-        return window.innerWidth <= MOBILE_BREAK;
-      }
-
-      // Leer brand de URL
-      function getBrand() {
-        const p = new URLSearchParams(location.search);
-        return p.get("brand") || "london";
-      }
-
-      // Render row de logos
-      async function renderBrands(active) {
-        const row = document.getElementById("brand-row");
-        row.innerHTML = "";
-        for (const b of BRANDS) {
-          const url = `${BRAND_PATH}/${b}.png`;
-          if (await imageExists(url)) {
-            const img = document.getElementById("img");
-            img.src = url;
-            img.alt = b;
-            if (b === active) img.classList.add("active");
-            img.addEventListener("click", () => {
-              history.pushState({ brand: b }, "", `?brand=${b}`);
-              init();
-            });
-            row.appendChild(img);
-          }
-        }
-      }
-
-      // Render productos para la marca (todas las categorías que existan)
-      async function renderProducts(brand) {
-        const cont = document.getElementById("products-container");
-        cont.innerHTML = "";
-        const base = (isMobile() ? MOBILE_PATH : WEB_PATH) + "/" + brand;
-        for (const cat of CATEGORIES) {
-          const imgUrl = `${base}/${cat}.svg`;
-          if (await imageExists(imgUrl)) {
-            const block = document.createElement("div");
-            block.className = "product-block";
-
-            const img = document.createElement("img");
-            img.src = imgUrl;
-            img.alt = `${brand} ${cat}`;
-
-            const btn = document.createElement("a");
-            btn.className = "btn-vermas";
-            btn.textContent = cat[0].toUpperCase() + cat.slice(1);
-            btn.addEventListener("click", () => {
-              window.location.href = `/views/item-marca.html?brand=${brand}&category=${cat}`;
-            });
-            block.addEventListener("click", () => {
-              window.location.href = `/views/item-marca.html?brand=${brand}&category=${cat}`;
-            });
-
-            block.append(img, btn);
-            cont.appendChild(block);
-          }
-        }
-        // Si sólo hay un bloque, agregar clase 'single'
-        if (cont.children.length === 1) {
-          cont.classList.add("single");
-        } else {
-          cont.classList.remove("single");
-        }
-      }
-
-      // Inicializa todo
-      async function init() {
-        /*      const brand = getBrand();
-        await renderBrands(brand);
-        await renderProducts(brand); */
-      }
-
-      // React to history nav & resize
-      window.addEventListener("popstate", init);
-      window.addEventListener("DOMContentLoaded", init);
-      window.addEventListener("resize", () => {
-        clearTimeout(window._r);
-        window._r = setTimeout(init, 200);
       });
     </script>
   </body>

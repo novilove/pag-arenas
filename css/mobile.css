@@ -175,7 +175,7 @@
   .carousel-container-2 {
     position: relative;
     max-width: 1440px;
-    margin: 0 3rem !important;
+    margin: 0 2rem !important;
     overflow: hidden;
   }
   .carousel-button {
@@ -211,7 +211,7 @@
     background: #c0d92c;
     color: #fff;
     border-radius: 8px;
-    cursor: pointer;
+    cursor: var(--cursor-pointer);
     transition: background 0.2s;
   }
   .filter-button.active,
@@ -230,7 +230,9 @@
     font-weight: 700 !important;
   }
   .special-image-container {
-    margin-right: 2rem;
+    /*    margin-right: 2rem; */
+    margin-left: 1rem !important;
+    width: 100dvw !important;
   }
   .hero-content.cate {
     padding-top: 20px;
@@ -243,11 +245,12 @@
     position: absolute;
     height: 11rem;
     width: 8rem;
+    margin-top: -0.5rem;
     background-position: right;
     background-size: contain;
   }
   .title-fondo-marca {
-    height: 45rem !important;
+    height: 40rem !important;
   }
   .title-fondo-marca h2.gotham.white {
     color: #fafafa;
@@ -312,7 +315,7 @@
   }
 
   .product-img {
-    margin-top: -7rem;
+    margin-top: -10rem;
     object-fit: contain !important;
     width: 80% !important;
     position: absolute;

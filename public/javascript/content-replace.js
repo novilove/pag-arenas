@@ -1,11 +1,11 @@
-import { contentMapping, pageMapping } from "./contentMapping.js";
+import { contentMapping } from "./contentMapping.js";
 
 function getParam(name, def) {
   const p = new URLSearchParams(window.location.search);
   return p.get(name) || def;
 }
 
-function applyContent() {
+async function applyContent() {
   const category = getParam("filtro", "basica");
   const brand = getParam("brand", "hey");
   const key = `${category}-${brand}`;
@@ -24,16 +24,58 @@ function applyContent() {
   }
 
   // 2) Reemplaza solo el innerHTML de cada selector
-  Object.entries(map).forEach(([selector, html]) => {
-    if (selector === "colors") return;
-    const el = document.querySelector(selector);
+  Object.entries(map.text).forEach(([selector, html]) => {
+    const el = document.getElementById(`${selector}`);
     if (el) {
       el.innerHTML = html;
+      console.log(`Contenido actualizado para ${selector}`);
     } else {
       console.warn(`Selector not found: ${selector}`);
     }
   });
+  /* VIDEO */
+  const video = document.getElementById(`video-wrapper`);
+  /*  video.innerHTML = "";
+c */
+  let newVideo;
+  if (map.video.isVideo) {
+    newVideo = document.createElement("video");
+    newVideo.id = "carouselVideo";
+    newVideo.className = "carousel-video";
+    newVideo.controls = true;
+    newVideo.muted = true;
+    newVideo.preload = "metadata";
+    newVideo.src = map.videoSrc;
+  } else {
+    newVideo = document.createElement("img");
+    newVideo.id = "carouselVideo";
+    newVideo.className = "carousel-video";
+    newVideo.src = map.videoSrc;
+  }
+  // Limpia el contenido previo
+  video.appendChild(newVideo);
+
+  /* MORE PRODUCTS */
+  const moreProducts = document.getElementById("brand-row");
+  map.extra.map((item) => {
+    const a = document.createElement("a");
+    a.href = item.urlRedirect;
+    const img = document.createElement("img");
+    img.src = item.src;
+    a.appendChild(img);
+    moreProducts.appendChild(a);
+  });
+  /* <!-- <video
+            id="carouselVideo"
+            class="carousel-video"
+            controls=""
+            muted=""
+            preload="metadata"
+            src="https://stalwart-faloodeh-22bebe.netlify.app/public/assets/video/hey-basica.mp4"
+          */
 }
+export { applyContent, getParam };
+
 /* 
 
 function initCarouselAndBrands() {
@@ -72,5 +114,5 @@ function initCarouselAndBrands() {
 window.addEventListener("DOMContentLoaded", initCarouselAndBrands);
 window.addEventListener("popstate", initCarouselAndBrands); */
 
-window.addEventListener("DOMContentLoaded", applyContent);
-window.addEventListener("popstate", applyContent);
+/* window.addEventListener("DOMContentLoaded", applyContent);
+window.addEventListener("popstate", applyContent); */

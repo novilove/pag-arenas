@@ -3,6 +3,15 @@
     /*     margin-top: -10rem; */
     height: 20rem;
   }
+  p {
+    font-size: 1rem !important;
+  }
+  .content {
+    z-index: 10 !important;
+    border: #c2d500 1px solid;
+    background: #fafafa;
+    padding: 0.5rem;
+  }
   .carousel-dots {
     position: relative !important;
     z-index: 20 !important;
@@ -166,7 +175,7 @@
   .carousel-container-2 {
     position: relative;
     max-width: 1440px;
-    margin: 0 3rem !important;
+    margin: 0 2rem !important;
     overflow: hidden;
   }
   .carousel-button {
@@ -202,7 +211,7 @@
     background: #c0d92c;
     color: #fff;
     border-radius: 8px;
-    cursor: pointer;
+    cursor: var(--cursor-pointer);
     transition: background 0.2s;
   }
   .filter-button.active,
@@ -221,7 +230,9 @@
     font-weight: 700 !important;
   }
   .special-image-container {
-    margin-right: 2rem;
+    /*    margin-right: 2rem; */
+    margin-left: 1rem !important;
+    width: 100dvw !important;
   }
   .hero-content.cate {
     padding-top: 20px;
@@ -234,6 +245,7 @@
     position: absolute;
     height: 11rem;
     width: 8rem;
+    margin-top: -0.5rem;
     background-position: right;
     background-size: contain;
   }

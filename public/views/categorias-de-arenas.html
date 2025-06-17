@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Categorias de arenas</title>
     <link rel="stylesheet" href="../css/styles.css" />
-
+    <link rel="stylesheet" href="../css/loading.css" />
     <link rel="stylesheet" href="../css/grid.css" />
     <link rel="stylesheet" href="../css/spacing-utilities.css" />
     <link rel="stylesheet" href="../css/global.css" />
@@ -88,14 +88,29 @@
       <div class="carousel-container-2">
         <button id="prevBtn" class="carousel-arrow">&larr;</button>
         <div class="carousel-slide">
-          <img id="carouselImage" alt="Imagen de arena" />
+          <div id="page-loader">
+            <div id="loader-slides">
+              <img src="../assets/loading_novi/Container.svg" class="slide" />
+              <img src="../assets/loading_novi/Container-1.svg" class="slide" />
+              <img src="../assets/loading_novi/Container-2.svg" class="slide" />
+              <img src="../assets/loading_novi/Container-3.svg" class="slide" />
+            </div>
+          </div>
+          <div id="page-content" class="products-grid">
+            <a id="carouselImageLink">
+              <img id="carouselImage" alt="Imagen de arena" />
+            </a>
+          </div>
         </div>
         <button id="nextBtn" class="carousel-arrow">&rarr;</button>
         <div id="carouselDots" class="carousel-dots"></div>
       </div>
       <!-- Aquí irá la imagen extra (table.svg) -->
 
-      <div class="row my-4" style="align-content: center; z-index: 2">
+      <div
+        class="row my-4"
+        style="align-content: center; z-index: 2; position: relative"
+      >
         <div class="cola-title"></div>
         <!-- title -->
         <!--         <div style="margin-top: 10rem; width: 100%"> -->
@@ -112,8 +127,7 @@
 
       <div id="topbar-placeholder"></div>
     </div>
-
-    <script src="../javascript/gallery.js" defer></script>
+    <script type="module" src="../javascript/gallery.js"></script>
     <script type="module">
       import { addComponent, addNavFunc } from "../javascript/addComponents.js";
       // Espera a que el DOM esté completamente cargado antes de ejecutar el script

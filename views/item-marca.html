@@ -22,6 +22,7 @@
       :root {
         --light: #f0c41d;
         --dark: #ea527e;
+        --text-light-100: #fafafa;
       }
       .line-color-marca {
         background: var(--dark);
@@ -49,11 +50,12 @@
       }
 
       .product-img {
-        object-fit: contain;
-        width: 100%;
+        background-size: contain !important;
+
+        width: 85%;
         position: absolute;
         top: 0;
-        height: 30rem;
+        height: 33rem;
         overflow: hidden;
       }
       .img-description {
@@ -123,6 +125,7 @@
         color: white;
         font-size: 1rem;
         max-width: 100%;
+        font-weight: 100;
         word-wrap: break-word;
       }
 
@@ -161,6 +164,7 @@
         border: 10px solid transparent;
         border-top-color: var(--dark);
         border-bottom: 0;
+        /*        color: var(--text-light-100); */
         margin-right: -5px;
       }
       .brand-row {
@@ -174,13 +178,23 @@
         height: auto;
         cursor: pointer;
         opacity: 0.6;
-        transition: opacity 0.3s;
+        transition: opacity 0.3s ease, width 0.3s ease;
       }
-      .brand-row img.active,
+
+      .brand-row img:not(:hover) {
+        opacity: 1;
+      }
       .brand-row img:hover {
+        width: 215px;
         opacity: 1;
       }
 
+      .list-kg {
+        align-self: stretch;
+        justify-content: start;
+        align-items: center;
+        display: inline-flex;
+      }
       /* Responsividad */
       @media (max-width: 767px) {
         .brand-row img {
@@ -193,6 +207,9 @@
         .chat-bubble {
           font-size: 0.95rem;
           padding: 1rem 1.2rem;
+        }
+        .list-kg {
+          justify-content: space-evenly;
         }
       }
 
@@ -261,24 +278,16 @@
           "
           class="col-md-5 col-sm-12"
         >
-          <h2 class="gotham white">
+          <h2 class="gotham white" id="title-fondo-marca">
             Hey! Arena de<br />bentonita natural <br />Aroma lavanda
           </h2>
-          <div
-            style="
-              align-self: stretch;
-              justify-content: space-between;
-              align-items: center;
-              display: inline-flex;
-            "
-            class="list-kg"
-          >
+          <div id="list-kg" class="list-kg mr-4">
             <h3 class="gotham white">3kg</h3>
             <h3 class="gotham white">4kg</h3>
             <h3 class="gotham white">10kg</h3>
             <h3 class="gotham white">20kg</h3>
           </div>
-          <h4 class="gotham white">
+          <h4 class="gotham white" id="description-fondo-marca">
             Esta arena está especialmente formulada para neutralizar rápidamente
             los olores y es de bajo rastreo, por lo que hay menos suciedad y no
             hay rastros de arena esparcida.
@@ -293,12 +302,12 @@
       </div>
       <!-- picture decription -->
       <div class="row col-md-12 not-p-x">
-        <div class="col-md-7 img-description px-2"></div>
+        <div class="col-md-7 img-description px-2 py-2 mb-2"></div>
         <div
           class="col-md-7 color-primary-marca px-2"
           style="border-bottom-right-radius: 100rem"
         >
-          <h3 class="gotham white-banner my-0">
+          <h3 class="gotham white-banner my-0" id="description-marca-text">
             Aglutinación superior y con un agradable aroma a lavanda.
           </h3>
         </div>
@@ -308,10 +317,10 @@
 
         <div class="d-center row col-md-6 cat-1"></div>
         <div class="d-center row col-md-6 col-sm-0 under-sand">
-          <h3 class="gotham white-sand w-100 pb-0">
+          <h3 class="gotham white-sand w-100 pb-0" id="cat-image-text-1">
             Ideal para todo<br />tipo de areneros
           </h3>
-          <h4 class="gotham white-sand w-100 pt-0">
+          <h4 class="gotham white-sand w-100 pt-0" id="cat-image-text-2">
             y es muy eficaz en hogares<br />con varios gatos.
           </h4>
         </div>
@@ -319,11 +328,13 @@
         <div class="d-center row col-md-0 col-sm-12 my-auto" style="z-index: 4">
           <h3
             class="gotham white-sand w-100 py-0 pt-2 text-center line-color-marca"
+            id="cat-image-text-3"
           >
             Ideal para todo<br />tipo de areneros
           </h3>
           <h4
             class="gotham white-sand w-100 pt-0 pb-2 text-center line-color-marca"
+            id="cat-image-text-4"
           >
             y es muy eficaz en hogares<br />con varios gatos.
           </h4>
@@ -333,37 +344,20 @@
       <!-- >>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< -->
 
       <!-- CHATTTTT -->
-      <main class="chat-container col-md-10">
-        <div class="chat-bubble right col-md-7 light">con aroma Lavanda</div>
-
-        <div class="chat-bubble left col-md-7 dark">
-          Los gránulos crean una potente unión para<br />retener la humedad y
-          evitar que cualquier<br />líquido llegue al fondo de la bandeja
-          higiénica.
-        </div>
-
-        <div class="chat-bubble right col-md-7 light">
-          Es hipoalergénica a alérgenos comunes como<br />el polvo, las
-          proteínas vegetales y las fragancias.
-        </div>
-
-        <div class="chat-bubble left col-md-7 dark">
-          <strong> Mira el siguiente video</strong>
-        </div>
-      </main>
+      <main class="chat-container col-md-10" id="chat-container"></main>
       <!-- >>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< -->
 
       <!-- VIDEO -->
       <div class="video-carousel mt-4">
-        <div class="video-wrapper">
-          <video
+        <div class="video-wrapper" id="video-wrapper">
+          <!--   <video
             id="carouselVideo"
             class="carousel-video"
             controls=""
             muted=""
             preload="metadata"
             src="https://stalwart-faloodeh-22bebe.netlify.app/public/assets/video/hey-basica.mp4"
-          ></video>
+          ></video> -->
         </div>
       </div>
 
@@ -371,7 +365,7 @@
         <h2 class="my-0">Más <strong>Arenas...</strong></h2>
       </div>
       <div id="brand-row" class="brand-row">
-        <a href="/views/item-marca.html?brand=pipicat&category=premium">
+        <!--  <a href="/views/item-marca.html?brand=pipicat&category=premium">
           <img
             src="https://stalwart-faloodeh-22bebe.netlify.app/public/assets/svg/marcas/web/pipicat/premium.svg"
             alt="gatuna"
@@ -388,7 +382,7 @@
             src="https://stalwart-faloodeh-22bebe.netlify.app/public/assets/svg/marcas/web/london/basica.svg"
             alt="pipicat"
           />
-        </a>
+        </a> -->
       </div>
       <div id="topbar-placeholder"></div>
     </div>

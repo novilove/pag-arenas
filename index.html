@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Arenas</title>
     <link rel="stylesheet" href="./css/styles.css" />
-
+    <link rel="stylesheet" href="../css/loading.css" />
     <link rel="stylesheet" href="./css/grid.css" />
     <link rel="stylesheet" href="./css/spacing-utilities.css" />
     <link rel="stylesheet" href="./css/global.css" />
@@ -103,13 +103,25 @@
         "
       ></div>
       <!-- BANNERS -->
-      <div class="carousel-container">
+      <div class="carousel-container" style="border-radius: 0">
         <!-- Botón “anterior” -->
         <button id="prevButton" class="carousel-button">&larr;</button>
-
-        <!-- Envoltorio de la imagen + progress bar -->
         <div class="carousel-image-wrapper">
-          <img id="carouselImage" alt="Banner" />
+          <div id="page-loader">
+            <div id="loader-slides">
+              <img src="../assets/loading_novi/Container.svg" class="slide" />
+              <img src="../assets/loading_novi/Container-1.svg" class="slide" />
+              <img src="../assets/loading_novi/Container-2.svg" class="slide" />
+              <img src="../assets/loading_novi/Container-3.svg" class="slide" />
+            </div>
+          </div>
+          <div id="page-content" class="products-grid">
+            <a href="" id="hrefBanner">
+              <!-- Envoltorio de la imagen + progress bar -->
+              <img id="carouselImage" alt="Banner" />
+            </a>
+          </div>
+
           <!-- Barra de carga en la parte inferior de la imagen -->
           <div class="progress-bar">
             <div class="progress-fill"></div>
@@ -140,6 +152,7 @@
               <img
                 src="https://stalwart-faloodeh-22bebe.netlify.app/public/assets/svg/iconos/categoria/calidad.svg"
                 alt="Icono Calidad"
+                style="cursor: var(--cursor-auto)"
               />
               <p>Calidad</p>
             </a>
@@ -150,6 +163,7 @@
               <img
                 src="https://stalwart-faloodeh-22bebe.netlify.app/public/assets/svg/iconos/categoria/anti.svg"
                 alt="Icono Anti Alergias"
+                style="cursor: var(--cursor-auto)"
               />
               <p>Anti Alergias</p>
             </a>
@@ -160,6 +174,7 @@
               <img
                 src="https://stalwart-faloodeh-22bebe.netlify.app/public/assets/svg/iconos/categoria/aroma.svg"
                 alt="Icono Aromas"
+                style="cursor: var(--cursor-auto)"
               />
               <p>Aromas</p>
             </a>
@@ -170,6 +185,7 @@
               <img
                 src="https://stalwart-faloodeh-22bebe.netlify.app/public/assets/svg/iconos/categoria/precio.svg"
                 alt="Icono Precio"
+                style="cursor: var(--cursor-auto)"
               />
               <p>Precio</p>
             </a>
@@ -354,7 +370,7 @@
           <!-- 2 LONDON-->
           <div class="col-sm-12 col-md-12 row d-center timeline-item">
             <div
-              class="col-sm-6 col-md-5 text-right content"
+              class="col-sm-6 col-md-4 text-right content"
               style="text-wrap: wrap"
             >
               <h3 class="gotham text-right">London Cats</h3>
@@ -406,7 +422,7 @@
               </a>
             </div>
             <!--  parrafo-->
-            <div class="col-sm-6 col-md-5 pt-4 content" style="text-wrap: wrap">
+            <div class="col-sm-6 col-md-4 pt-4 content" style="text-wrap: wrap">
               <h3 class="gotham">Gatuna</h3>
               <p>
                 <br />En 2019, Gatuna se expande al mercado retail de Easy,

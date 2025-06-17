@@ -1,3 +1,5 @@
+import { setLoading } from "./loader.js";
+
 const MAX_IMAGES = 6;
 const MOBILE_PATH =
   "https://stalwart-faloodeh-22bebe.netlify.app/public/assets/svg/categorias/mobile";
@@ -5,7 +7,32 @@ const WEB_PATH =
   "https://stalwart-faloodeh-22bebe.netlify.app/public/assets/svg/categorias/web";
 const MOBILE_BREAK = 767;
 const SPECIAL_FILE = "table.svg";
-
+const CATEROGY_URLS = {
+  basica: [
+    { url: `/basica/1.jpg`, redirect: "brand=hey&category=basica" },
+    {
+      url: `/basica/2.jpg`,
+      redirect: "brand=london&category=basica",
+    },
+  ],
+  premium: [
+    {
+      url: `/premium/1.jpg`,
+      redirect: "brand=pipicat&category=premium",
+    },
+    {
+      url: `/premium/2.jpg`,
+      redirect: "brand=gatuna&category=premium",
+    },
+  ],
+  super: [
+    {
+      url: `/super/1.jpg`,
+      redirect: "brand=pipicat&category=super",
+    },
+  ],
+  black: [{ url: `/black/1.jpg`, redirect: "brand=london&category=black" }],
+};
 let imageUrls = [];
 let currentIndex = 0;
 let lastIsMobile = null;
@@ -28,6 +55,7 @@ function imageExists(url) {
 // Lee filtro de URL
 function getCategory() {
   const p = new URLSearchParams(window.location.search);
+  console.log(p.get("filtro"));
   return p.get("filtro") || "basica";
 }
 
@@ -42,14 +70,13 @@ function updateActiveFilter(cat) {
 
 // Genera lista de JPG existentes
 async function generateImageUrls(cat) {
-  const base = (isMobile() ? MOBILE_PATH : WEB_PATH) + "/" + cat;
+  const base = isMobile() ? MOBILE_PATH : WEB_PATH;
   const arr = [];
-  for (let i = 1; i <= MAX_IMAGES; i++) {
-    const url = `${base}/${i}.jpg`;
-    console.log(url);
-
-    if (await imageExists(url)) arr.push(url);
-  }
+  CATEROGY_URLS[cat].map((item) => {
+    item.url = `${base}${item.url}`;
+    arr.push(item);
+    return arr;
+  });
   return arr;
 }
 
@@ -57,6 +84,7 @@ async function generateImageUrls(cat) {
 function buildDots() {
   const dc = document.getElementById("carouselDots");
   dc.innerHTML = "";
+  console.log("Construyendo dots", imageUrls);
   imageUrls.forEach((_, idx) => {
     const d = document.createElement("span");
     d.className = "dot" + (idx === currentIndex ? " active" : "");
@@ -70,7 +98,11 @@ function buildDots() {
 // Muestra slide
 function showSlide(idx) {
   currentIndex = idx;
-  document.getElementById("carouselImage").src = imageUrls[idx];
+  console.log("Mostrando slide", idx, imageUrls[idx]);
+  document.getElementById(
+    "carouselImageLink"
+  ).href = `./item-marca.html?${imageUrls[idx].redirect}`;
+  document.getElementById("carouselImage").src = imageUrls[idx].url;
   document
     .querySelectorAll(".dot")
     .forEach((d, i) => d.classList.toggle("active", i === idx));
@@ -83,16 +115,18 @@ async function loadSpecialImage(cat) {
   const base = (isMobile() ? MOBILE_PATH : WEB_PATH) + "/" + cat;
   const url = `${base}/${SPECIAL_FILE}`;
 
-  if (await imageExists(url)) {
-    const img = document.createElement("img");
-    img.src = url;
-    img.alt = `${cat} summary table`;
-    container.appendChild(img);
-  }
+  /*   if (await imageExists(url)) { */
+  const img = document.createElement("img");
+  img.src = url;
+  img.alt = `${cat} summary table`;
+  container.appendChild(img);
+  /*   } */
 }
 
 // Inicializa o reinicializa todo
 async function initCarousel() {
+  setLoading(true);
+
   const cat = getCategory();
   updateActiveFilter(cat);
 
@@ -103,7 +137,6 @@ async function initCarousel() {
 
     // Carrusel
     imageUrls = await generateImageUrls(cat);
-    console.log(imageUrls);
     currentIndex = 0;
     buildDots();
     if (imageUrls.length) showSlide(0);
@@ -111,6 +144,8 @@ async function initCarousel() {
     // Imagen extra
     await loadSpecialImage(cat);
   }
+  /*  console.log("listo imágenes..."); */
+  setTimeout(() => setLoading(false), 1000); // Simula carga de imágenes
 }
 
 // Botones filtro
@@ -139,12 +174,15 @@ function bindArrows() {
 // Eventos
 window.addEventListener("DOMContentLoaded", () => {
   // Asegura data-category en botones
+  /*   preloadImages(); */
+  console.log("Cargando imágenes...");
   document.querySelectorAll(".filter-button").forEach((btn, i) => {
     if (!btn.dataset.category) {
       const cats = ["basica", "premium", "super", "black"];
       btn.dataset.category = cats[i] || "";
     }
   });
+
   bindFilters();
   bindArrows();
   initCarousel();

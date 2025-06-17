@@ -5,38 +5,55 @@ export const contentMapping = {
       light: "#f0c41d",
       dark: "#ea527e",
     },
-    // Título principal
-    ".title-fondo-marca h2.gotham.white":
-      "Hey! Arena Básica Premium<br/>Aroma lavanda",
-    // Lista de pesos
-    ".title-fondo-marca .list-kg": `<h3 class="gotham white">3kg</h3>
+    text: {
+      // Título principal
+      "title-fondo-marca": "Hey! Arena Básica Premium<br/>Aroma lavanda",
+      // Lista de pesos
+      "list-kg": `<h3 class="gotham white">3kg</h3>
        <h3 class="gotham white">5kg</h3>
        <h3 class="gotham white">12kg</h3>
        <h3 class="gotham white">25kg</h3>`,
-    // Descripción corta
-    ".title-fondo-marca h4.gotham.white":
-      "Esta arena básica combina eficacia y economía, neutralizando olores y reduciendo el rastreo.",
-    // Subtítulo imagen
-    ".color-primary-marca h3.gotham.white-banner":
-      "Aglutinación superior con fresco aroma a lavanda.",
-    // Texto dentro de .arena
-    ".arena .gotham.white-sand:nth-of-type(1)":
-      "Ideal para todo<br/>tipo de areneros",
-    ".arena .gotham.white-sand:nth-of-type(2)":
-      "y muy eficaz en hogares<br/>con varios gatos.",
-    // Texto en versión móvil
-    ".under-sand h3.gotham.white-sand": "Ideal para todo<br/>tipo de areneros",
-    ".under-sand h4.gotham.white-sand":
-      "y muy eficaz en hogares<br/>con varios gatos.",
-    /* CHAT */
-    ".chat-container > .chat-bubble.right.light:nth-child(1)":
-      "con aroma Lavanda",
-    ".chat-container > .chat-bubble.left.dark:nth-child(2)":
-      "Los gránulos crean una potente unión para retener la humedad y evitar que cualquier líquido llegue al fondo de la bandeja higiénica.",
-    ".chat-container > .chat-bubble.right.light:nth-child(3)":
-      "Es hipoalergénica a alérgenos comunes como el polvo, las proteínas vegetales y las fragancias.",
-    ".chat-container > .chat-bubble.left.dark:nth-child(4)":
-      "<strong>Mira el siguiente video</strong>",
+      // Descripción corta
+      "description-fondo-marca":
+        "Esta arena básica combina eficacia y economía, neutralizando olores y reduciendo el rastreo.",
+      // Subtítulo imagen
+      "description-marca-text":
+        "Aglutinación superior con fresco aroma a lavanda. ",
+      // Texto dentro de .arena
+      "cat-image-text-1": "Ideal para todo<br/>tipo de areneros",
+      "cat-image-text-2": "y muy eficaz en hogares<br/>con varios gatos.",
+      // Texto en versión móvil
+      "cat-image-text-3": "Ideal para todo<br/>tipo de areneros",
+      "cat-image-text-4": "y muy eficaz en hogares<br/>con varios gatos.",
+      /* CHAT */
+      "chat-container": ` <div class="chat-bubble right col-md-7 light" >con aroma Lavanda <img src='https://stalwart-faloodeh-22bebe.netlify.app/public/assets/marcas/hey/basica/aroma.svg' alt='Hey! Básica' class='logo-marca'/></div>
+
+        <div class="chat-bubble left col-md-7 dark">
+          Los gránulos crean una potente unión para<br />retener la humedad y
+          evitar que cualquier<br />líquido llegue al fondo de la bandeja
+          higiénica.
+        </div>
+
+        <div class="chat-bubble right col-md-7 light">
+          Es hipoalergénica a alérgenos comunes como<br />el polvo, las
+          proteínas vegetales y las fragancias.
+        </div>
+
+        <div class="chat-bubble left col-md-7 dark">
+          <strong> Mira el siguiente video</strong>
+        </div>`,
+    },
+
+    video: {
+      isVideo: true,
+      src: "https://stalwart-faloodeh-22bebe.netlify.app/public/assets/video/hey-basica.mp4",
+    },
+    extra: [
+      {
+        src: "https://stalwart-faloodeh-22bebe.netlify.app/public/assets/svg/marcas/web/pipicat/premium.svg",
+        urlRedirect: "/item-marca.html?brand=pipicat&category=premium",
+      },
+    ],
   },
   "basica-london": {
     colors: {
@@ -145,7 +162,7 @@ export const contentMapping = {
       "Genera menos suciedad y evita que la arena se disperse.",
     /* 3 */
     ".chat-container > .chat-bubble.right.light:nth-child(3)":
-      "Formulada para neutralizar olores rápidamente",
+      "Formulada para neutralizar olores rápidamente",
     /* 4 */
     ".chat-container > .chat-bubble.left.dark:nth-child(4)": "",
   },

@@ -9,11 +9,20 @@
   font-style: normal;
   font-display: swap; */
 }
+@font-face {
+  font-family: "Gotham";
+  src: url("./gotham/Gotham-Black.otf") format("woff2"),
+    url("./gotham/Gotham-Light.otf") format("woff2");
+  /*   font-weight: normal;
+  font-style: normal;
+  font-display: swap; */
+}
 body {
   width: 100%;
   max-width: 1440px;
   margin: 0 auto;
   background-color: #afbe95;
+  cursor: url("../assets/loading_novi/mouseAuto.png") 0 0, auto;
 }
 .fondo {
   background-color: #fafafa;
@@ -24,7 +33,15 @@ body {
   --text-dark: #333;
   --text-light: #e8f5d0;
   font-family: Calvert !important;
+  font-family: Gotham;
+
+  --cursor-pointer: url("../assets/loading_novi/mouse.png") 0 0, pointer !important;
+  --cursor-auto: url("../assets/loading_novi/mouse2.png") 0 0, auto !important;
 }
+/* a:hover,
+a:-webkit-any-link {
+  cursor: var(--cursor-auto);
+} */
 
 h1 {
   color: var(--Colors-Primary-600, #73a121);
@@ -60,7 +77,7 @@ a:not(.active) h3 {
   font-weight: 700 !important;
 }
 .cursor-pointer {
-  cursor: pointer;
+  cursor: var(--cursor-pointer);
 }
 .white-text {
   color: var(--Colors-Neutral-100, #fafafa);
@@ -71,7 +88,7 @@ a:not(.active) h3 {
 h3.gotham {
   color: #707070;
   font-size: 1.5em;
-  font-family: "Gotham";
+  font-family: Gotham;
   font-weight: 900 !important;
   line-height: 25.2px;
   margin: 0;
@@ -82,17 +99,18 @@ h3.gotham {
 h2.gotham.white {
   color: #fafafa;
   font-size: 2.5em;
-  font-family: "Gotham";
+  font-family: Gotham;
   font-weight: 900 !important;
   line-height: 1.2em;
   margin: 0;
-  padding: 2rem;
+  margin-left: 2rem;
+  margin-top: 2rem;
   word-wrap: break-word !important;
 }
 h3.gotham.white {
   color: #fafafa;
   font-size: 1.5em;
-  font-family: "Gotham";
+  font-family: Gotham;
   font-weight: 600 !important;
   line-height: 25.2px;
   padding: 1rem 2rem;
@@ -104,7 +122,7 @@ h3.gotham.white {
 h3.gotham.white-banner {
   color: #fafafa;
   font-size: 20px;
-  font-family: "Gotham";
+  font-family: Gotham;
   font-weight: 400 !important;
   line-height: 25.2px;
   padding: 1rem 2rem;
@@ -114,8 +132,8 @@ h3.gotham.white-banner {
 }
 h3.gotham.white-sand {
   color: #fafafa;
-  font-size: 20px;
-  font-family: "Gotham";
+  font-size: 32px;
+  font-family: Gotham;
   font-weight: 600 !important;
   line-height: 25.2px;
   padding: 1rem 2rem;
@@ -127,7 +145,7 @@ h4.gotham.white {
   font-size: 16px;
   padding: 1rem 2rem;
 
-  font-family: "Gotham";
+  font-family: Gotham;
   font-weight: 400 !important;
   line-height: 25.2px;
   margin: 0;
@@ -138,7 +156,7 @@ h4.gotham.white-sand {
   font-size: 16px;
   padding: 1rem 2rem;
 
-  font-family: "Gotham";
+  font-family: Gotham;
   font-weight: 400 !important;
   line-height: 25.2px;
   margin: 0;
@@ -168,7 +186,7 @@ h4 {
 }
 p {
   color: #707070;
-  font-size: 1.5rem;
+  font-size: 1.4rem;
   font-family: Gotham;
   font-weight: 200;
   line-height: 27.5px;
@@ -204,7 +222,7 @@ p {
 }
 
 .point-category:hover {
-  cursor: pointer;
+  cursor: var(--cursor-auto);
   box-shadow: 0px 0px 50px #86bc24;
 }
 .icon-category {
@@ -224,7 +242,7 @@ button {
 }
 
 button:hover {
-  cursor: pointer;
+  cursor: var(--cursor-pointer);
 
   background: var(--Colors-Secondary-900, #364823);
   color: var(--Colors-Primary-100, #e8f5d0) !important;
@@ -320,9 +338,10 @@ button:hover {
     background: url("https://stalwart-faloodeh-22bebe.netlify.app/public/assets/svg/home/web/cat-origin.svg")
       no-repeat;
     /*     height: 100vh !important; */
-    width: 100vw;
+    width: 100%;
     height: 40rem;
     object-fit: fill;
+    background-position: left !important;
   }
   .shovel-origin {
     position: absolute;
@@ -413,6 +432,7 @@ button:hover {
   flex-direction: column;
   align-items: center;
   text-decoration: none;
+  cursor: var(--cursor-auto);
 }
 
 .icono img {
@@ -423,6 +443,7 @@ button:hover {
   background: #b8c701;
   box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2);
   border-radius: 100px;
+  cursor: var(--cursor-auto);
 }
 .icono.v2 img {
   background: #87b05c;
@@ -431,7 +452,7 @@ button:hover {
   background: #87bd27;
 }
 .icono:hover img {
-  cursor: pointer;
+  cursor: var(--cursor-pointer);
   box-shadow: 0px 0px 50px #86bc24;
 }
 
@@ -467,7 +488,7 @@ button:hover {
 }
 
 .btn-vermas:hover {
-  cursor: pointer;
+  cursor: var(--cursor-pointer);
   background: var(--Colors-Secondary-900, #364823);
 
   color: var(--Colors-Primary-100, #e8f5d0) !important;
@@ -487,6 +508,7 @@ button:hover {
   /*   width: 200px;
   height: 200px; */
   object-fit: contain;
+  cursor: var(--cursor-auto);
   /*   margin-right: 0.2px; */
   flex: 0 0 auto;
 }
@@ -507,12 +529,13 @@ button:hover {
   overflow-x: auto;
   scroll-behavior: smooth;
   padding: 16px;
-  cursor: grab;
+  cursor: var(--cursor-auto);
 }
 
 /* Ocultar scrollbar */
 .infinite-scroll::-webkit-scrollbar {
   display: none;
+  cursor: var(--cursor-auto);
 }
 .infinite-scroll {
   -ms-overflow-style: none;
@@ -545,11 +568,16 @@ button:hover {
   text-align: left;
   display: flex;
   margin-left: 2rem;
-  width: 80dvw !important;
+  width: 100%;
   max-width: 800px;
 }
 .special-image-container img {
   max-width: 100%;
   height: auto;
   border-radius: 8px;
+}
+
+.carousel-image {
+  width: 100%;
+  border-radius: 18px;
 }
