@@ -153,6 +153,12 @@ h4.gotham.white {
   margin: 0;
   word-wrap: break-word !important;
 }
+h3.gotham.white.title {
+  width: 100%;
+  min-width: 100%;
+  padding: 0 2rem;
+  padding-top: 1rem;
+}
 h4.gotham.white-sand {
   color: #fafafa;
   font-size: 16px;
@@ -169,6 +175,7 @@ h4.gotham.white-sand {
   z-index: 4;
   margin-top: -4rem;
   margin-left: 13rem;
+  max-width: fit-content;
 }
 /*  */
 
@@ -453,7 +460,8 @@ button:hover {
 .icono.v3 img {
   background: #87bd27;
 }
-.icono:hover img {
+.icono:hover img,
+.icono.active img {
   cursor: var(--cursor-pointer);
   box-shadow: 0px 0px 50px #86bc24;
 }

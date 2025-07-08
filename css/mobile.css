@@ -250,7 +250,7 @@
     background-size: contain;
   }
   .title-fondo-marca {
-    height: 40rem !important;
+    height: 50rem !important;
   }
   .title-fondo-marca h2.gotham.white {
     color: #fafafa;
@@ -326,7 +326,7 @@
   }
   .img-description {
     width: 100%;
-    height: 2.5rem !important;
+    height: 4rem !important;
     margin-top: 2rem;
     background-size: contain;
   }
@@ -365,6 +365,11 @@
     margin: 0;
     word-wrap: break-word !important;
   }
+  h3.gotham.white.title {
+    width: 100%;
+    min-width: 100%;
+    padding: 0 !important;
+  }
 
   h4.gotham.white-sand {
     color: #fafafa !important;
@@ -387,5 +392,8 @@
   }
   .tips-image {
     padding: 0 !important;
+  }
+  .center-mobile {
+    text-align: center;
   }
 }

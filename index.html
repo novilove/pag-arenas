@@ -193,10 +193,15 @@
               <p>Precio</p>
             </a>
           </div>
-          <p class="descripcion">
-            Aprende a diferenciar cada una de nuestras arenas para que puedas
-            recomendar siempre la mejor opción a tu cliente ;)
-          </p>
+          <div class="text-center row" style="justify-content: center">
+            <p
+              class="descripcion col-md-6 col-sm-12"
+              style="color: #87bd27; font-weight: bolder"
+            >
+              Aprende a diferenciar cada una de nuestras arenas para que puedas
+              recomendar siempre la mejor opción a tu cliente ;)
+            </p>
+          </div>
           <a
             href="./views/categorias-de-arenas.html?filter=black"
             class="btn-vermas"
@@ -580,6 +585,57 @@
         addComponent("topbar-placeholder", "components/footer.html");
         carruselBanner();
         iconsAndBackgorund();
+        // icons.js
+        const icons = Array.from(document.querySelectorAll(".icono"));
+        let current = 0;
+        let intervalId = null;
+        let hoverCount = 0;
+
+        function activateIcon(idx) {
+          icons.forEach((ic, i) => {
+            ic.classList.toggle("active", i === idx);
+          });
+          current = idx;
+        }
+
+        function startAutoCycle() {
+          if (intervalId) return;
+          intervalId = setInterval(() => {
+            const next = (current + 1) % icons.length;
+            activateIcon(next);
+          }, 800);
+        }
+
+        function stopAutoCycle() {
+          clearInterval(intervalId);
+          intervalId = null;
+          icons.forEach((ic) => ic.classList.remove("active"));
+        }
+
+        // handle hover to pause/resume
+        icons.forEach((icon, idx) => {
+          icon.addEventListener("mouseenter", () => {
+            hoverCount++;
+            stopAutoCycle();
+            activateIcon(idx);
+          });
+          icon.addEventListener("mouseleave", () => {
+            hoverCount = Math.max(0, hoverCount - 1);
+            if (hoverCount === 0) {
+              // resume cycle, start from current
+              startAutoCycle();
+            }
+          });
+          icon.addEventListener("click", () => {
+            stopAutoCycle();
+            activateIcon(idx);
+          });
+        });
+
+        // kick off
+        activateIcon(0);
+        startAutoCycle();
+
         scrollInfinitoImg();
         setCarruselVideos();
       });

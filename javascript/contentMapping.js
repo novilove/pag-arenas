@@ -7,15 +7,13 @@ export const contentMapping = {
     },
     text: {
       // Título principal
-      "title-fondo-marca": "Hey! Arena Básica Premium<br/>Aroma lavanda",
+      "title-fondo-marca": "Hey! Arena sanitaria de bentonita natural",
       // Lista de pesos
-      "list-kg": `<h3 class="gotham white">3kg</h3>
-       <h3 class="gotham white">5kg</h3>
-       <h3 class="gotham white">12kg</h3>
-       <h3 class="gotham white">25kg</h3>`,
+      "list-kg": `<div class="center-mobile"><h3 class="gotham white title">Formatos disponibles:</h3><div  class="list-kg"><h3 class="gotham white " style="padding: 0 2rem;text-wrap-mode: nowrap;">3kg 4kg 10kg 20kg</h3>
+      </div></div>`,
       // Descripción corta
       "description-fondo-marca":
-        "Esta arena básica combina eficacia y economía, neutralizando olores y reduciendo el rastreo.",
+        "<div class='mt-2'>Arena sanitaria de bentonita 100% natural con aroma a lavanda, diseñada para aglutinar y neutralizar rápidamente los olores. Manteniendo los espacios más limpios y libres de residuos.</div>",
       // Subtítulo imagen
       "description-marca-text":
         "Aglutinación superior con fresco aroma a lavanda. ",
@@ -28,12 +26,12 @@ export const contentMapping = {
       /* CHAT */
       "chat-container": ` <div class="chat-bubble right col-md-7 light" style="display: flex;align-items: center;" >con aroma Lavanda <img src="https://stalwart-faloodeh-22bebe.netlify.app/public/assets/svg/marcas/web/hey/basica/aroma.png" style="width:32px;height:32px" alt='Hey! Básica' class='logo-marca ml-2'/></div>
         <div class="chat-bubble left col-md-7 dark">
-          Los gránulos crean una potente unión para<br />retener la humedad y
-          evitar que cualquier<br />líquido llegue al fondo de la bandeja
+          Los gránulos crean una potente unión para retener la humedad y
+          evitar que cualquier líquido llegue al fondo de la bandeja
           higiénica.
         </div>
         <div class="chat-bubble right col-md-7 light">
-          Es hipoalergénica a alérgenos comunes como<br />el polvo, las
+          Es hipoalergénica a alérgenos comunes como el polvo, las
           proteínas vegetales y las fragancias.
         </div>
         <div class="chat-bubble left col-md-7 dark">
@@ -67,13 +65,13 @@ export const contentMapping = {
     },
     text: {
       // Título principal
-      "title-fondo-marca": "London Cats Arena sanitaria<br/>Aroma lavanda",
+      "title-fondo-marca": "London Cats<br/>Arena sanitaria Premium",
       // Lista de pesos
-      "list-kg": `<h3 class="gotham white">10kg</h3>
-       <h3 class="gotham white">20kg</h3>`,
+      "list-kg": `<div class="center-mobile"><h3 class="gotham white title">Formatos disponibles:</h3><div  class="list-kg"><h3 class="gotham white " style="padding: 0 2rem;text-wrap-mode: nowrap;">10kg y 20kg</h3>
+     </div></div>`,
       // Descripción corta
       "description-fondo-marca":
-        "Está hecha de carbón activo que proporciona un control de los olores durante todo el día. Es decir que neutraliza los aromas, además está hecha de bentonita 100% natural y aglutina efectivamente sin dejar soluciones pastosas en el arenero.",
+        "<div class='mt-2'>Elaborada con bentonita 100% natural, esta arena ofrece un control de olores superior durante todo el día. Forma bolos sólidos y compactos, evitando residuos pastosos en el arenero.<br/><br/>Con un delicado aroma a lavanda, los puedes encontrar en formatos convenientes de 10 kilos y 20 kilos.</div>",
       // Subtítulo imagen
       "description-marca-text":
         "Combate los fuertes olores a amoníaco al instante.",
@@ -86,10 +84,10 @@ export const contentMapping = {
       /* CHAT */
       "chat-container": ` <div class="chat-bubble right col-md-7 light" style="display: flex;align-items: center;" >con aroma Lavanda <img src="https://stalwart-faloodeh-22bebe.netlify.app/public/assets/svg/marcas/web/london/basica/aroma.png" style="width:32px;height:32px" alt='london Básica' class='logo-marca ml-2'/></div>
         <div class="chat-bubble left col-md-7 dark">
-          Tiene una aroma neutro, libre de químicos<br/>y suave que no saturará el espacio de la casa.
+          Libre de químicos y suave que no saturará el espacio de la casa.
         </div>
         <div class="chat-bubble right col-md-7 light">
-           La arena de grano fino es muy respetuosa con<br/>las patas del gato.
+           La arena de grano fino es muy respetuosa con las patas del gato.
         </div>
         <div class="chat-bubble left col-md-7 dark">
           <strong> Mira el siguiente video</strong>
@@ -118,17 +116,17 @@ export const contentMapping = {
     colors: {
       light: "#87BD27",
       dark: "#E8F5D0",
-      "text-light-100": "#87BD27",
+      "text-light-100": "#374f0c",
     },
     text: {
       // Título principal
       "title-fondo-marca": "Pipicat Arena<br/>Ecológica Premium",
       // Lista de pesos
-      "list-kg": `<h3 class="gotham white">4kg</h3>
-       <h3 class="gotham white">15kg</h3>`,
+      "list-kg": `<div class="center-mobile"><h3 class="gotham white title">Formatos disponibles:</h3><div  class="list-kg"><h3 class="gotham white " style="padding: 0 2rem;text-wrap-mode: nowrap;">4kg y 15kg</h3>
+     </div></div>`,
       // Descripción corta
       "description-fondo-marca":
-        "La calidad de la arena para gatos Pipicat la convierte en líder por su excelente relación de precio y calidad. Una alternativa de calidad con buena aglutinación y filtración de polvo.",
+        "<div class='mt-2'>La arena para gatos Pipicat destaca como líder por su excepcional relación precio-calidad, ofreciendo una aglutinación eficiente y mínima generación de poolvo.<br/>lvo.<br/>Elaborada con bentonita 100% natural, es segura para los gatos y amigable con su bienestar.olvo.<br/><br/>Disponible en formatos de 4 kilos y 15 kilos, en tres aromas frescos como lavanda, menta y manzana.</div>",
       // Subtítulo imagen
       "description-marca-text": "Hecha de bentonita 100% natural",
       // Texto dentro de .arena
@@ -141,7 +139,7 @@ export const contentMapping = {
       "chat-container": ` <div class="chat-bubble right col-md-7 light" style="display: flex;align-items: center;" >con aromas Manzana, Lavanda y Menta  <img src="https://stalwart-faloodeh-22bebe.netlify.app/public/assets/svg/marcas/web/pipicat/premium/aroma3.png"style="width:32px;height:32px" alt='Hey! Básica' class='logo-marca mx-1'/> <img src="https://stalwart-faloodeh-22bebe.netlify.app/public/assets/svg/marcas/web/pipicat/premium/aroma1.png"style="width:40px;height:40px" alt='Hey! Básica' class='logo-marca mx-1'/> <img src="https://stalwart-faloodeh-22bebe.netlify.app/public/assets/svg/marcas/web/pipicat/premium/aroma2.png"style="width:32px;height:32px" alt='Hey! Básica' class='logo-marca mx-1'/>
      </div>
         <div class="chat-bubble left col-md-7 dark">
-         Tecnología especial de neutralización<br/>de olores combate los fuertes olores<br/>a amoníaco al instante.
+        Tecnología especial de neutralización de olores.
         </div>
         <div class="chat-bubble right col-md-7 light">
          No ensucia las almohadillas de los michis
@@ -177,16 +175,16 @@ export const contentMapping = {
     },
     text: {
       // Título principal
-      "title-fondo-marca": "Gatuna Arena Premium<br/>Aroma lavanda",
+      "title-fondo-marca": "Gatuna Arena sanitaria<br/>Premium",
       // Lista de pesos
-      "list-kg": `<h3 class="gotham white">4kg</h3>
-       <h3 class="gotham white">15kg</h3>`,
+      "list-kg": `<div class="center-mobile"><h3 class="gotham white title">Formatos disponibles:</h3><div  class="list-kg"><h3 class="gotham white " style="padding: 0 2rem;text-wrap-mode: nowrap;">4kg y 15kg</h3>
+     </div></div>`,
       // Descripción corta
       "description-fondo-marca":
-        "La arena para gatos Gatuna está hecha de arcilla natural que forma grumos duros para facilitar la recogida. Los gránulos crean una potente unión para retener la humedad y evitar que cualquier líquido llegue al fondo de la caja de arena.",
+        "<div class='mt-2'>La arena para gatos Gatuna está elaborada con bentonita natural de alta calidad, diseñada para formar bolos compactos que facilitan la limpieza. Sus gránulos crean una fuerte unión que retiene la humedad y evita que los líquidos lleguen al fondo del arenero.<br/><br/>Ofrece aglutinación superior, neutraliza eficazmente los malos olores y es respetuosa con el medio ambiente. Con un agradable aroma a lavanda, está disponible en formatos de 4 kilos y 15 kilos.</div>",
       // Subtítulo imagen
       "description-marca-text":
-        "Hecha de arcilla natural que forma grumos duros para facilitar la limpieza",
+        "Hecha de arcilla natural que forma grumos duros para facilitar la limpieza",
       // Texto dentro de .arena
       "cat-image-text-1": "Apta para alérgicos",
       "cat-image-text-2": "libre de polvo, proteínas vegetales y fragancias",
@@ -194,7 +192,7 @@ export const contentMapping = {
       "cat-image-text-3": "Apta para alérgicos",
       "cat-image-text-4": "libre de polvo, proteínas vegetales y fragancias",
       /* CHAT */
-      "chat-container": ` <div class="chat-bubble right col-md-7 light" style="display: flex;align-items: center;" >con aroma Lavanda <img src="https://stalwart-faloodeh-22bebe.netlify.app/public/assets/svg/marcas/web/gatuna/premium/aroma.png" style="width:32px;height:32px" alt='london Básica' class='logo-marca ml-2'/></div>
+      "chat-container": ` <div class="chat-bubble right col-md-7 light" style="display: flex;align-items: center;" >con aroma Lavanda </div>
         <div class="chat-bubble left col-md-7 dark">
       Genera menos suciedad y evita que la arena se disperse.
         </div>
@@ -210,7 +208,7 @@ export const contentMapping = {
     extra: [
       {
         src: "https://stalwart-faloodeh-22bebe.netlify.app/public/assets/svg/marcas/web/london/basica.svg",
-        urlRedirect: "@/item-marca.html?brand=london&category=basica",
+        urlRedirect: "/views/item-marca.html?brand=london&category=basica",
       },
       {
         src: "https://stalwart-faloodeh-22bebe.netlify.app/public/assets/svg/marcas/web/hey/basica.svg",
@@ -229,16 +227,16 @@ export const contentMapping = {
     },
     text: {
       // Título principal
-      "title-fondo-marca":
-        "Pipicat Arena<br/>sanitaria  Super<br/>Premium<br/>Aroma neutro",
+      "title-fondo-marca": "Pipicat Arena sanitaria<br/>Super Premium",
       // Lista de pesos
-      "list-kg": `<h3 class="gotham white">10kg</h3>
-       <h3 class="gotham white">20kg</h3>`,
+      "list-kg": `<div class="center-mobile"><h3 class="gotham white title">Formatos disponibles:</h3><div  class="list-kg"><h3 class="gotham white " style="padding: 0 2rem;text-wrap-mode: nowrap;">4kg y 15kg</h3>
+     </div></div>`,
       // Descripción corta
       "description-fondo-marca":
-        "Proporciona un control de los olores durante todo el período de uso en el arenero, es decir, que neutraliza cualquier mal aroma que pueda emanar desde su baño.",
+        "<div class='mt-2'>Ofrece un control eficaz de olores durante todo el tiempo de uso, neutralizando cualquier aroma desagradable que pueda surgir del arenero.<br/>Elaborada con bentonita 100% natural y carbón activado para mayor absorción y frescura.<br/><br/>Disponible en formatos de 4 kilos y 15 kilos.</div>",
       // Subtítulo imagen
-      "description-marca-text": "Neutraliza el olor a pipí",
+      "description-marca-text":
+        "Neutraliza el olor a pipí, eliminando el 100% del amonio que éste produce.",
       // Texto dentro de .arena
       "cat-image-text-1": "Tecnología especial de<br/>neutralización de olores",
       "cat-image-text-2": "combate los fuertes olores a amoníaco al instante.",
@@ -253,9 +251,6 @@ export const contentMapping = {
         <div class="chat-bubble right col-md-7 light">
          Encapsula los olores y los retine eficientemente.
         </div>
-         <div class="chat-bubble left col-md-7 dark">
-    <strong>Mira el siguiente video</strong>
-        </div>
        `,
     },
     video: {
@@ -264,7 +259,7 @@ export const contentMapping = {
     },
     extra: [
       {
-        src: "https://stalwart-faloodeh-22bebe.netlify.app/public/assets/svg/marcas/web/london/basica.svg",
+        src: "https://stalwart-faloodeh-22bebe.netlify.app/public/assets/svg/marcas/web/london/black.svg",
         urlRedirect: "/views/item-marca.html?brand=london&category=black",
       },
 
@@ -286,16 +281,16 @@ export const contentMapping = {
     text: {
       // Título principal
       "title-fondo-marca":
-        "London Cats<br/>Black Arena<br/>sanitaria con<br/>carbón activo",
+        "London Cats Black<br/>Arena sanitaria Super Premium",
       // Lista de pesos
-      "list-kg": `<h3 class="gotham white">10kg</h3>
-       <h3 class="gotham white">20kg</h3>`,
+      "list-kg": `<div class="center-mobile"><h3 class="gotham white title">Formatos disponibles:</h3><div  class="list-kg"><h3 class="gotham white " style="padding: 0 2rem;text-wrap-mode: nowrap;">10kg y 20kg</h3>
+     </div></div>`,
       // Descripción corta
       "description-fondo-marca":
-        "Está compuesta por bentonita integrada con carbón activado (Carconita), ambos materiales naturales que garantizan una excelente capacidad de retención de líquidos y control de olores.",
+        "<div class='mt-2'>Compuesta por una exclusiva combinación de bentonita y carbón activado en un solo grano (Carconita), <strong style='font-weight: 700;'>es la única de su tipo en el mercado con esta innovadora fórmula.</strong> Estos materiales naturales garantizan una absorción superior, un efectivo control de olores y una excelente retención de líquidos. Eliminando al 100% el olor a orina y aglutinando de forma eficiente cualquier desecho que se produzca en el arenero. Optimizando el rendimiento para un mayor ahorro.<br/>Disponible en formatos de 10 kilos y 20 kilos.</div>",
       // Subtítulo imagen
       "description-marca-text":
-        "Alta absorción de amonio, eliminador de olor ambiental, antibacterial y libre de polvo",
+        "Alta absorción de amonio, eliminador de olor ambiental y antibacterial.",
       // Texto dentro de .arena
       "cat-image-text-1": "Intensa acción aglomerante",
       "cat-image-text-2": "",
@@ -303,12 +298,12 @@ export const contentMapping = {
       "cat-image-text-3": "Intensa acción aglomerante",
       "cat-image-text-4": "",
       /* CHAT */
-      "chat-container": ` <div class="chat-bubble right col-md-7 light" style="display: flex;align-items: center;" >con aroma Carbon <img src="https://stalwart-faloodeh-22bebe.netlify.app/public/assets/svg/marcas/web/london/black/aroma.png" style="width:32px;height:32px" alt='london Básica' class='logo-marca ml-2'/></div>
+      "chat-container": ` <div class="chat-bubble right col-md-7 light" style="display: flex;align-items: center;" >Única en el mercado</div>
         <div class="chat-bubble left col-md-7 dark">
     La carconita proporcionar un ambiente más limpio, fresco y de alta seguridad para los gatos.
         </div>
         <div class="chat-bubble right col-md-7 light">
-        Alta absorción de amonio, eliminador de olor ambiental, antibacterial y libre de polvo.
+      Optimiza el rendimiento para un mayor ahorro, gracias a que elimina al 100% el olor a orina y aglutina de forma eficiente cualquier desecho.
         </div>
          <div class="chat-bubble left col-md-7 dark">
     <strong>Mira el siguiente video</strong>
