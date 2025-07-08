@@ -126,7 +126,7 @@ export const contentMapping = {
      </div></div>`,
       // Descripción corta
       "description-fondo-marca":
-        "<div class='mt-2'>La arena para gatos Pipicat destaca como líder por su excepcional relación precio-calidad, ofreciendo una aglutinación eficiente y mínima generación de poolvo.<br/>lvo.<br/>Elaborada con bentonita 100% natural, es segura para los gatos y amigable con su bienestar.olvo.<br/><br/>Disponible en formatos de 4 kilos y 15 kilos, en tres aromas frescos como lavanda, menta y manzana.</div>",
+        "<div class='mt-2'>La arena para gatos Pipicat destaca como líder por su excepcional relación precio-calidad, ofreciendo una aglutinación eficiente y mínima generación de poolvo.<br/><br/>Elaborada con bentonita 100% natural, es segura para los gatos y amigable con su bienestar.olvo.<br/><br/>Disponible en formatos de 4 kilos y 15 kilos, en tres aromas frescos como lavanda, menta y manzana.</div>",
       // Subtítulo imagen
       "description-marca-text": "Hecha de bentonita 100% natural",
       // Texto dentro de .arena

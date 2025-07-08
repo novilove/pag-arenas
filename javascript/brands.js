@@ -4,7 +4,7 @@ import { routeServer } from "../javascript/utils.js";
 const BRAND_PATH = `${routeServer}/iconos/logos`;
 const MOBILE_PATH = `${routeServer}/marcas/mobile`;
 const WEB_PATH = `${routeServer}/marcas/web`;
-const BRANDS = ["london", "hey", "pipicat", "gatuna"];
+const BRANDS = ["gatuna", "pipicat", "london", "hey"];
 const CATEGORIES = {
   london: ["basica", "black"],
   gatuna: ["premium"],
