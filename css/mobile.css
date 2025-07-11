@@ -116,9 +116,9 @@
     bottom: 0%;
     /* height: 100vh !important; */
     right: 0;
-    width: 34vw;
+    width: 100vw;
     background-position: right;
-    height: 23rem;
+    height: 39rem;
     object-fit: cover;
     z-index: 4;
   }
