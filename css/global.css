@@ -356,7 +356,7 @@ button:hover {
     position: absolute;
     background: url("https://stalwart-faloodeh-22bebe.netlify.app/public/assets/svg/home/web/shovel-origin.svg")
       no-repeat;
-    bottom: 55%;
+    bottom: 0%;
     /* height: 100vh !important; */
     right: 0;
     width: 100vw;

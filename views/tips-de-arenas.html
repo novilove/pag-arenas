@@ -167,9 +167,24 @@
         z-index: 0;
         margin-top: -10rem;
       }
-      .hidden-until-end {
-        height: 100dvh; /* width: 100%; */
+  /*     .hidden-until-end {
+        height: 100dvh; 
         margin-bottom: -20rem;
+      } */
+             .hidden-until-end {
+         opacity: 1;
+        transform: translateY(0);
+      }
+/* 
+      .hidden-until-end.show {
+        opacity: 1;
+        transform: translateY(0);
+      } */
+      #cat-image {
+        opacity: 0;
+
+        position: relative;
+        z-index: 10;
       }
       @media (max-width: 769px) {
         .hidden-until-end {
@@ -342,7 +357,14 @@
           </div>
         </div>
       </div>
-      <div id="fondo-home" class="fondo-home-4 hidden-until-end"></div>
+     <div id="fondo-home" class="fondo-home-4 hidden-until-end">
+        <img
+          id="cat-image"
+          src="https://stalwart-faloodeh-22bebe.netlify.app/public/assets/svg/hablemos/cat-hablemos.svg"
+          width="75%"
+          class="hidden-until-end"
+        />
+      </div>
       <div id="topbar-placeholder"></div>
     </div>
 

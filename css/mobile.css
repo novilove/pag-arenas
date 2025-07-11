@@ -113,13 +113,14 @@
     position: absolute;
     background: url("https://stalwart-faloodeh-22bebe.netlify.app/public/assets/svg/home/web/shovel-origin.svg")
       no-repeat;
-    bottom: 57%;
+    bottom: 0%;
     /* height: 100vh !important; */
     right: 0;
-    width: 100vw;
+    width: 34vw;
     background-position: right;
-    height: 41rem;
+    height: 23rem;
     object-fit: cover;
+    z-index: 4;
   }
   .plant-origin {
     position: absolute;
@@ -250,7 +251,7 @@
     background-size: contain;
   }
   .title-fondo-marca {
-    height: 50rem !important;
+    height: 54rem !important;
   }
   .title-fondo-marca h2.gotham.white {
     color: #fafafa;
