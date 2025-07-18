@@ -316,12 +316,12 @@
   }
 
   .product-img {
-    margin-top: -10rem;
+    margin-top: -15rem;
     object-fit: contain !important;
-    width: 80% !important;
+    width: 95% !important;
     position: absolute;
     top: 0;
-    height: 20rem !important;
+    height: 27rem !important;
     overflow: hidden;
     justify-content: center;
   }
