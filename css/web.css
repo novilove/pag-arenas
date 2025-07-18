@@ -32,7 +32,9 @@
     /*   margin: 3rem 0; */
     justify-content: space-evenly;
   }
-
+  .align-right.set {
+    margin-top: -10rem;
+  }
   /*  */
 
   /* Variante “salvaje” */

@@ -11,7 +11,8 @@
 }
 @font-face {
   font-family: "Gotham";
-  src: url("./gotham/Gotham-Black.otf") format("woff2"),
+  src: url("./gotham/Gotham-Regular.otf") format("woff2"),
+    url("./gotham/Gotham-Black.otf") format("woff2"),
     url("./gotham/Gotham-Light.otf") format("woff2");
   /*   font-weight: normal;
   font-style: normal;
@@ -169,6 +170,10 @@ h4.gotham.white-sand {
   line-height: 23px;
   margin: 0;
   word-wrap: break-word !important;
+}
+h6.gotham {
+  font-family: "Open Sans" !important;
+  font-weight: normal !important;
 }
 
 .under-sand {
@@ -497,13 +502,16 @@ button:hover {
   transition: background-color 0.2s ease;
 }
 
-.btn-vermas:hover {
+.btn-vermas:not(.fijo):hover {
   cursor: var(--cursor-pointer);
   background: var(--Colors-Secondary-900, #364823);
 
   color: var(--Colors-Primary-100, #e8f5d0) !important;
 }
 
+.btn-vermas.fijo {
+  background: var(--Colors-Secondary-900, #364823) !important;
+}
 /* -----------<<<<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>>>>>>>------------ */
 
 .lazy-svg {

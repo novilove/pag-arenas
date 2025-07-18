@@ -6,10 +6,16 @@ const MOBILE_PATH = `${routeServer}/marcas/mobile`;
 const WEB_PATH = `${routeServer}/marcas/web`;
 const BRANDS = ["gatuna", "pipicat", "london", "hey"];
 const CATEGORIES = {
-  london: ["basica", "black"],
-  gatuna: ["premium"],
-  pipicat: ["premium", "super"],
-  hey: ["basica"],
+  london: [
+    { name: "basica", label: "Básica" },
+    { name: "black", label: "Black" },
+  ],
+  gatuna: [{ name: "premium", label: "Premium" }],
+  pipicat: [
+    { name: "premium", label: "Premium" },
+    { name: "super", label: "Super Premium" },
+  ],
+  hey: [{ name: "basica", label: "Básica" }],
 };
 
 const MOBILE_BREAK = 767;
@@ -52,7 +58,7 @@ async function renderProducts(brand) {
   cont.innerHTML = "";
   const base = (isMobile() ? MOBILE_PATH : WEB_PATH) + "/" + brand;
   for (const cat of CATEGORIES[brand]) {
-    const imgUrl = `${base}/${cat}.svg`;
+    const imgUrl = `${base}/${cat.name}.svg`;
     /*  if (await imageExists(imgUrl)) { */
     const block = document.createElement("a");
     block.className = "product-block";
@@ -63,7 +69,7 @@ async function renderProducts(brand) {
 
     const btn = document.createElement("a");
     btn.className = "btn-vermas";
-    btn.textContent = cat[0].toUpperCase() + cat.slice(1);
+    btn.textContent = cat.label[0].toUpperCase() + cat.label.slice(1);
     btn.addEventListener("click", () => {
       window.location.href = `/views/item-marca.html?brand=${brand}&category=${cat}`;
     });
@@ -96,7 +102,7 @@ async function init() {
 // React to history nav & resize
 window.addEventListener("popstate", init);
 window.addEventListener("DOMContentLoaded", init);
-window.addEventListener("resize", () => {
+/* window.addEventListener("resize", () => {
   clearTimeout(window._r);
   window._r = setTimeout(init, 200);
-});
+}); */
