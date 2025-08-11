@@ -65,16 +65,16 @@ async function renderProducts(brand) {
 
     const img = document.createElement("img");
     img.src = imgUrl;
-    img.alt = `${brand} ${cat}`;
+    img.alt = `${brand} ${cat.name}`;
 
     const btn = document.createElement("a");
     btn.className = "btn-vermas";
     btn.textContent = cat.label[0].toUpperCase() + cat.label.slice(1);
     btn.addEventListener("click", () => {
-      window.location.href = `/views/item-marca.html?brand=${brand}&category=${cat}`;
+      window.location.href = `/views/item-marca.html?brand=${brand}&category=${cat.name}`;
     });
     block.addEventListener("click", () => {
-      window.location.href = `/views/item-marca.html?brand=${brand}&category=${cat}`;
+      window.location.href = `/views/item-marca.html?brand=${brand}&category=${cat.name}`;
     });
 
     block.append(img, btn);
