@@ -24,6 +24,9 @@
         /*         padding: 2rem; */
         /* Ajusta ancho máximo, márgenes, etc. */
       }
+      #carouselImage {
+        border-radius: 0 !important;
+      }
 
       .timeline-item {
         position: relative;
@@ -190,10 +193,15 @@
               <p>Precio</p>
             </a>
           </div>
-          <p class="descripcion">
-            Aprende a diferenciar cada una de nuestras arenas para que puedas
-            recomendar siempre la mejor opción a tu cliente ;)
-          </p>
+          <div class="text-center row" style="justify-content: center">
+            <p
+              class="descripcion col-md-6 col-sm-12"
+              style="color: #87bd27; font-weight: bolder"
+            >
+              Aprende a diferenciar cada una de nuestras arenas para que puedas
+              recomendar siempre la mejor opción a tu cliente ;)
+            </p>
+          </div>
           <a
             href="./views/categorias-de-arenas.html?filter=black"
             class="btn-vermas"
@@ -345,7 +353,7 @@
             >
               <a
                 class="point-category version-origin button-h4 circle"
-                href="./views/categorias-de-arenas.html?filter=premium"
+                href="./views/item-marca.html?brand=pipicat&category=super"
               >
                 <h1 style="color: #374d10">2017</h1>
               </a>
@@ -394,14 +402,13 @@
             >
               <a
                 class="point-category version-origin button-h4 circle"
-                href="./views/categorias-de-arenas.html?filter=basica"
+                href="/views/item-marca.html?brand=london&category=basica"
               >
                 <h1 style="color: #374d10">2018</h1>
               </a>
               <!--             <div class="arrow-left"></div> -->
             </div>
           </div>
-          <div class="col-md-4 shovel-origin"></div>
           <!-- 3 -->
           <div class="col-sm-12 col-md-12 row d-center pt-4 timeline-item">
             <!-- year -->
@@ -416,7 +423,7 @@
             >
               <a
                 class="point-category version-origin button-h4 circle"
-                href="./views/categorias-de-arenas.html?filter=premium"
+                href="/views/item-marca.html?brand=gatuna&category=premium"
               >
                 <h1 style="color: #374d10">2019</h1>
               </a>
@@ -457,13 +464,14 @@
             >
               <a
                 class="point-category version-origin button-h4 circle"
-                href="./views/categorias-de-arenas.html?filter=basica"
+                href="/views/item-marca.html?brand=hey&category=basica"
               >
                 <h1 style="color: #374d10">2023</h1>
               </a>
               <!--             <div class="arrow-left"></div> -->
             </div>
           </div>
+          <div class="col-md-4 shovel-origin"></div>
 
           <!-- 5 -->
           <div class="col-sm-12 col-md-12 row d-center pt-4 timeline-item">
@@ -480,7 +488,8 @@
             >
               <a
                 class="point-category version-origin button-h4 circle"
-                href="./views/categorias-de-arenas.html?filter=black"
+                href="/views/item-marca.html?brand=london&category=black
+                "
                 style="background-color: #374d10 !important"
               >
                 <h1 style="color: #e8f5d0">2025</h1>
@@ -576,6 +585,57 @@
         addComponent("topbar-placeholder", "components/footer.html");
         carruselBanner();
         iconsAndBackgorund();
+        // icons.js
+        const icons = Array.from(document.querySelectorAll(".icono"));
+        let current = 0;
+        let intervalId = null;
+        let hoverCount = 0;
+
+        function activateIcon(idx) {
+          icons.forEach((ic, i) => {
+            ic.classList.toggle("active", i === idx);
+          });
+          current = idx;
+        }
+
+        function startAutoCycle() {
+          if (intervalId) return;
+          intervalId = setInterval(() => {
+            const next = (current + 1) % icons.length;
+            activateIcon(next);
+          }, 800);
+        }
+
+        function stopAutoCycle() {
+          clearInterval(intervalId);
+          intervalId = null;
+          icons.forEach((ic) => ic.classList.remove("active"));
+        }
+
+        // handle hover to pause/resume
+        icons.forEach((icon, idx) => {
+          icon.addEventListener("mouseenter", () => {
+            hoverCount++;
+            stopAutoCycle();
+            activateIcon(idx);
+          });
+          icon.addEventListener("mouseleave", () => {
+            hoverCount = Math.max(0, hoverCount - 1);
+            if (hoverCount === 0) {
+              // resume cycle, start from current
+              startAutoCycle();
+            }
+          });
+          icon.addEventListener("click", () => {
+            stopAutoCycle();
+            activateIcon(idx);
+          });
+        });
+
+        // kick off
+        activateIcon(0);
+        startAutoCycle();
+
         scrollInfinitoImg();
         setCarruselVideos();
       });

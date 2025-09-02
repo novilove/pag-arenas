@@ -111,15 +111,16 @@
   }
   .shovel-origin {
     position: absolute;
-    background: url("https://stalwart-faloodeh-22bebe.netlify.app/public/assets/svg/home/web/shovel-origin.svg")
+    background: url("https://stalwart-faloodeh-22bebe.netlify.app/public/assets/svg/home/mobile/shovel-origin.svg")
       no-repeat;
-    bottom: 57%;
+    bottom: 0%;
     /* height: 100vh !important; */
     right: 0;
     width: 100vw;
     background-position: right;
-    height: 41rem;
+    height: 39rem;
     object-fit: cover;
+    z-index: 4;
   }
   .plant-origin {
     position: absolute;
@@ -180,7 +181,7 @@
   }
   .carousel-button {
     font-size: 1.5rem;
-    top: 15% !important;
+    /*     top: 15% !important; */
     transform: none;
     padding: 8px 12px;
   }
@@ -250,7 +251,7 @@
     background-size: contain;
   }
   .title-fondo-marca {
-    height: 45rem !important;
+    height: 54rem !important;
   }
   .title-fondo-marca h2.gotham.white {
     color: #fafafa;
@@ -315,18 +316,18 @@
   }
 
   .product-img {
-    margin-top: -7rem;
+    margin-top: -15rem;
     object-fit: contain !important;
-    width: 80% !important;
+    width: 95% !important;
     position: absolute;
     top: 0;
-    height: 20rem !important;
+    height: 27rem !important;
     overflow: hidden;
     justify-content: center;
   }
   .img-description {
     width: 100%;
-    height: 2.5rem !important;
+    height: 4rem !important;
     margin-top: 2rem;
     background-size: contain;
   }
@@ -365,6 +366,11 @@
     margin: 0;
     word-wrap: break-word !important;
   }
+  h3.gotham.white.title {
+    width: 100%;
+    min-width: 100%;
+    padding: 0 !important;
+  }
 
   h4.gotham.white-sand {
     color: #fafafa !important;
@@ -376,5 +382,19 @@
     line-height: 25.2px;
     margin: 0;
     word-wrap: break-word !important;
+  }
+  .tips-text {
+    padding: 3rem;
+  }
+  .tips-content {
+    padding: 0 !important;
+    color: #707070;
+    width: 100%;
+  }
+  .tips-image {
+    padding: 0 !important;
+  }
+  .center-mobile {
+    text-align: center;
   }
 }

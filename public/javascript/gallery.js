@@ -9,10 +9,10 @@ const MOBILE_BREAK = 767;
 const SPECIAL_FILE = "table.svg";
 const CATEROGY_URLS = {
   basica: [
-    { url: `/basica/1.jpg`, redirect: "brand=hey&category=basica" },
+    { url: `/basica/1.jpg`, redirect: "brand=london&category=basica" },
     {
       url: `/basica/2.jpg`,
-      redirect: "brand=london&category=basica",
+      redirect: "brand=hey&category=basica",
     },
   ],
   premium: [
@@ -55,7 +55,6 @@ function imageExists(url) {
 // Lee filtro de URL
 function getCategory() {
   const p = new URLSearchParams(window.location.search);
-  console.log(p.get("filtro"));
   return p.get("filtro") || "basica";
 }
 
@@ -73,8 +72,10 @@ async function generateImageUrls(cat) {
   const base = isMobile() ? MOBILE_PATH : WEB_PATH;
   const arr = [];
   CATEROGY_URLS[cat].map((item) => {
-    item.url = `${base}${item.url}`;
-    arr.push(item);
+    let newItem = structuredClone(item); // Clonamos el objeto
+    newItem.url = `${base}${item.url}`;
+
+    arr.push(newItem);
     return arr;
   });
   return arr;
@@ -84,7 +85,6 @@ async function generateImageUrls(cat) {
 function buildDots() {
   const dc = document.getElementById("carouselDots");
   dc.innerHTML = "";
-  console.log("Construyendo dots", imageUrls);
   imageUrls.forEach((_, idx) => {
     const d = document.createElement("span");
     d.className = "dot" + (idx === currentIndex ? " active" : "");
@@ -98,7 +98,6 @@ function buildDots() {
 // Muestra slide
 function showSlide(idx) {
   currentIndex = idx;
-  console.log("Mostrando slide", idx, imageUrls[idx]);
   document.getElementById(
     "carouselImageLink"
   ).href = `./item-marca.html?${imageUrls[idx].redirect}`;
@@ -144,7 +143,6 @@ async function initCarousel() {
     // Imagen extra
     await loadSpecialImage(cat);
   }
-  /*  console.log("listo imágenes..."); */
   setTimeout(() => setLoading(false), 1000); // Simula carga de imágenes
 }
 
@@ -175,7 +173,6 @@ function bindArrows() {
 window.addEventListener("DOMContentLoaded", () => {
   // Asegura data-category en botones
   /*   preloadImages(); */
-  console.log("Cargando imágenes...");
   document.querySelectorAll(".filter-button").forEach((btn, i) => {
     if (!btn.dataset.category) {
       const cats = ["basica", "premium", "super", "black"];

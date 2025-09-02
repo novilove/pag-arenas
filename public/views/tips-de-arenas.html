@@ -20,12 +20,20 @@
     <style>
       .tips-section {
         background-color: #f8f8f8;
+        position: relative;
       }
-
+      .white {
+        color: #f8f8f8;
+      }
       .container-tips {
         max-width: 1440px;
         width: 100%;
         margin: 0 auto;
+      }
+      h5 {
+        font-size: 32px;
+        font-family: "Open Sans";
+        font-weight: 400;
       }
 
       .main-title {
@@ -39,31 +47,49 @@
       .tips-content {
         display: flex;
         flex-direction: row;
-        align-items: center;
+   /*      align-items: center; */
         justify-content: space-between;
-        gap: 20px; /* antes 40px */
+        gap: 0px; /* antes 40px */
         flex-wrap: wrap;
-        padding: 0 2rem;
+        /*       padding: 0 2rem; */
       }
-
+      .tips-image {
+        margin-bottom: 5rem !important;
+        margin-left: 1rem;
+        margin-right: 1rem;
+        padding-left: 2rem;
+        width: fit-content;
+        position:relative;
+      }
+      .tips-image.right {
+        padding-right: 2rem;
+      }
       .tips-image img {
         width: 100%; /* que ocupe el ancho disponible de su contenedor */
-        max-width: 85%; /* puedes ajustar este valor */
+        /*     max-width: 85%; */ /* puedes ajustar este valor */
         height: auto;
         border-radius: 10px;
       }
 
       .tips-text {
         flex: 1;
-        min-width: 280px;
-        max-width: 800px;
+        /*       min-width: 280px;
+        max-width: 800px; */
+        padding-right: 2rem;
+        font-family: "Open Sans", sans-serif;
+      }
+      .tips-text.right {
+        flex: 1;
+        /*       min-width: 280px;
+        max-width: 800px; */
+        padding-left: 3rem;
         font-family: "Open Sans", sans-serif;
       }
 
       .tips-text h2 {
         color: #7cb518;
-        font-size: 1.5rem;
-        line-height: 1.6;
+        font-size: 48px;
+        line-height: 1;
         margin-bottom: 5px;
       }
 
@@ -71,13 +97,15 @@
         margin: 0;
         color: #f8f8f8;
         padding: 0.5rem 1.5rem;
+        /*   font-family: Gotham !important;
+  font-weight: normal !important; */
       }
 
       .tips-text3 h5 {
         margin: 0;
         color: #f8f8f8;
         line-height: 1.6;
-        font-size: 1.2em;
+        font-size: 24px;
       }
 
       .tips-text p {
@@ -89,13 +117,25 @@
 
       .bubble-text {
         background: #7cb518;
-        border-radius: 50%;
+        border-radius: 3%;
         height: auto;
         text-align: center;
         display: flex;
         align-items: anchor-center;
         justify-content: center;
         padding: 1.5rem 0;
+      }
+       .bubble-text.right::after {
+        content: "";
+        position: absolute;
+        right: 2rem;
+        bottom: -15px;
+        width: 0;
+        height: 0;
+        border: 20px solid transparent;
+        border-top-color: #7cb518;
+        border-bottom: 0;
+        margin-right: -5px;
       }
 
       .bubble-trail {
@@ -119,6 +159,9 @@
         justify-content: flex-end;
       }
 
+  .align-right.set {
+    margin-top: -7rem;
+  }
       .radius-text {
         background: #7cb518;
         height: auto;
@@ -127,9 +170,15 @@
         align-items: anchor-center;
         justify-content: center;
         padding: 0.5rem 0;
-        border-top-left-radius: 100rem;
-        border-bottom-left-radius: 100rem;
+        border-top-left-radius: 50rem;
+        border-bottom-left-radius: 50rem;
         margin: 1rem 0;
+      }
+      .radius-text.radius-right {
+        border-top-right-radius: 50rem;
+        border-bottom-right-radius: 50rem;
+        border-top-left-radius: 0;
+        border-bottom-left-radius: 0;
       }
 
       #bubble {
@@ -139,6 +188,38 @@
       #img-2-tips {
         z-index: 0;
         margin-top: -10rem;
+      }
+  /*     .hidden-until-end {
+        height: 100dvh; 
+        margin-bottom: -20rem;
+      } */
+             .hidden-until-end {
+         opacity: 1;
+        transform: translateY(0);
+      }
+/* 
+      .hidden-until-end.show {
+        opacity: 1;
+        transform: translateY(0);
+      } */
+      #cat-image {
+        opacity: 0;
+
+        position: relative;
+        z-index: 10;
+      }
+      @media (max-width: 769px) {
+              .tips-image {
+        margin-bottom: 5rem !important;
+      margin-left: 1rem;
+      margin-right: 1rem;
+
+      }
+        .hidden-until-end {
+          height: 18rem !important;
+          /* width: 100%; */
+          margin-bottom: -10rem;
+        }
       }
     </style>
   </head>
@@ -160,29 +241,30 @@
             uso de las arenas
           </h1> -->
           <div>
-            <div class="cola-title mt-4 pt-4"></div>
-            <div class="col-sm-12 col-md-12 hero-content cate">
+            <div class="cola-title mt-4 pt-4" style="z-index: 99"></div>
+            <div class="col-sm-12 col-md-12 hero-content cate my-4">
               <h1 class="my-0" style="line-height: 100%">
-                Tips esenciales<br />
-                para un buen <br />
+                Tips esenciales para un buen <br />
                 <h2 class="my-0">uso de las arenas</h2>
               </h1>
             </div>
           </div>
-          <div class="tips-content">
-            <div class="tips-image">
+          <div class="tips-content col-sm-12">
+            <div class="tips-image col-md-6 col-sm-12">
               <img
                 src="https://stalwart-faloodeh-22bebe.netlify.app/public/assets/svg/tips/tip-cat-1.svg"
                 alt="Gatito con arenero"
               />
             </div>
-            <div class="tips-text">
-              <h2><strong>¡Cambia la arena con regularidad!</strong></h2>
-              <strong>
+            <div class="tips-text col-md-6 col-sm-12">
+              <h2 style="font-family: Gotham" class="mb-2">
+                <strong>¡Cambia la arena con regularidad!</strong>
+              </h2>
+              <strong style="font-size: 20px">
                 ¿Sabías que cambiar la arena regularmente ayuda a mantener un
-                ambiente más higiénico y libre de bacterias?
-              </strong>
-              <p>
+                ambiente más higiénico y libre de bacterias? </strong
+              ><br />
+              <p style="font-family: Open sans" class="mt-2 mb-4">
                 Esto ocurre porque los restos en el fondo del arenero pierden su
                 efectividad bactericida y virucida, acumulando suciedad que
                 puede ser un vector de enfermedades para los gatos y el hogar.
@@ -190,19 +272,19 @@
             </div>
           </div>
           <div class="tips-content">
-            <div class="tips-text">
-              <h2>
+            <div class="tips-text right">
+              <h2 style="font-family: Gotham" class="mb-2">
                 <strong
-                  >¿Por que se recomienda tener mas de un<br />
+                  >¿Por que se recomienda tener mas de un
                   arenero en casa?</strong
                 >
               </h2>
-              <strong>
+              <strong style="font-size: 20px">
                 Recuerda que lo ideal es tener dos areneros por gato, ya que en
                 el mundo de los gatos la orina y las heces cumplen funciones de
-                comunicación diferentes.
-              </strong>
-              <p>
+                comunicación diferentes. </strong
+              ><br />
+              <p style="font-family: Open sans" class="mt-2">
                 Se recomienda tener dos areneros por gato porque los felinos
                 separan orina y heces para evitar estimulos olfativos excesivos.
                 Esto reduce el estrés y los conflictos, especialmente en hogares
@@ -210,18 +292,18 @@
               </p>
             </div>
             <div class="d-center col-md-6 row">
-              <div id="bubble" class="tips-image">
-                <div class="col-md-12 bubble-text">
+              <div id="bubble" class="tips-image right">
+                <div class="col-md-12 bubble-text right">
                   <div class="tips-text2">
-                    <h6>
-                      Ahora cuando tienes más de un gato, la regla<br />
-                      que se debe seguir (N+1). Es decir, por cada<br />
-                      gato que ingresa al hogar, debes proporcionar<br />un
-                      arenero más a los dos adicionales que ya<br />tienes.
+                    <h6 class="gotham" style="font-size: 16px">
+                      Ahora cuando tienes más de un gato, la regla 
+                      que se debe seguir (N+1). Es decir, por cada 
+                      gato que ingresa al hogar, debes proporcionar un
+                      arenero más a los dos adicionales que ya tienes.
                     </h6>
                   </div>
                 </div>
-                <div class="bubble-trail">
+               <!--  <div class="bubble-trail">
                   <span
                     class="small-bubble"
                     style="width: 25px; height: 25px"
@@ -231,9 +313,9 @@
                     style="margin-right: 20px; width: 15px; height: 15px"
                   ></span>
                   <span class="small-bubble" style="margin-right: 40px"></span>
-                </div>
+                </div> -->
               </div>
-              <div id="img-2-tips" class="tips-image">
+              <div id="img-2-tips" class="tips-image right">
                 <img
                   src="https://stalwart-faloodeh-22bebe.netlify.app/public/assets/svg/tips/tip-cat-2.svg"
                   alt="Gatito con arenero"
@@ -241,26 +323,75 @@
               </div>
             </div>
           </div>
-          <div class="row col-md-12 align-right">
-            <div class="tips-text col-md-10">
+          <div class="row col-md-12 align-right mb-4 set">
+            <div class="tips-text right col-md-7 " style="flex: auto">
               <h2><strong>¡No mezcles arenas!</strong></h2>
-              <strong>
-                Mezclar distintos tipos de arena para gatos<br />
-                puede afectar su rendimiento, disminuyendo<br />
-                cualidades importantes como la capacidad de<br />
+              <p style="font-family: Open sans" class="mt-2 col-md-6 ">
+                Mezclar distintos tipos de arena para gatos 
+                puede afectar su rendimiento, disminuyendo 
+                cualidades importantes como la capacidad de
                 formar grumos o controlar olores.
-              </strong>
+              </p>
             </div>
-            <div class="radius-text row col-md-10">
-              <div class="tips-text3 col-md-8">
-                <h5>
-                  Elige una arena que se adapte a las necesidades de su gato<br />
+            <div class="radius-text row col-md-10 mb-4">
+              <div class="tips-text col-md-10 white">
+                <h4
+                  class="gotham white"
+                  style="font-size: 24px; padding: 1rem 0rem"
+                >
+                  Elige una arena que se adapte a las necesidades de su gato
                   (aglomerante, con o sin aroma, ecológica, etc.).
                 </h5>
               </div>
             </div>
           </div>
+  
+          <div
+            class="row col-md-12 align-right mt-0"
+            style="justify-content: flex-start !important"
+          >
+            <div
+              class="tips-text col-md-12 mt-0"
+              style="flex: auto; justify-items: center"
+            >
+              <div class="tips-text col-md-11" style="flex: auto">
+                <h2 class="col-md-6">
+                  <strong
+                    >¡Elige la textura de arena que tu gato
+                    prefiera!</strong
+                  >
+                </h2>
+                <p style="font-family: Open sans" class="mt-2 col-md-6">
+                  Prefiere las arenas que no irriten el tacto de tu 
+                  mascota, muchos de los gatos prefieren arenas 
+                  degranulometría fina o redondeadas ya que es 
+                  más cómodo para sus almohadillas. 
+                </p>
+              </div>
+            </div>
+
+            <div class="radius-text radius-right row col-md-10">
+              <div class="tips-text col-md-10 white">
+                <h4
+                  class="gotham white"
+                  style="font-size: 24px; padding: 1rem 0rem"
+                >
+                  Cada gato tiene preferencias únicas; elegir una textura de
+                  arena que le resulte cómoda asegura su bienestar y fomenta su
+                  uso del arenero.
+                </h4>
+              </div>
+            </div>
+          </div>
         </div>
+      </div>
+     <div id="fondo-home" class="fondo-home-4 hidden-until-end">
+        <img
+          id="cat-image"
+          src="https://stalwart-faloodeh-22bebe.netlify.app/public/assets/svg/hablemos/cat-hablemos.svg"
+          width="75%"
+          class="hidden-until-end"
+        />
       </div>
       <div id="topbar-placeholder"></div>
     </div>

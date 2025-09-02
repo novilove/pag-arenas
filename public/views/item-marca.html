@@ -22,6 +22,7 @@
       :root {
         --light: #f0c41d;
         --dark: #ea527e;
+        --text-light-100: #fafafa;
       }
       .line-color-marca {
         background: var(--dark);
@@ -43,23 +44,29 @@
       .title-fondo-marca {
         width: 100%;
         object-fit: contain;
-        height: 33rem;
+        height: 37rem;
         overflow: hidden;
         background-position: bottom;
+        justify-content: space-around;
       }
 
       .product-img {
-        object-fit: contain;
-        width: 100%;
+        background-size: contain !important;
+        background-position: bottom;
+
+        width: 85%;
         position: absolute;
         top: 0;
-        height: 30rem;
+        height: 33rem;
         overflow: hidden;
       }
       .img-description {
         width: 100%;
         height: 4rem;
         margin-top: 2rem;
+        margin-left: 1rem;
+        margin-right: 1rem;
+
         background-size: contain;
       }
       .arena {
@@ -74,6 +81,7 @@
       .cat-1 {
         background-size: contain;
         width: 100%;
+        background-position: right;
         height: 36rem;
         /*         margin-top: -10rem; */
         z-index: 3 !important;
@@ -91,12 +99,15 @@
         display: flex;
         flex-direction: column;
         justify-self: center;
-        gap: 1rem;
+        gap: 3rem;
+        font-family: "Open Sans";
         width: 50%;
+        margin-top: 10rem;
       }
       @media (max-width: 767px) {
         .chat-container {
           width: 90%;
+          margin-top: 2rem;
         }
       }
 
@@ -119,7 +130,8 @@
         border-radius: 24px;
         color: white;
         font-size: 1rem;
-        max-width: 100%;
+        max-width: 60%;
+        font-weight: 100;
         word-wrap: break-word;
       }
 
@@ -158,6 +170,7 @@
         border: 10px solid transparent;
         border-top-color: var(--dark);
         border-bottom: 0;
+        /*        color: var(--text-light-100); */
         margin-right: -5px;
       }
       .brand-row {
@@ -171,13 +184,23 @@
         height: auto;
         cursor: pointer;
         opacity: 0.6;
-        transition: opacity 0.3s;
+        transition: opacity 0.3s ease, width 0.3s ease;
       }
-      .brand-row img.active,
+
+      .brand-row img:not(:hover) {
+        opacity: 1;
+      }
       .brand-row img:hover {
+        width: 215px;
         opacity: 1;
       }
 
+      .list-kg {
+        align-self: stretch;
+        justify-content: start;
+        align-items: center;
+        display: inline-flex;
+      }
       /* Responsividad */
       @media (max-width: 767px) {
         .brand-row img {
@@ -190,6 +213,9 @@
         .chat-bubble {
           font-size: 0.95rem;
           padding: 1rem 1.2rem;
+        }
+        .list-kg {
+          justify-content: space-evenly;
         }
       }
 
@@ -251,40 +277,30 @@
       <div class="title-fondo-marca row">
         <div
           style="
-            /*             gap: 24px; */
             align-self: stretch;
             flex-direction: column;
             justify-content: start;
-            /*  align-items: flex-start; */
             display: flex;
           "
-          class="col-md-5 col-sm-12"
+          class="col-md-7 col-sm-12"
         >
-          <h2 class="gotham white">
+          <h2 class="gotham white" id="title-fondo-marca">
             Hey! Arena de<br />bentonita natural <br />Aroma lavanda
           </h2>
-          <div
-            style="
-              align-self: stretch;
-              justify-content: space-between;
-              align-items: center;
-              display: inline-flex;
-            "
-            class="list-kg"
-          >
+          <div id="list-kg" class="list-kg">
             <h3 class="gotham white">3kg</h3>
             <h3 class="gotham white">4kg</h3>
             <h3 class="gotham white">10kg</h3>
             <h3 class="gotham white">20kg</h3>
           </div>
-          <h4 class="gotham white">
+          <h4 class="gotham white" id="description-fondo-marca">
             Esta arena está especialmente formulada para neutralizar rápidamente
             los olores y es de bajo rastreo, por lo que hay menos suciedad y no
             hay rastros de arena esparcida.
           </h4>
         </div>
         <div
-          class="col-md-5 col-sm-12"
+          class="col-md-5 col-sm-12 my-4"
           style="display: flex; justify-content: center; align-content: end"
         >
           <div class="product-img"></div>
@@ -292,125 +308,106 @@
       </div>
       <!-- picture decription -->
       <div class="row col-md-12 not-p-x">
-        <div class="col-md-7 img-description px-2"></div>
+        <div class="col-md-7 img-description px-2 py-2 mb-2"></div>
         <div
           class="col-md-7 color-primary-marca px-2"
           style="border-bottom-right-radius: 100rem"
         >
-          <h3 class="gotham white-banner my-0">
+          <h3
+            class="gotham white-banner my-0 text-center"
+            id="description-marca-text"
+          >
             Aglutinación superior y con un agradable aroma a lavanda.
           </h3>
         </div>
       </div>
-      <div class="row">
-        <div class="row col-md-6 arena" style="justify-content: center">
-          <div
-            class="d-center row col-md-0 col-sm-12 my-auto"
-            style="z-index: 4"
-          >
-            <h3
-              class="gotham white-sand w-100 py-0 pt-2 text-center line-color-marca"
-            >
-              Ideal para todo<br />tipo de areneros
-            </h3>
-            <h4
-              class="gotham white-sand w-100 pt-0 pb-2 text-center line-color-marca"
-            >
-              y es muy eficaz en hogares<br />con varios gatos.
-            </h4>
-          </div>
-        </div>
+      <div class="row" style="position: relative">
+        <div class="row col-md-6 arena" style="justify-content: center"></div>
 
         <div class="d-center row col-md-6 cat-1"></div>
-        <div class="d-center row col-md-6 col-sm-0 under-sand">
-          <h3 class="gotham white-sand w-100 pb-0">
+        <div class="d-center row col-md-12 col-sm-0 under-sand">
+          <h3 class="gotham white-sand w-100 pb-0" id="cat-image-text-1">
             Ideal para todo<br />tipo de areneros
           </h3>
-          <h4 class="gotham white-sand w-100 pt-0">
+          <h4 class="gotham white-sand w-100 pt-0" id="cat-image-text-2">
             y es muy eficaz en hogares<br />con varios gatos.
           </h4>
         </div>
         <div class="fondo-cat"></div>
+        <div class="d-center row col-md-0 col-sm-12 my-auto" style="z-index: 4">
+          <h3
+            class="gotham white-sand w-100 py-0 pt-2 text-center line-color-marca"
+            id="cat-image-text-3"
+          >
+            Ideal para todo<br />tipo de areneros
+          </h3>
+          <h4
+            class="gotham white-sand w-100 pt-0 pb-2 text-center line-color-marca"
+            id="cat-image-text-4"
+          >
+            y es muy eficaz en hogares<br />con varios gatos.
+          </h4>
+        </div>
       </div>
 
       <!-- >>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< -->
 
       <!-- CHATTTTT -->
-      <main class="chat-container col-md-10" style="margin-top: 10rem">
-        <div class="chat-bubble right col-md-7 light">con aroma Lavanda</div>
-
-        <div class="chat-bubble left col-md-7 dark">
-          Los gránulos crean una potente unión para<br />retener la humedad y
-          evitar que cualquier<br />líquido llegue al fondo de la bandeja
-          higiénica.
-        </div>
-
-        <div class="chat-bubble right col-md-7 light">
-          Es hipoalergénica a alérgenos comunes como<br />el polvo, las
-          proteínas vegetales y las fragancias.
-        </div>
-
-        <div class="chat-bubble left col-md-7 dark">
-          <strong> Mira el siguiente video</strong>
-        </div>
-      </main>
+      <main class="chat-container col-md-10" id="chat-container"></main>
       <!-- >>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< -->
 
       <!-- VIDEO -->
       <div class="video-carousel mt-4">
-        <div class="video-wrapper">
-          <video
+        <div class="video-wrapper" id="video-wrapper">
+          <!--   <video
             id="carouselVideo"
             class="carousel-video"
             controls=""
             muted=""
             preload="metadata"
             src="https://stalwart-faloodeh-22bebe.netlify.app/public/assets/video/hey-basica.mp4"
-          ></video>
+          ></video> -->
         </div>
       </div>
 
       <div class="col-sm-12 col-md-12 mt-4 hero-content cate">
-        <h2 class="my-0">
-          Más
-          <h1 class="my-0">Arenas</h1>
-        </h2>
+        <h2 class="my-0">Más <strong>Arenas...</strong></h2>
       </div>
       <div id="brand-row" class="brand-row">
-        <a href="/item-marca.html?brand=pipicat&category=premium">
+        <!--  <a href="/views/item-marca.html?brand=pipicat&category=premium">
           <img
             src="https://stalwart-faloodeh-22bebe.netlify.app/public/assets/svg/marcas/web/pipicat/premium.svg"
             alt="gatuna"
         /></a>
-        <a href="/item-marca.html?brand=gatuna&category=premium">
+        <a href="/views/item-marca.html?brand=gatuna&category=premium">
           <img
             src="https://stalwart-faloodeh-22bebe.netlify.app/public/assets/svg/marcas/web/gatuna/premium.svg"
             alt="london"
             class="active"
           />
         </a>
-        <a href="/item-marca.html?brand=london&category=basica">
+        <a href="/views/item-marca.html?brand=london&category=basica">
           <img
             src="https://stalwart-faloodeh-22bebe.netlify.app/public/assets/svg/marcas/web/london/basica.svg"
             alt="pipicat"
           />
-        </a>
+        </a> -->
       </div>
       <div id="topbar-placeholder"></div>
     </div>
     <!--  -->
     <!-- JS -->
     <!--  -->
-    <script type="module" src="./javascript/content-replace.js"></script>
+    <script type="module" src="../javascript/content-replace.js"></script>
 
     <script type="module">
-      import { addComponent, addNavFunc } from "./javascript/addComponents.js";
+      import { addComponent, addNavFunc } from "../javascript/addComponents.js";
 
       // Espera a que el DOM esté completamente cargado antes de ejecutar el script
       document.addEventListener("DOMContentLoaded", async () => {
-        await addComponent("navbar-placeholder", "components/navbar.html");
+        await addComponent("navbar-placeholder", "../components/navbar.html");
         addNavFunc();
-        addComponent("topbar-placeholder", "components/footer.html");
+        addComponent("topbar-placeholder", "../components/footer.html");
 
         const container = document.querySelector(".chat-container");
         const bubbles = Array.from(container.querySelectorAll(".chat-bubble"));
@@ -454,7 +451,7 @@
       const BRAND_PATH =
         "https://stalwart-faloodeh-22bebe.netlify.app/public/assets/svg/marcas/logos";
       const MOBILE_PATH =
-        "https://stalwart-faloodeh-22bebe.netlify.app/public/assets/svg/marcas/web";
+        "https://stalwart-faloodeh-22bebe.netlify.app/public/assets/svg/marcas/mobile";
       const WEB_PATH =
         "https://stalwart-faloodeh-22bebe.netlify.app/public/assets/svg/marcas/web";
 
@@ -498,6 +495,7 @@
           const file = PARTS[cls];
           const url = `${basePath}/${file}`;
           if (await imageExists(url)) {
+            console.log(url);
             document.querySelectorAll(`.${cls}`).forEach((el) => {
               el.style.backgroundImage = `url('${url}')`;
             });

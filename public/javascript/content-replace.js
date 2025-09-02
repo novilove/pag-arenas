@@ -5,8 +5,8 @@ function getParam(name, def) {
   return p.get(name) || def;
 }
 
-async function applyContent() {
-  const category = getParam("filtro", "basica");
+function applyContent() {
+  const category = getParam("category", "basica");
   const brand = getParam("brand", "hey");
   const key = `${category}-${brand}`;
   const map = contentMapping[key];
@@ -15,12 +15,15 @@ async function applyContent() {
     console.warn(`No mapping for ${key}`);
     return;
   }
-
+  /*   console.log(`Aplicando contenido para:`, map); */
   // 1) Aplica colores CSS variables
   if (map.colors) {
     const root = document.documentElement;
     root.style.setProperty("--light", map.colors.light);
     root.style.setProperty("--dark", map.colors.dark);
+    if (map.colors["text-light-100"]) {
+      root.style.setProperty("--dark", map.colors["text-light-100"]);
+    }
   }
 
   // 2) Reemplaza solo el innerHTML de cada selector
@@ -28,15 +31,15 @@ async function applyContent() {
     const el = document.getElementById(`${selector}`);
     if (el) {
       el.innerHTML = html;
-      console.log(`Contenido actualizado para ${selector}`);
+
+      /*  console.log(`Contenido actualizado para ${selector}`); */
     } else {
       console.warn(`Selector not found: ${selector}`);
     }
   });
   /* VIDEO */
   const video = document.getElementById(`video-wrapper`);
-  /*  video.innerHTML = "";
-c */
+
   let newVideo;
   if (map.video.isVideo) {
     newVideo = document.createElement("video");
@@ -45,15 +48,21 @@ c */
     newVideo.controls = true;
     newVideo.muted = true;
     newVideo.preload = "metadata";
-    newVideo.src = map.videoSrc;
+    video.appendChild(newVideo);
+
+    playAt(map.video.src);
   } else {
     newVideo = document.createElement("img");
-    newVideo.id = "carouselVideo";
-    newVideo.className = "carousel-video";
-    newVideo.src = map.videoSrc;
+    newVideo.style.width = "100%";
+    video.style.padding = "0";
+    video.style.background = "transparent";
+
+    /*     newVideo.id = "carouselVideo"; */
+    /*    newVideo.className = "carousel-video"; */
+    newVideo.src = map.video.src;
+    video.appendChild(newVideo);
   }
   // Limpia el contenido previo
-  video.appendChild(newVideo);
 
   /* MORE PRODUCTS */
   const moreProducts = document.getElementById("brand-row");
@@ -65,17 +74,15 @@ c */
     a.appendChild(img);
     moreProducts.appendChild(a);
   });
-  /* <!-- <video
-            id="carouselVideo"
-            class="carousel-video"
-            controls=""
-            muted=""
-            preload="metadata"
-            src="https://stalwart-faloodeh-22bebe.netlify.app/public/assets/video/hey-basica.mp4"
-          */
 }
-export { applyContent, getParam };
 
+function playAt(src) {
+  const vidEl = document.getElementById("carouselVideo");
+
+  vidEl.pause();
+  vidEl.src = src;
+  vidEl.load();
+}
 /* 
 
 function initCarouselAndBrands() {
@@ -114,5 +121,5 @@ function initCarouselAndBrands() {
 window.addEventListener("DOMContentLoaded", initCarouselAndBrands);
 window.addEventListener("popstate", initCarouselAndBrands); */
 
-/* window.addEventListener("DOMContentLoaded", applyContent);
-window.addEventListener("popstate", applyContent); */
+window.addEventListener("DOMContentLoaded", applyContent);
+window.addEventListener("popstate", applyContent);

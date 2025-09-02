@@ -111,9 +111,9 @@
   background-size: cover;
   background-position: bottom;
   width: 100%;
-  position: relative;
-  z-index: 20;
-  height: 19rem;
+  position: relative !important;
+  z-index: 20 !important;
+  height: 29rem;
 }
 
 /* Cada dot circular con número */
