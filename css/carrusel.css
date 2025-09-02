@@ -107,7 +107,7 @@
 }
 .carousel-dots.home-fondo {
   /* Foto de fondo para la zona de dots */
-  background-image: url("https://stalwart-faloodeh-22bebe.netlify.app/public/assets/svg/home/mobile/fondo-marcas-2.svg") !important;
+  background-image: url("../assets/svg/home/mobile/fondo-marcas-2.svg") !important;
   background-size: cover;
   background-position: bottom;
   width: 100%;

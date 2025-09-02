@@ -24,7 +24,7 @@ export const contentMapping = {
       "cat-image-text-3": "Ideal para todo<br/>tipo de areneros",
       "cat-image-text-4": "y muy eficaz en hogares<br/>con varios gatos.",
       /* CHAT */
-      "chat-container": ` <div class="chat-bubble right col-md-7 light" style="display: flex;align-items: center;" >con aroma Lavanda <img src="https://stalwart-faloodeh-22bebe.netlify.app/public/assets/svg/marcas/web/hey/basica/aroma.png" style="width:32px;height:32px" alt='Hey! Básica' class='logo-marca ml-2'/></div>
+      "chat-container": ` <div class="chat-bubble right col-md-7 light" style="display: flex;align-items: center;" >con aroma Lavanda <img src="../assets/svg/marcas/web/hey/basica/aroma.png" style="width:32px;height:32px" alt='Hey! Básica' class='logo-marca ml-2'/></div>
         <div class="chat-bubble left col-md-7 dark">
           Los gránulos crean una potente unión para retener la humedad y
           evitar que cualquier líquido llegue al fondo de la bandeja
@@ -41,19 +41,19 @@ export const contentMapping = {
 
     video: {
       isVideo: true,
-      src: "https://stalwart-faloodeh-22bebe.netlify.app/public/assets/video/hey-basica.mp4",
+      src: "../assets/video/hey-basica.mp4",
     },
     extra: [
       {
-        src: "https://stalwart-faloodeh-22bebe.netlify.app/public/assets/svg/marcas/web/gatuna/premium.svg",
+        src: "../assets/svg/marcas/web/gatuna/premium.svg",
         urlRedirect: "/views/item-marca.html?brand=gatuna&category=premium",
       },
       {
-        src: "https://stalwart-faloodeh-22bebe.netlify.app/public/assets/svg/marcas/web/london/basica.svg",
+        src: "../assets/svg/marcas/web/london/basica.svg",
         urlRedirect: "/views/item-marca.html?brand=london&category=basica",
       },
       {
-        src: "https://stalwart-faloodeh-22bebe.netlify.app/public/assets/svg/marcas/web/pipicat/premium.svg",
+        src: "../assets/svg/marcas/web/pipicat/premium.svg",
         urlRedirect: "/views/item-marca.html?brand=pipicat&category=premium",
       },
     ],
@@ -82,7 +82,7 @@ export const contentMapping = {
       "cat-image-text-3": "100% natural",
       "cat-image-text-4": "y respetuoso con el medio ambiente.",
       /* CHAT */
-      "chat-container": ` <div class="chat-bubble right col-md-7 light" style="display: flex;align-items: center;" >con aroma Lavanda <img src="https://stalwart-faloodeh-22bebe.netlify.app/public/assets/svg/marcas/web/london/basica/aroma.png" style="width:32px;height:32px" alt='london Básica' class='logo-marca ml-2'/></div>
+      "chat-container": ` <div class="chat-bubble right col-md-7 light" style="display: flex;align-items: center;" >con aroma Lavanda <img src="../assets/svg/marcas/web/london/basica/aroma.png" style="width:32px;height:32px" alt='london Básica' class='logo-marca ml-2'/></div>
         <div class="chat-bubble left col-md-7 dark">
           Libre de químicos y suave que no saturará el espacio de la casa.
         </div>
@@ -95,19 +95,19 @@ export const contentMapping = {
     },
     video: {
       isVideo: true,
-      src: "https://stalwart-faloodeh-22bebe.netlify.app/public/assets/video/london-basica.mp4",
+      src: "../assets/video/london-basica.mp4",
     },
     extra: [
       {
-        src: "https://stalwart-faloodeh-22bebe.netlify.app/public/assets/svg/marcas/web/pipicat/premium.svg",
+        src: "../assets/svg/marcas/web/pipicat/premium.svg",
         urlRedirect: "/views/item-marca.html?brand=pipicat&category=premium",
       },
       {
-        src: "https://stalwart-faloodeh-22bebe.netlify.app/public/assets/svg/marcas/web/london/black.svg",
+        src: "../assets/svg/marcas/web/london/black.svg",
         urlRedirect: "/views/item-marca.html?brand=london&category=black",
       },
       {
-        src: "https://stalwart-faloodeh-22bebe.netlify.app/public/assets/svg/marcas/web/gatuna/premium.svg",
+        src: "../assets/svg/marcas/web/gatuna/premium.svg",
         urlRedirect: "/views/item-marca.html?brand=gatuna&category=premium",
       },
     ],
@@ -126,7 +126,7 @@ export const contentMapping = {
      </div></div>`,
       // Descripción corta
       "description-fondo-marca":
-        "<div class='mt-2'>La arena para gatos Pipicat destaca como líder por su excepcional relación precio-calidad, ofreciendo una aglutinación eficiente y mínima generación de poolvo.<br/><br/>Elaborada con bentonita 100% natural, es segura para los gatos y amigable con su bienestar.olvo.<br/><br/>Disponible en formatos de 4 kilos y 15 kilos, en tres aromas frescos como lavanda, menta y manzana.</div>",
+        "<div class='mt-2'>La arena para gatos Pipicat destaca como líder por su excepcional relación precio-calidad, ofreciendo una aglutinación eficiente y mínima generación de polvo.<br/><br/>Elaborada con bentonita 100% natural, es segura para los gatos y amigable con su bienestar.<br/><br/>Disponible en formatos de 4 kilos y 15 kilos, en tres aromas frescos como lavanda, menta y manzana.</div>",
       // Subtítulo imagen
       "description-marca-text": "Hecha de bentonita 100% natural",
       // Texto dentro de .arena
@@ -136,7 +136,7 @@ export const contentMapping = {
       "cat-image-text-3": "Neutraliza los olores",
       "cat-image-text-4": "de manera efectiva.",
       /* CHAT */
-      "chat-container": ` <div class="chat-bubble right col-md-7 light" style="display: flex;align-items: center;" >con aromas Manzana, Lavanda y Menta  <img src="https://stalwart-faloodeh-22bebe.netlify.app/public/assets/svg/marcas/web/pipicat/premium/aroma3.png"style="width:32px;height:32px" alt='Hey! Básica' class='logo-marca mx-1'/> <img src="https://stalwart-faloodeh-22bebe.netlify.app/public/assets/svg/marcas/web/pipicat/premium/aroma1.png"style="width:40px;height:40px" alt='Hey! Básica' class='logo-marca mx-1'/> <img src="https://stalwart-faloodeh-22bebe.netlify.app/public/assets/svg/marcas/web/pipicat/premium/aroma2.png"style="width:32px;height:32px" alt='Hey! Básica' class='logo-marca mx-1'/>
+      "chat-container": ` <div class="chat-bubble right col-md-7 light" style="display: flex;align-items: center;" >con aromas Manzana, Lavanda y Menta  <img src="../assets/svg/marcas/web/pipicat/premium/aroma3.png"style="width:32px;height:32px" alt='Hey! Básica' class='logo-marca mx-1'/> <img src="../assets/svg/marcas/web/pipicat/premium/aroma1.png"style="width:40px;height:40px" alt='Hey! Básica' class='logo-marca mx-1'/> <img src="../assets/svg/marcas/web/pipicat/premium/aroma2.png"style="width:32px;height:32px" alt='Hey! Básica' class='logo-marca mx-1'/>
      </div>
         <div class="chat-bubble left col-md-7 dark">
         Tecnología especial de neutralización de olores.
@@ -150,20 +150,20 @@ export const contentMapping = {
     },
     video: {
       isVideo: true,
-      src: "https://stalwart-faloodeh-22bebe.netlify.app/public/assets/video/pipicat-premium.mp4",
+      src: "../assets/video/pipicat-premium.mp4",
     },
     extra: [
       {
-        src: "https://stalwart-faloodeh-22bebe.netlify.app/public/assets/svg/marcas/web/hey/basica.svg",
+        src: "../assets/svg/marcas/web/hey/basica.svg",
         urlRedirect: "/views/item-marca.html?brand=hey&category=basica",
       },
 
       {
-        src: "https://stalwart-faloodeh-22bebe.netlify.app/public/assets/svg/marcas/web/pipicat/super.svg",
+        src: "../assets/svg/marcas/web/pipicat/super.svg",
         urlRedirect: "/views/item-marca.html?brand=pipicat&category=super",
       },
       {
-        src: "https://stalwart-faloodeh-22bebe.netlify.app/public/assets/svg/marcas/web/london/black.svg",
+        src: "../assets/svg/marcas/web/london/black.svg",
         urlRedirect: "/views/item-marca.html?brand=london&category=black",
       },
     ],
@@ -203,19 +203,19 @@ export const contentMapping = {
     },
     video: {
       isVideo: false,
-      src: "https://stalwart-faloodeh-22bebe.netlify.app/public/assets/svg/marcas/web/gatuna/premium/video.png",
+      src: "../assets/svg/marcas/web/gatuna/premium/video.png",
     },
     extra: [
       {
-        src: "https://stalwart-faloodeh-22bebe.netlify.app/public/assets/svg/marcas/web/london/basica.svg",
+        src: "../assets/svg/marcas/web/london/basica.svg",
         urlRedirect: "/views/item-marca.html?brand=london&category=basica",
       },
       {
-        src: "https://stalwart-faloodeh-22bebe.netlify.app/public/assets/svg/marcas/web/hey/basica.svg",
+        src: "../assets/svg/marcas/web/hey/basica.svg",
         urlRedirect: "/views/item-marca.html?brand=hey&category=basica",
       },
       {
-        src: "https://stalwart-faloodeh-22bebe.netlify.app/public/assets/svg/marcas/web/pipicat/premium.svg",
+        src: "../assets/svg/marcas/web/pipicat/premium.svg",
         urlRedirect: "/views/item-marca.html?brand=pipicat&category=premium",
       },
     ],
@@ -244,7 +244,7 @@ export const contentMapping = {
       "cat-image-text-3": "Tecnología especial de<br/>neutralización de olores",
       "cat-image-text-4": "combate los fuertes olores a amoníaco al instante.",
       /* CHAT */
-      "chat-container": ` <div class="chat-bubble right col-md-7 light" style="display: flex;align-items: center;" >con aroma Neutro <img src="https://stalwart-faloodeh-22bebe.netlify.app/public/assets/svg/marcas/web/pipicat/super/aroma.png" style="width:32px;height:32px" alt='london Básica' class='logo-marca ml-2'/></div>
+      "chat-container": ` <div class="chat-bubble right col-md-7 light" style="display: flex;align-items: center;" >con aroma Neutro <img src="../assets/svg/marcas/web/pipicat/super/aroma.png" style="width:32px;height:32px" alt='london Básica' class='logo-marca ml-2'/></div>
         <div class="chat-bubble left col-md-7 dark">
      Libre de químicos que no saturará el espacio de la casa
         </div>
@@ -255,20 +255,20 @@ export const contentMapping = {
     },
     video: {
       isVideo: false,
-      src: "https://stalwart-faloodeh-22bebe.netlify.app/public/assets/svg/marcas/web/pipicat/super/video.svg",
+      src: "../assets/svg/marcas/web/pipicat/super/video.svg",
     },
     extra: [
       {
-        src: "https://stalwart-faloodeh-22bebe.netlify.app/public/assets/svg/marcas/web/london/black.svg",
+        src: "../assets/svg/marcas/web/london/black.svg",
         urlRedirect: "/views/item-marca.html?brand=london&category=black",
       },
 
       {
-        src: "https://stalwart-faloodeh-22bebe.netlify.app/public/assets/svg/marcas/web/gatuna/premium.svg",
+        src: "../assets/svg/marcas/web/gatuna/premium.svg",
         urlRedirect: "/views/item-marca.html?brand=gatuna&category=premium",
       },
       {
-        src: "https://stalwart-faloodeh-22bebe.netlify.app/public/assets/svg/marcas/web/hey/basica.svg",
+        src: "../assets/svg/marcas/web/hey/basica.svg",
         urlRedirect: "/views/item-marca.html?brand=hey&category=basica",
       },
     ],
@@ -313,19 +313,19 @@ export const contentMapping = {
 
     video: {
       isVideo: true,
-      src: "https://stalwart-faloodeh-22bebe.netlify.app/public/assets/video/london-black.mp4",
+      src: "../assets/video/london-black.mp4",
     },
     extra: [
       {
-        src: "https://stalwart-faloodeh-22bebe.netlify.app/public/assets/svg/marcas/web/gatuna/premium.svg",
+        src: "../assets/svg/marcas/web/gatuna/premium.svg",
         urlRedirect: "/views/item-marca.html?brand=gatuna&category=premium",
       },
       {
-        src: "https://stalwart-faloodeh-22bebe.netlify.app/public/assets/svg/marcas/web/pipicat/premium.svg",
+        src: "../assets/svg/marcas/web/pipicat/premium.svg",
         urlRedirect: "/views/item-marca.html?brand=pipicat&category=premium",
       },
       {
-        src: "https://stalwart-faloodeh-22bebe.netlify.app/public/assets/svg/marcas/web/pipicat/super.svg",
+        src: "../assets/svg/marcas/web/pipicat/super.svg",
         urlRedirect: "/views/item-marca.html?brand=pipicat&category=super",
       },
     ],

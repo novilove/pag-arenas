@@ -109,8 +109,7 @@
   /* origin */
 
   .fondo-category {
-    background: url("https://stalwart-faloodeh-22bebe.netlify.app/public/assets/svg/categorias/fondo-category.svg")
-      no-repeat;
+    background: url("../assets/svg/categorias/fondo-category.svg") no-repeat;
     object-fit: contain;
     width: 100%;
     height: 26rem;
@@ -189,8 +188,7 @@
     object-fit: contain;
   }
   .cola-title {
-    background: url("https://stalwart-faloodeh-22bebe.netlify.app/public/assets/svg/categorias/line-title.svg")
-      no-repeat;
+    background: url("../assets/svg/categorias/line-title.svg") no-repeat;
     position: absolute;
     height: 17rem;
     width: 33%;

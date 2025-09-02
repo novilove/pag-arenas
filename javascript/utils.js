@@ -1,2 +1,1 @@
-export const routeServer =
-  "https://stalwart-faloodeh-22bebe.netlify.app/public/assets/svg";
+export const routeServer = "../assets/svg";

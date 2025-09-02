@@ -4,10 +4,8 @@ import { setLoading } from "./loader.js";
 export function carruselBanner() {
   // 1. Parámetros básicos
   const MAX_NUMBER = 6;
-  const mobileBasePath =
-    "https://stalwart-faloodeh-22bebe.netlify.app/public/assets/svg/banners/mobile/";
-  const webBasePath =
-    "https://stalwart-faloodeh-22bebe.netlify.app/public/assets/svg/banners/web/";
+  const mobileBasePath = "../assets/svg/banners/mobile/";
+  const webBasePath = "../assets/svg/banners/web/";
   const MOBILE_MAX_WIDTH = 767;
   const AUTOPLAY_INTERVAL = 5000;
   const BANNERS_STATIC = [
@@ -222,8 +220,7 @@ export function iconsAndBackgorund() {
 }
 
 export async function scrollInfinitoImg() {
-  const BASE_URL =
-    "https://stalwart-faloodeh-22bebe.netlify.app/public/assets/svg/iconos/logos/"; // Ajusta tu dominio
+  const BASE_URL = "../assets/svg/iconos/logos/"; // Ajusta tu dominio
   const LOGOS_URLS = [
     {
       name: "1.png",
@@ -327,9 +324,9 @@ export async function scrollInfinitoImg() {
 }
 
 export function setCarruselVideos() {
-  const BASE =
-    "https://stalwart-faloodeh-22bebe.netlify.app/public/assets/video/home/";
-
+  /* assets/video/home/1.mp4 */
+  const BASE = "../assets/video/home/";
+  console.log(BASE);
   const MAX = 4;
   const videos = [];
   let current = 0;
@@ -370,7 +367,23 @@ export function setCarruselVideos() {
   function playAt(i) {
     current = i;
     vidEl.pause();
-    vidEl.src = videos[current];
+    /*  vidEl.src = videos[current]; */
+    // Get the first <source> element within the video element.
+    const sourceEl = vidEl.querySelectorAll("source");
+
+    // Change the 'src' of the source element to the new video URL.
+
+    sourceEl.forEach((sourceEl, index) => {
+      // Asegúrate de tener una URL para cada <source>.
+      // Aquí usamos el mismo video para todos, pero puedes adaptar la lógica.
+      if (index == 0) {
+        sourceEl.src = videos[current];
+      } else {
+        console.log(videos[current]);
+        sourceEl.src = ".." + videos[current].split(".")[2] + ".webm";
+      }
+    });
+
     vidEl.load();
     updateDots();
   }

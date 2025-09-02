@@ -140,7 +140,7 @@
       <!-- CONOCE -->
       <section
         class="hero lazy-bg"
-        data-bg="https://stalwart-faloodeh-22bebe.netlify.app/public/assets/svg/home/web/fondo-1.svg"
+        data-bg="../assets/svg/home/web/fondo-1.svg"
       >
         <div class="hero-content">
           <h1 class="my-0">
@@ -153,7 +153,7 @@
               class="icono"
             >
               <img
-                src="https://stalwart-faloodeh-22bebe.netlify.app/public/assets/svg/iconos/categoria/calidad.svg"
+                src="../assets/svg/iconos/categoria/calidad.svg"
                 alt="Icono Calidad"
                 style="cursor: var(--cursor-auto)"
               />
@@ -164,7 +164,7 @@
               class="icono v2"
             >
               <img
-                src="https://stalwart-faloodeh-22bebe.netlify.app/public/assets/svg/iconos/categoria/anti.svg"
+                src="../assets/svg/iconos/categoria/anti.svg"
                 alt="Icono Anti Alergias"
                 style="cursor: var(--cursor-auto)"
               />
@@ -175,7 +175,7 @@
               class="icono v3"
             >
               <img
-                src="https://stalwart-faloodeh-22bebe.netlify.app/public/assets/svg/iconos/categoria/aroma.svg"
+                src="../assets/svg/iconos/categoria/aroma.svg"
                 alt="Icono Aromas"
                 style="cursor: var(--cursor-auto)"
               />
@@ -186,7 +186,7 @@
               class="icono"
             >
               <img
-                src="https://stalwart-faloodeh-22bebe.netlify.app/public/assets/svg/iconos/categoria/precio.svg"
+                src="../assets/svg/iconos/categoria/precio.svg"
                 alt="Icono Precio"
                 style="cursor: var(--cursor-auto)"
               />
@@ -225,7 +225,7 @@
         <div class="w-100" style="display: flex; justify-content: flex-end">
           <img
             class="lazy-svg hero-curve col-md-0"
-            data-src="https://stalwart-faloodeh-22bebe.netlify.app/public/assets/svg/home/web/cola-1-v2.svg"
+            data-src="../assets/svg/home/web/cola-1-v2.svg"
             alt="Línea curva decorativa"
           />
         </div>
@@ -237,7 +237,7 @@
             <img
               class="lazy-svg col-sm-0"
               style="background-position: left !important; width: 100%"
-              data-src="https://stalwart-faloodeh-22bebe.netlify.app/public/assets/svg/home/web/cat-1.svg"
+              data-src="../assets/svg/home/web/cat-1.svg"
               alt="Gato con plantas y círculo"
             />
           </div>
@@ -259,7 +259,7 @@
         >
           <img
             class="lazy-svg hero-curve col-sm-0"
-            data-src="https://stalwart-faloodeh-22bebe.netlify.app/public/assets/svg/home/web/cola-1-v2.svg"
+            data-src="../assets/svg/home/web/cola-1-v2.svg"
             alt="Línea curva decorativa"
           />
         </div>
@@ -272,14 +272,14 @@
           width: 100%;
           background-position: left !important;
         "
-        data-src="https://stalwart-faloodeh-22bebe.netlify.app/public/assets/svg/home/web/cat-1.svg"
+        data-src="../assets/svg/home/web/cat-1.svg"
         alt="Gato con plantas y círculo"
       />
       <!-- MARCAS -->
 
       <section
         class="hero--marca lazy-bg w-100"
-        data-bg="https://stalwart-faloodeh-22bebe.netlify.app/public/assets/svg/home/web/fondo-marcas.svg"
+        data-bg="../assets/svg/home/web/fondo-marcas.svg"
       >
         <div class="row text-center" style="justify-content: center">
           <div class="col-sm-12 col-md-12">
@@ -309,7 +309,7 @@
             class="lazy-video"
             muted
             controls
-            poster="https://stalwart-faloodeh-22bebe.netlify.app/public/assets/svg/logo.svg"
+            poster="../assets/svg/logo.svg"
           ></video> -->
           <video
             id="carouselVideo"
@@ -317,7 +317,11 @@
             controls
             muted
             preload="metadata"
-          ></video>
+          >
+            <source src="movie.mp4" type="video/mp4" />
+            <source src="../assets/video/home/1.webm" type="video/webm" />
+            Tu navegador no soporta el formato de video.
+          </video>
         </div>
         <button id="nextBtn" class="carousel-button">&rarr;</button>
         <div id="videoDots" class="carousel-dots home-fondo"></div>
@@ -542,7 +546,7 @@
       <!-- Ejemplos de elementos diferidos: -->
       <!--     <img
       class="lazy-svg"
-      data-src="https://stalwart-faloodeh-22bebe.netlify.app/public/assets/svg/logo.svg"
+      data-src="../assets/svg/logo.svg"
       alt="Icono de Mapa"
       width="120"
       height="120"
@@ -550,11 +554,11 @@
 
     <video
       class="lazy-video"
-      data-src="https://stalwart-faloodeh-22bebe.netlify.app/public/assets/video/black.mp4"
+      data-src="../assets/video/black.mp4"
       controls
       width="640"
       height="360"
-      poster="https://stalwart-faloodeh-22bebe.netlify.app/public/assets/svg/logo.svg"
+      poster="../assets/svg/logo.svg"
     >
       Tu navegador no soporta la etiqueta <code>&lt;video&gt;</code>.
     </video> -->

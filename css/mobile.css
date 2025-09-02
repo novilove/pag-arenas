@@ -111,8 +111,7 @@
   }
   .shovel-origin {
     position: absolute;
-    background: url("https://stalwart-faloodeh-22bebe.netlify.app/public/assets/svg/home/mobile/shovel-origin.svg")
-      no-repeat;
+    background: url("../assets/svg/home/mobile/shovel-origin.svg") no-repeat;
     bottom: 0%;
     /* height: 100vh !important; */
     right: 0;
@@ -125,8 +124,7 @@
   .plant-origin {
     position: absolute;
     /* align-content: start; */
-    background: url("https://stalwart-faloodeh-22bebe.netlify.app/public/assets/svg/home/web/plant-origin.svg")
-      no-repeat;
+    background: url("../assets/svg/home/web/plant-origin.svg") no-repeat;
     height: 50vh !important;
     width: 100%;
     z-index: 0;
@@ -135,7 +133,7 @@
   }
 
   .fondo-category {
-    background: url("https://stalwart-faloodeh-22bebe.netlify.app/public/assets/svg/categorias/fondo-category-mobile.svg")
+    background: url("../assets/svg/categorias/fondo-category-mobile.svg")
       no-repeat;
     object-fit: contain;
     width: 100%;
@@ -241,8 +239,7 @@
     /*     padding-left: 10px; */
   }
   .cola-title {
-    background: url("https://stalwart-faloodeh-22bebe.netlify.app/public/assets/svg/categorias/line-title.svg")
-      no-repeat;
+    background: url("../assets/svg/categorias/line-title.svg") no-repeat;
     position: absolute;
     height: 11rem;
     width: 8rem;

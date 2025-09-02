@@ -1,10 +1,8 @@
 import { setLoading } from "./loader.js";
 
 const MAX_IMAGES = 6;
-const MOBILE_PATH =
-  "https://stalwart-faloodeh-22bebe.netlify.app/public/assets/svg/categorias/mobile";
-const WEB_PATH =
-  "https://stalwart-faloodeh-22bebe.netlify.app/public/assets/svg/categorias/web";
+const MOBILE_PATH = "../assets/svg/categorias/mobile";
+const WEB_PATH = "../assets/svg/categorias/web";
 const MOBILE_BREAK = 767;
 const SPECIAL_FILE = "table.svg";
 const CATEROGY_URLS = {
