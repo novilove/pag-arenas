@@ -124,7 +124,7 @@
   .plant-origin {
     position: absolute;
     /* align-content: start; */
-    background: url("../assets/svg/home/web/plant-origin.svg") no-repeat;
+    background: url("../assets/svg/home/web/plant-origin.png") no-repeat;
     height: 50vh !important;
     width: 100%;
     z-index: 0;
